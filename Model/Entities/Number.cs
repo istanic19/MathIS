@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MathIS.Model.Entities
 {
-    public class Number
+    public class Number: BaseMathEntity
     {
         private decimal _real;
         private decimal _imaginary;
@@ -347,7 +347,38 @@ namespace MathIS.Model.Entities
 
         }
 
+
+
         #region Operators
+
+        public override BaseMathEntity Add(BaseMathEntity x)
+        {
+            if(x is Number)
+            {
+                return ((this) + ((Number)x));
+            }
+            return base.Add(x);
+        }
+        public override BaseMathEntity Subtract(BaseMathEntity x)
+        {
+            if (x is Number)
+            {
+                return ((this) - ((Number)x));
+            }
+            return base.Add(x);
+        }
+        public override BaseMathEntity Multiply(BaseMathEntity x)
+        {
+            if (x is Number)
+            {
+                return ((this) * ((Number)x));
+            }
+            else if (x is Vector)
+            {
+                return ((this) * ((Vector)x));
+            }
+            return base.Add(x);
+        }
         public static Number operator +(Number b, Number c)
         {
             Number num = new Number(b.Real + c.Real, b.Imaginary + c.Imaginary);

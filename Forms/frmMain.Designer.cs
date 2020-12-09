@@ -28,19 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.connectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btCopy = new System.Windows.Forms.Button();
             this.btCalculate = new System.Windows.Forms.Button();
             this.cmbOperation = new System.Windows.Forms.ComboBox();
@@ -50,19 +43,31 @@
             this.txtNum2 = new System.Windows.Forms.TextBox();
             this.txtNum1 = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.grpA = new System.Windows.Forms.GroupBox();
             this.pnlA = new System.Windows.Forms.Panel();
-            this.cmbTypeA = new System.Windows.Forms.ComboBox();
-            this.nmRows_A = new System.Windows.Forms.NumericUpDown();
+            this.grpA = new System.Windows.Forms.GroupBox();
             this.nmColumns_A = new System.Windows.Forms.NumericUpDown();
+            this.nmRows_A = new System.Windows.Forms.NumericUpDown();
+            this.cmbTypeA = new System.Windows.Forms.ComboBox();
+            this.btnCreate_1 = new System.Windows.Forms.Button();
+            this.grpB = new System.Windows.Forms.GroupBox();
+            this.btnCreate_2 = new System.Windows.Forms.Button();
+            this.nmColumns_B = new System.Windows.Forms.NumericUpDown();
+            this.nmRows_B = new System.Windows.Forms.NumericUpDown();
+            this.cmbTypeB = new System.Windows.Forms.ComboBox();
+            this.pnlB = new System.Windows.Forms.Panel();
+            this.cmbVectorOperation = new System.Windows.Forms.ComboBox();
+            this.btnCalculateVector = new System.Windows.Forms.Button();
+            this.pnlResult = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.grpA.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nmRows_A)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmColumns_A)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmRows_A)).BeginInit();
+            this.grpB.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmColumns_B)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmRows_B)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -87,14 +92,14 @@
             // connectionToolStripMenuItem
             // 
             this.connectionToolStripMenuItem.Name = "connectionToolStripMenuItem";
-            this.connectionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.connectionToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.connectionToolStripMenuItem.Text = "Connection ...";
             this.connectionToolStripMenuItem.Click += new System.EventHandler(this.connectionToolStripMenuItem_Click);
             // 
             // testToolStripMenuItem
             // 
             this.testToolStripMenuItem.Name = "testToolStripMenuItem";
-            this.testToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.testToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.testToolStripMenuItem.Text = "Test";
             this.testToolStripMenuItem.Click += new System.EventHandler(this.testToolStripMenuItem_Click);
             // 
@@ -111,7 +116,6 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.dataGridView1);
             this.tabPage1.Controls.Add(this.btCopy);
             this.tabPage1.Controls.Add(this.btCalculate);
             this.tabPage1.Controls.Add(this.cmbOperation);
@@ -127,47 +131,6 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Complex";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.ColumnHeadersVisible = false;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3});
-            this.dataGridView1.Location = new System.Drawing.Point(326, 132);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(356, 83);
-            this.dataGridView1.TabIndex = 8;
-            this.dataGridView1.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dataGridView1_RowsAdded);
-            // 
-            // Column1
-            // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Column1.HeaderText = "Column1";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Column2.HeaderText = "Column2";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Column3.HeaderText = "Column3";
-            this.Column3.Name = "Column3";
             // 
             // btCopy
             // 
@@ -251,6 +214,11 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.pnlResult);
+            this.tabPage2.Controls.Add(this.btnCalculateVector);
+            this.tabPage2.Controls.Add(this.cmbVectorOperation);
+            this.tabPage2.Controls.Add(this.pnlB);
+            this.tabPage2.Controls.Add(this.grpB);
             this.tabPage2.Controls.Add(this.pnlA);
             this.tabPage2.Controls.Add(this.grpA);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
@@ -261,18 +229,6 @@
             this.tabPage2.Text = "Vectors and Matrix";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // grpA
-            // 
-            this.grpA.Controls.Add(this.nmColumns_A);
-            this.grpA.Controls.Add(this.nmRows_A);
-            this.grpA.Controls.Add(this.cmbTypeA);
-            this.grpA.Location = new System.Drawing.Point(8, 16);
-            this.grpA.Name = "grpA";
-            this.grpA.Size = new System.Drawing.Size(223, 41);
-            this.grpA.TabIndex = 0;
-            this.grpA.TabStop = false;
-            this.grpA.Text = "A";
-            // 
             // pnlA
             // 
             this.pnlA.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -281,35 +237,18 @@
             this.pnlA.Size = new System.Drawing.Size(268, 73);
             this.pnlA.TabIndex = 0;
             // 
-            // cmbTypeA
+            // grpA
             // 
-            this.cmbTypeA.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbTypeA.FormattingEnabled = true;
-            this.cmbTypeA.Items.AddRange(new object[] {
-            "Number",
-            "Vector",
-            "Matrix"});
-            this.cmbTypeA.Location = new System.Drawing.Point(6, 14);
-            this.cmbTypeA.Name = "cmbTypeA";
-            this.cmbTypeA.Size = new System.Drawing.Size(74, 21);
-            this.cmbTypeA.TabIndex = 0;
-            // 
-            // nmRows_A
-            // 
-            this.nmRows_A.Location = new System.Drawing.Point(103, 14);
-            this.nmRows_A.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.nmRows_A.Name = "nmRows_A";
-            this.nmRows_A.Size = new System.Drawing.Size(50, 20);
-            this.nmRows_A.TabIndex = 1;
-            this.nmRows_A.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.grpA.Controls.Add(this.btnCreate_1);
+            this.grpA.Controls.Add(this.nmColumns_A);
+            this.grpA.Controls.Add(this.nmRows_A);
+            this.grpA.Controls.Add(this.cmbTypeA);
+            this.grpA.Location = new System.Drawing.Point(8, 16);
+            this.grpA.Name = "grpA";
+            this.grpA.Size = new System.Drawing.Size(268, 41);
+            this.grpA.TabIndex = 0;
+            this.grpA.TabStop = false;
+            this.grpA.Text = "A";
             // 
             // nmColumns_A
             // 
@@ -327,6 +266,149 @@
             0,
             0,
             0});
+            this.nmColumns_A.Visible = false;
+            // 
+            // nmRows_A
+            // 
+            this.nmRows_A.Location = new System.Drawing.Point(103, 14);
+            this.nmRows_A.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nmRows_A.Name = "nmRows_A";
+            this.nmRows_A.Size = new System.Drawing.Size(50, 20);
+            this.nmRows_A.TabIndex = 1;
+            this.nmRows_A.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nmRows_A.Visible = false;
+            // 
+            // cmbTypeA
+            // 
+            this.cmbTypeA.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTypeA.FormattingEnabled = true;
+            this.cmbTypeA.Location = new System.Drawing.Point(6, 14);
+            this.cmbTypeA.Name = "cmbTypeA";
+            this.cmbTypeA.Size = new System.Drawing.Size(74, 21);
+            this.cmbTypeA.TabIndex = 0;
+            this.cmbTypeA.SelectedIndexChanged += new System.EventHandler(this.cmbTypeA_SelectedIndexChanged);
+            // 
+            // btnCreate_1
+            // 
+            this.btnCreate_1.Location = new System.Drawing.Point(223, 12);
+            this.btnCreate_1.Name = "btnCreate_1";
+            this.btnCreate_1.Size = new System.Drawing.Size(39, 23);
+            this.btnCreate_1.TabIndex = 3;
+            this.btnCreate_1.Text = "Add";
+            this.btnCreate_1.UseVisualStyleBackColor = true;
+            this.btnCreate_1.Click += new System.EventHandler(this.btnCreate_1_Click);
+            // 
+            // grpB
+            // 
+            this.grpB.Controls.Add(this.btnCreate_2);
+            this.grpB.Controls.Add(this.nmColumns_B);
+            this.grpB.Controls.Add(this.nmRows_B);
+            this.grpB.Controls.Add(this.cmbTypeB);
+            this.grpB.Location = new System.Drawing.Point(406, 16);
+            this.grpB.Name = "grpB";
+            this.grpB.Size = new System.Drawing.Size(268, 41);
+            this.grpB.TabIndex = 1;
+            this.grpB.TabStop = false;
+            this.grpB.Text = "B";
+            // 
+            // btnCreate_2
+            // 
+            this.btnCreate_2.Location = new System.Drawing.Point(223, 12);
+            this.btnCreate_2.Name = "btnCreate_2";
+            this.btnCreate_2.Size = new System.Drawing.Size(39, 23);
+            this.btnCreate_2.TabIndex = 3;
+            this.btnCreate_2.Text = "Add";
+            this.btnCreate_2.UseVisualStyleBackColor = true;
+            this.btnCreate_2.Click += new System.EventHandler(this.btnCreate_2_Click);
+            // 
+            // nmColumns_B
+            // 
+            this.nmColumns_B.Location = new System.Drawing.Point(167, 14);
+            this.nmColumns_B.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nmColumns_B.Name = "nmColumns_B";
+            this.nmColumns_B.Size = new System.Drawing.Size(50, 20);
+            this.nmColumns_B.TabIndex = 2;
+            this.nmColumns_B.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nmColumns_B.Visible = false;
+            // 
+            // nmRows_B
+            // 
+            this.nmRows_B.Location = new System.Drawing.Point(103, 14);
+            this.nmRows_B.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nmRows_B.Name = "nmRows_B";
+            this.nmRows_B.Size = new System.Drawing.Size(50, 20);
+            this.nmRows_B.TabIndex = 1;
+            this.nmRows_B.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nmRows_B.Visible = false;
+            // 
+            // cmbTypeB
+            // 
+            this.cmbTypeB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTypeB.FormattingEnabled = true;
+            this.cmbTypeB.Location = new System.Drawing.Point(6, 14);
+            this.cmbTypeB.Name = "cmbTypeB";
+            this.cmbTypeB.Size = new System.Drawing.Size(74, 21);
+            this.cmbTypeB.TabIndex = 0;
+            this.cmbTypeB.SelectedIndexChanged += new System.EventHandler(this.cmbTypeB_SelectedIndexChanged);
+            // 
+            // pnlB
+            // 
+            this.pnlB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlB.Location = new System.Drawing.Point(406, 63);
+            this.pnlB.Name = "pnlB";
+            this.pnlB.Size = new System.Drawing.Size(268, 73);
+            this.pnlB.TabIndex = 2;
+            // 
+            // cmbVectorOperation
+            // 
+            this.cmbVectorOperation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbVectorOperation.FormattingEnabled = true;
+            this.cmbVectorOperation.Location = new System.Drawing.Point(282, 89);
+            this.cmbVectorOperation.Name = "cmbVectorOperation";
+            this.cmbVectorOperation.Size = new System.Drawing.Size(118, 21);
+            this.cmbVectorOperation.TabIndex = 3;
+            // 
+            // btnCalculateVector
+            // 
+            this.btnCalculateVector.Location = new System.Drawing.Point(680, 34);
+            this.btnCalculateVector.Name = "btnCalculateVector";
+            this.btnCalculateVector.Size = new System.Drawing.Size(75, 23);
+            this.btnCalculateVector.TabIndex = 7;
+            this.btnCalculateVector.Text = "Calculate";
+            this.btnCalculateVector.UseVisualStyleBackColor = true;
+            this.btnCalculateVector.Click += new System.EventHandler(this.btnCalculateVector_Click);
+            // 
+            // pnlResult
+            // 
+            this.pnlResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlResult.Location = new System.Drawing.Point(8, 205);
+            this.pnlResult.Name = "pnlResult";
+            this.pnlResult.Size = new System.Drawing.Size(268, 73);
+            this.pnlResult.TabIndex = 8;
             // 
             // frmMain
             // 
@@ -346,11 +428,13 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.grpA.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.nmRows_A)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmColumns_A)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmRows_A)).EndInit();
+            this.grpB.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.nmColumns_B)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmRows_B)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -372,16 +456,22 @@
         private System.Windows.Forms.ComboBox cmbOperation;
         private System.Windows.Forms.Button btCalculate;
         private System.Windows.Forms.Button btCopy;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.ToolStripMenuItem testToolStripMenuItem;
         private System.Windows.Forms.GroupBox grpA;
         private System.Windows.Forms.Panel pnlA;
         private System.Windows.Forms.ComboBox cmbTypeA;
         private System.Windows.Forms.NumericUpDown nmColumns_A;
         private System.Windows.Forms.NumericUpDown nmRows_A;
+        private System.Windows.Forms.Button btnCreate_1;
+        private System.Windows.Forms.Panel pnlB;
+        private System.Windows.Forms.GroupBox grpB;
+        private System.Windows.Forms.Button btnCreate_2;
+        private System.Windows.Forms.NumericUpDown nmColumns_B;
+        private System.Windows.Forms.NumericUpDown nmRows_B;
+        private System.Windows.Forms.ComboBox cmbTypeB;
+        private System.Windows.Forms.ComboBox cmbVectorOperation;
+        private System.Windows.Forms.Button btnCalculateVector;
+        private System.Windows.Forms.Panel pnlResult;
     }
 }
 

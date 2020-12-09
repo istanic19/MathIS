@@ -16,6 +16,8 @@ namespace MathIS.Forms
 {
     public partial class frmMain : Form
     {
+        
+
         #region Fields
         private AppSettings _settings;
         private EventDisabler EventDisable = new EventDisabler();
@@ -121,6 +123,95 @@ namespace MathIS.Forms
                 Clipboard.SetText(num.Text);
         }
 
+        private void cmbTypeA_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (EventDisable)
+                return;
+            switch(((AritmeticType)cmbTypeA.SelectedItem).Aritmetc)
+            {
+                case Model.Enums.AritmeticTypeEnum.Number:
+                    nmColumns_A.Visible = false;
+                    nmRows_A.Visible = false;
+                    break;
+                case Model.Enums.AritmeticTypeEnum.Vector:
+                    nmColumns_A.Visible = false;
+                    nmRows_A.Visible = true;
+                    break;
+                case Model.Enums.AritmeticTypeEnum.Matrix:
+                    nmColumns_A.Visible = true;
+                    nmRows_A.Visible = true;
+                    break;
+            }
+        }
+
+        private void cmbTypeB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (EventDisable)
+                return;
+            switch (((AritmeticType)cmbTypeB.SelectedItem).Aritmetc)
+            {
+                case Model.Enums.AritmeticTypeEnum.Number:
+                    nmColumns_B.Visible = false;
+                    nmRows_B.Visible = false;
+                    break;
+                case Model.Enums.AritmeticTypeEnum.Vector:
+                    nmColumns_B.Visible = false;
+                    nmRows_B.Visible = true;
+                    break;
+                case Model.Enums.AritmeticTypeEnum.Matrix:
+                    nmColumns_B.Visible = true;
+                    nmRows_B.Visible = true;
+                    break;
+            }
+        }
+
+        private void btnCreate_1_Click(object sender, EventArgs e)
+        {
+            ClearA();
+            switch (((AritmeticType)cmbTypeA.SelectedItem).Aritmetc)
+            {
+                case Model.Enums.AritmeticTypeEnum.Number:
+                    var n = new Number(0);
+                    var nc = new NumberControl(n, pnlA);
+                    break;
+                case Model.Enums.AritmeticTypeEnum.Vector:
+                    var v = new Vector((int)nmRows_A.Value);
+                    var vc = new VectorControl(v, pnlA);
+                    break;
+                case Model.Enums.AritmeticTypeEnum.Matrix:
+                    var m = new Matrix((int)nmRows_A.Value, (int)nmColumns_A.Value);
+                    var mnc = new MatrixControl(m, pnlA);
+                    break;
+            }
+            ArrangeControls();
+        }
+
+        private void btnCreate_2_Click(object sender, EventArgs e)
+        {
+            ClearB();
+            switch (((AritmeticType)cmbTypeB.SelectedItem).Aritmetc)
+            {
+                case Model.Enums.AritmeticTypeEnum.Number:
+                    var n = new Number(0);
+                    var nc = new NumberControl(n, pnlB);
+                    break;
+                case Model.Enums.AritmeticTypeEnum.Vector:
+                    var v = new Vector((int)nmRows_B.Value);
+                    var vc = new VectorControl(v, pnlB);
+                    break;
+                case Model.Enums.AritmeticTypeEnum.Matrix:
+                    var m = new Matrix((int)nmRows_B.Value, (int)nmColumns_B.Value);
+                    var mnc = new MatrixControl(m, pnlB);
+                    break;
+            }
+            ArrangeControls();
+        }
+
+        private void btnCalculateVector_Click(object sender, EventArgs e)
+        {
+            CalculateVector();
+        }
+
         #endregion
 
         #region Constructor
@@ -148,7 +239,108 @@ namespace MathIS.Forms
             }
             cmbOperation.DataSource = AritmeticsService.Operations;
             cmbOperation.SelectedIndex = 0;
-                      
+
+            cmbTypeA.DataSource = new List<AritmeticType>(AritmeticsService.Types);
+            cmbTypeA.SelectedIndex = 0;
+
+            cmbTypeB.DataSource = new List<AritmeticType>(AritmeticsService.Types);
+            cmbTypeB.SelectedIndex = 0;
+
+            cmbVectorOperation.DataSource = AritmeticsService.VectorOperations;
+            cmbVectorOperation.SelectedIndex = 0;
+
+        }
+
+        private void CalculateVector()
+        {
+            AritmeticControl ac = null;
+            AritmeticControl bc = null;
+
+            if (pnlA.Controls.Count != 0)
+                ac = pnlA.Tag as AritmeticControl;
+            if (pnlB.Controls.Count != 0)
+                bc = pnlB.Tag as AritmeticControl;
+
+            if (ac == null)
+            {
+                MessageBox.Show(this, "Variable A not defined!", "Calculate", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (bc == null)
+            {
+                MessageBox.Show(this, "Variable B not defined!", "Calculate", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            BaseMathEntity result = null;
+
+            try
+            {
+                result = AritmeticsService.CalculateVector((VectorOperation)cmbVectorOperation.SelectedItem, ac.Entity, bc.Entity);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(this, ex.Message,"Calculate", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            if (result == null)
+                return;
+
+            ClearResult();
+            if (result is Number)
+                new NumberControl((Number)result, pnlResult);
+            else if (result is Vector)
+                new VectorControl((Vector)result, pnlResult);
+            else if (result is Matrix)
+                new MatrixControl((Matrix)result, pnlResult);
+        }
+
+        private void ClearA()
+        {
+            for (int i = pnlA.Controls.Count - 1; i >= 0; --i)
+            {
+                var control = pnlA.Controls[i];
+                pnlA.Controls.Remove(control);
+                control.Dispose();
+            }
+        }
+
+        private void ClearB()
+        {
+            for (int i = pnlB.Controls.Count - 1; i >= 0; --i)
+            {
+                var control = pnlB.Controls[i];
+                pnlB.Controls.Remove(control);
+                control.Dispose();
+            }
+        }
+
+        private void ClearResult()
+        {
+            for (int i = pnlResult.Controls.Count - 1; i >= 0; --i)
+            {
+                var control = pnlResult.Controls[i];
+                pnlResult.Controls.Remove(control);
+                control.Dispose();
+            }
+        }
+
+        public void ArrangeControls()
+        {
+            int top = 63;
+            int gap = 6;
+
+            int maxHeight = pnlA.Height;
+            if (pnlB.Height > maxHeight)
+                maxHeight = pnlB.Height;
+            if (cmbVectorOperation.Height > maxHeight)
+                maxHeight = cmbVectorOperation.Height;
+
+            pnlA.Location = new Point(pnlA.Location.X, top + (maxHeight - pnlA.Height) / 2);
+
+            cmbVectorOperation.Location = new Point(pnlA.Location.X + pnlA.Width + gap, top + (maxHeight - cmbVectorOperation.Height) / 2);
+
+            pnlB.Location = new Point(cmbVectorOperation.Location.X + cmbVectorOperation.Width + gap, top + (maxHeight - pnlB.Height) / 2);
 
         }
 
@@ -216,12 +408,7 @@ namespace MathIS.Forms
 
         #endregion
 
-        private void dataGridView1_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
-        {
-            int h = dataGridView1.Rows.GetRowsHeight(DataGridViewElementStates.Visible);
-            dataGridView1.Size = new Size(dataGridView1.Width, h+3);
-        }
-
+        
         private void testToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var m = new Matrix(3, 3);
@@ -230,5 +417,7 @@ namespace MathIS.Forms
 
             var nc = new MatrixControl(m, pnlA);
         }
+
+        
     }
 }

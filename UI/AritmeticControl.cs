@@ -1,4 +1,5 @@
-﻿using MathIS.Model.Entities;
+﻿using MathIS.Forms;
+using MathIS.Model.Entities;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -14,12 +15,18 @@ namespace MathIS.UI
         protected DataGridViewEx _dataGrid;
         protected Control _parentContainer;
         protected DataGridViewCellStyle dataGridViewCellStyle1;
-        private object _aritmeticObject;
+        private BaseMathEntity _aritmeticObject;
 
-        public AritmeticControl(Control parent, object aritmeticObject)
+        public BaseMathEntity Entity
+        {
+            get { return _aritmeticObject; }
+        }
+
+        public AritmeticControl(Control parent, BaseMathEntity aritmeticObject)
         {
             _aritmeticObject = aritmeticObject;
             _parentContainer = parent;
+            _parentContainer.Tag = this;
         }
 
         protected void InitializeDataGrid()
@@ -78,6 +85,23 @@ namespace MathIS.UI
             }
             cell.Value = originlNum.ToString(false);
             AdjustSize();
+            UpdateControls();
+        }
+
+        private void UpdateControls()
+        {
+            Control parent = _parentContainer;
+            while (!(parent is frmMain))
+            {
+                parent = parent.Parent;
+                if (parent == null)
+                    break;
+            }
+
+            if (parent != null && parent is frmMain)
+            {
+                ((frmMain)parent).ArrangeControls();
+            }
         }
     }
 }

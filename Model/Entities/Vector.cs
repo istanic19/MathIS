@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MathIS.Model.Entities
 {
-    public class Vector
+    public class Vector: BaseMathEntity
     {
         private List<Number> _components;
         private string _text;
@@ -33,6 +33,14 @@ namespace MathIS.Model.Entities
             UpdateText();
         }
 
+        public Vector(int dimensions)
+        {
+            _components = new List<Number>();
+            for (int i = 0; i < dimensions; ++i)
+                _components.Add(new Number(0));
+            UpdateText();
+        }
+
         private void UpdateText()
         {
             _text = "";
@@ -52,6 +60,30 @@ namespace MathIS.Model.Entities
         }
 
         #region Operators
+        public override BaseMathEntity Multiply(BaseMathEntity x)
+        {
+            if (x is Number)
+            {
+                return ((this) * ((Number)x));
+            }
+            else if (x is Vector)
+            {
+                return ((this) * ((Vector)x));
+            }
+            else if (x is Matrix)
+            {
+                return ((this) * ((Matrix)x));
+            }
+            return base.Add(x);
+        }
+        public override BaseMathEntity MatrixMultiply(BaseMathEntity x)
+        {
+            if (x is Vector)
+            {
+                return ((this) & ((Vector)x));
+            }
+            return base.Add(x);
+        }
         public static Vector operator +(Vector b, Vector c)
         {
             if (b.Components.Count != c.Components.Count)
@@ -143,6 +175,16 @@ namespace MathIS.Model.Entities
         }
 
         public static Vector operator *(Vector c, Matrix b )
+        {
+            return b * c;
+        }
+
+        public static Vector operator &(Matrix b, Vector c)
+        {
+            return b * c;
+        }
+
+        public static Vector operator &(Vector c, Matrix b)
         {
             return b * c;
         }

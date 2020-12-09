@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MathIS.Model.Entities
 {
-    public class Matrix
+    public class Matrix: BaseMathEntity
     {
         private Number[,] _components;
         private int _rows;
@@ -95,24 +95,44 @@ namespace MathIS.Model.Entities
             return GetText();
         }
 
+        public override BaseMathEntity Multiply(BaseMathEntity x)
+        {
+            if (x is Vector)
+            {
+                return ((this) * ((Vector)x));
+            }
+            else if (x is Matrix)
+            {
+                return ((this) * ((Matrix)x));
+            }
+            return base.Add(x);
+        }
+
         public static Matrix operator *(Matrix b, Matrix c)
         {
             if (b.Columns != c.Rows)
                 throw new Exception("First matrix columns number have to be the same as second matrix rows number!");
-            Matrix result = new Matrix(b.Columns, b.Rows);
-            
+            Matrix result = new Matrix(b.Rows, c.Columns);
+
             for (int i = 0; i < b.Rows; ++i)
             {
-                Number num = new Number(0);
-                int columnIndex = 0;
-                for (int j = 0; j < b.Columns; ++j)
+                
+                for (int z = 0; z < c.Columns; ++z)
                 {
-                    num = num + (b.Components[i, j] * c.Components[j, columnIndex]); 
+                    Number num = new Number(0);
+                    for (int j = 0; j < b.Columns; ++j)
+                    {
+                        num = num + (b.Components[i, j] * c.Components[j, z]);
+                    }
+                    result.Components[i, z] = num;
                 }
-                result.Components[i, columnIndex] = num;
-                columnIndex++;
             }
             return result;
+        }
+
+        public static Matrix operator &(Matrix b, Matrix c)
+        {
+            return b * c;
         }
     }
 }
