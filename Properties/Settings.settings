@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="MathIS.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="frmMainLocation" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)">100, 100</Value>
+    </Setting>
+    <Setting Name="frmMainSize" Type="System.Drawing.Size" Scope="User">
+      <Value Profile="(Default)">800, 700</Value>
+    </Setting>
+    <Setting Name="frmMainState" Type="System.Windows.Forms.FormWindowState" Scope="User">
+      <Value Profile="(Default)">Normal</Value>
+    </Setting>
+    <Setting Name="frmConnectionLocation" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)">100, 200</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

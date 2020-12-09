@@ -1,0 +1,118 @@
+﻿using MathIS.Services;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MathIS.Model.Entities
+{
+    public class Matrix
+    {
+        private Number[,] _components;
+        private int _rows;
+        private int _columns;
+
+        public Number[,] Components
+        {
+            get { return _components; }
+        }
+        public int Rows
+        {
+            get { return _rows; }
+        }
+        public int Columns
+        {
+            get { return _columns; }
+        }
+
+        public Matrix(int rows, int columns)
+        {
+            _rows = rows;
+            _columns = columns;
+            _components = new Number[_rows, _columns];
+            for (int i = 0; i < _rows; ++i)
+            {
+                for (int j = 0; j < _columns; ++j)
+                {
+                    _components[i, j] = new Number(0);
+                }
+            }
+        }
+
+        public Matrix(int rows, int columns, string input)
+        {
+            _rows = rows;
+            _columns = columns;
+            _components = new Number[_rows, _columns];
+            for (int i = 0; i < _rows; ++i)
+            {
+                for (int j = 0; j < _columns; ++j)
+                {
+                    _components[i, j] = new Number(0);
+                }
+            }
+            InitializeComponents(input);
+        }
+
+        public void InitializeComponents(string input)
+        {
+            var rows = input.Split(';');
+            int rowIndex = 0;
+            foreach(var row in rows)
+            {
+                if (rowIndex >= _rows)
+                    break;
+                var vector = new Vector(row);
+                for (int i = 0; i < vector.Components.Count && i < _columns; ++i)
+                {
+                    _components[rowIndex, i] = vector.Components.ElementAt(i).Clone();
+                }
+                rowIndex++;
+            }
+        }
+
+        private string GetText()
+        {
+            var text = "";
+            for (int i = 0; i < _rows; ++i)
+            {
+                if (text != "")
+                    text += "\r\n";
+                var row = "";
+                for (int j = 0; j < _columns; ++j)
+                {
+                    row += _components[i, j].ToString(true);
+                }
+                text += row;
+            }
+
+            return text;
+        }
+
+        public override string ToString()
+        {
+            return GetText();
+        }
+
+        public static Matrix operator *(Matrix b, Matrix c)
+        {
+            if (b.Columns != c.Rows)
+                throw new Exception("First matrix columns number have to be the same as second matrix rows number!");
+            Matrix result = new Matrix(b.Columns, b.Rows);
+            
+            for (int i = 0; i < b.Rows; ++i)
+            {
+                Number num = new Number(0);
+                int columnIndex = 0;
+                for (int j = 0; j < b.Columns; ++j)
+                {
+                    num = num + (b.Components[i, j] * c.Components[j, columnIndex]); 
+                }
+                result.Components[i, columnIndex] = num;
+                columnIndex++;
+            }
+            return result;
+        }
+    }
+}
