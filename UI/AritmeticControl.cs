@@ -22,6 +22,11 @@ namespace MathIS.UI
             get { return _aritmeticObject; }
         }
 
+        public DataGridViewEx Grid
+        {
+            get { return _dataGrid; }
+        }
+
         public AritmeticControl(Control parent, BaseMathEntity aritmeticObject)
         {
             _aritmeticObject = aritmeticObject;
@@ -41,9 +46,9 @@ namespace MathIS.UI
             _dataGrid.RowHeadersVisible = false;
             _dataGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             _dataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-
+            _dataGrid.Tag = _aritmeticObject;
             _dataGrid.Location = new Point(0, 0);
-
+ 
             dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
 
@@ -54,6 +59,16 @@ namespace MathIS.UI
             AdjustSize();
 
             _dataGrid.CellEndEdit += _dataGrid_CellEndEdit;
+            _dataGrid.KeyDown += _dataGrid_KeyDown;
+        }
+
+        private void _dataGrid_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                _dataGrid.EndEdit();
+                e.Handled = true;
+            }
         }
 
         protected virtual void InitializeData()

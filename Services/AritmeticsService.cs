@@ -14,6 +14,8 @@ namespace MathIS.Services
         public static List<VectorOperation> VectorOperations { get; private set; }
         public static List<AritmeticType> Types { get; private set; }
 
+        public static BaseMathEntity CopiedEntity { get; set; }
+
         static AritmeticsService()
         {
             Operations = new List<MatOperation>();

@@ -173,16 +173,57 @@ namespace MathIS.Forms
                 case Model.Enums.AritmeticTypeEnum.Number:
                     var n = new Number(0);
                     var nc = new NumberControl(n, pnlA);
+                    nc.Grid.ContextMenuStrip = cntxMenu;
                     break;
                 case Model.Enums.AritmeticTypeEnum.Vector:
                     var v = new Vector((int)nmRows_A.Value);
                     var vc = new VectorControl(v, pnlA);
+                    vc.Grid.ContextMenuStrip = cntxMenu;
                     break;
                 case Model.Enums.AritmeticTypeEnum.Matrix:
                     var m = new Matrix((int)nmRows_A.Value, (int)nmColumns_A.Value);
                     var mnc = new MatrixControl(m, pnlA);
+                    mnc.Grid.ContextMenuStrip = cntxMenu;
                     break;
             }
+            ArrangeControls();
+        }
+
+        private void pasteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (AritmeticsService.CopiedEntity == null)
+                return;
+
+            Control ctrl = cntxMenu.SourceControl;
+            Control container = null;
+            if (ctrl == pnlA || ctrl.Parent == pnlA)
+            {
+                container = pnlA;
+                ClearA();
+            }
+            else if (ctrl == pnlB || ctrl.Parent == pnlB)
+            {
+                container = pnlB;
+                ClearB();
+            }
+            else if (ctrl == pnlResult || ctrl.Parent == pnlResult)
+            {
+                container = pnlResult;
+                ClearResult();
+            }
+            if (container == null)
+                return;
+            AritmeticControl ac = null;
+            if (AritmeticsService.CopiedEntity is Number)
+                ac = new NumberControl((Number)AritmeticsService.CopiedEntity, container);
+            else if (AritmeticsService.CopiedEntity is Vector)
+                ac = new VectorControl((Vector)AritmeticsService.CopiedEntity, container);
+            else if (AritmeticsService.CopiedEntity is Matrix)
+                ac = new MatrixControl((Matrix)AritmeticsService.CopiedEntity, container);
+
+            if (ac != null)
+                ac.Grid.ContextMenuStrip = cntxMenu;
+
             ArrangeControls();
         }
 
@@ -194,14 +235,17 @@ namespace MathIS.Forms
                 case Model.Enums.AritmeticTypeEnum.Number:
                     var n = new Number(0);
                     var nc = new NumberControl(n, pnlB);
+                    nc.Grid.ContextMenuStrip = cntxMenu;
                     break;
                 case Model.Enums.AritmeticTypeEnum.Vector:
                     var v = new Vector((int)nmRows_B.Value);
                     var vc = new VectorControl(v, pnlB);
+                    vc.Grid.ContextMenuStrip = cntxMenu;
                     break;
                 case Model.Enums.AritmeticTypeEnum.Matrix:
                     var m = new Matrix((int)nmRows_B.Value, (int)nmColumns_B.Value);
                     var mnc = new MatrixControl(m, pnlB);
+                    mnc.Grid.ContextMenuStrip = cntxMenu;
                     break;
             }
             ArrangeControls();
@@ -210,6 +254,34 @@ namespace MathIS.Forms
         private void btnCalculateVector_Click(object sender, EventArgs e)
         {
             CalculateVector();
+        }
+
+        private void cntxMenu_Opening(object sender, CancelEventArgs e)
+        {
+            var control = cntxMenu.SourceControl;
+            if(control== pnlA || control == pnlA || control == pnlResult)
+            {
+                copyToolStripMenuItem.Visible = false;
+                pasteToolStripMenuItem.Visible = true;
+            }
+            else
+            {
+                copyToolStripMenuItem.Visible = true;
+                pasteToolStripMenuItem.Visible = true;
+            }
+
+            if (AritmeticsService.CopiedEntity == null)
+                pasteToolStripMenuItem.Enabled = false;
+            else
+                pasteToolStripMenuItem.Enabled = true;
+        }
+
+        private void copyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Control ctrl = cntxMenu.SourceControl;
+            var ac = ctrl.Parent.Tag as AritmeticControl;
+            if (ac != null)
+                AritmeticsService.CopiedEntity = ac.Entity;
         }
 
         #endregion
@@ -287,12 +359,15 @@ namespace MathIS.Forms
                 return;
 
             ClearResult();
+            AritmeticControl rc = null;
             if (result is Number)
-                new NumberControl((Number)result, pnlResult);
+                rc = new NumberControl((Number)result, pnlResult);
             else if (result is Vector)
-                new VectorControl((Vector)result, pnlResult);
+                rc = new VectorControl((Vector)result, pnlResult);
             else if (result is Matrix)
-                new MatrixControl((Matrix)result, pnlResult);
+                rc = new MatrixControl((Matrix)result, pnlResult);
+            if (rc != null)
+                rc.Grid.ContextMenuStrip = cntxMenu;
         }
 
         private void ClearA()

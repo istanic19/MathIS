@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.connectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,31 +44,35 @@
             this.txtNum2 = new System.Windows.Forms.TextBox();
             this.txtNum1 = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.pnlA = new System.Windows.Forms.Panel();
-            this.grpA = new System.Windows.Forms.GroupBox();
-            this.nmColumns_A = new System.Windows.Forms.NumericUpDown();
-            this.nmRows_A = new System.Windows.Forms.NumericUpDown();
-            this.cmbTypeA = new System.Windows.Forms.ComboBox();
-            this.btnCreate_1 = new System.Windows.Forms.Button();
+            this.pnlResult = new System.Windows.Forms.Panel();
+            this.btnCalculateVector = new System.Windows.Forms.Button();
+            this.cmbVectorOperation = new System.Windows.Forms.ComboBox();
+            this.pnlB = new System.Windows.Forms.Panel();
             this.grpB = new System.Windows.Forms.GroupBox();
             this.btnCreate_2 = new System.Windows.Forms.Button();
             this.nmColumns_B = new System.Windows.Forms.NumericUpDown();
             this.nmRows_B = new System.Windows.Forms.NumericUpDown();
             this.cmbTypeB = new System.Windows.Forms.ComboBox();
-            this.pnlB = new System.Windows.Forms.Panel();
-            this.cmbVectorOperation = new System.Windows.Forms.ComboBox();
-            this.btnCalculateVector = new System.Windows.Forms.Button();
-            this.pnlResult = new System.Windows.Forms.Panel();
+            this.pnlA = new System.Windows.Forms.Panel();
+            this.grpA = new System.Windows.Forms.GroupBox();
+            this.btnCreate_1 = new System.Windows.Forms.Button();
+            this.nmColumns_A = new System.Windows.Forms.NumericUpDown();
+            this.nmRows_A = new System.Windows.Forms.NumericUpDown();
+            this.cmbTypeA = new System.Windows.Forms.ComboBox();
+            this.cntxMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.grpA.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nmColumns_A)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmRows_A)).BeginInit();
             this.grpB.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmColumns_B)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmRows_B)).BeginInit();
+            this.grpA.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmColumns_A)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmRows_A)).BeginInit();
+            this.cntxMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -229,82 +234,42 @@
             this.tabPage2.Text = "Vectors and Matrix";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // pnlA
+            // pnlResult
             // 
-            this.pnlA.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlA.Location = new System.Drawing.Point(8, 63);
-            this.pnlA.Name = "pnlA";
-            this.pnlA.Size = new System.Drawing.Size(268, 73);
-            this.pnlA.TabIndex = 0;
+            this.pnlResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlResult.ContextMenuStrip = this.cntxMenu;
+            this.pnlResult.Location = new System.Drawing.Point(8, 205);
+            this.pnlResult.Name = "pnlResult";
+            this.pnlResult.Size = new System.Drawing.Size(268, 73);
+            this.pnlResult.TabIndex = 8;
             // 
-            // grpA
+            // btnCalculateVector
             // 
-            this.grpA.Controls.Add(this.btnCreate_1);
-            this.grpA.Controls.Add(this.nmColumns_A);
-            this.grpA.Controls.Add(this.nmRows_A);
-            this.grpA.Controls.Add(this.cmbTypeA);
-            this.grpA.Location = new System.Drawing.Point(8, 16);
-            this.grpA.Name = "grpA";
-            this.grpA.Size = new System.Drawing.Size(268, 41);
-            this.grpA.TabIndex = 0;
-            this.grpA.TabStop = false;
-            this.grpA.Text = "A";
+            this.btnCalculateVector.Location = new System.Drawing.Point(666, 34);
+            this.btnCalculateVector.Name = "btnCalculateVector";
+            this.btnCalculateVector.Size = new System.Drawing.Size(75, 23);
+            this.btnCalculateVector.TabIndex = 7;
+            this.btnCalculateVector.Text = "Calculate";
+            this.btnCalculateVector.UseVisualStyleBackColor = true;
+            this.btnCalculateVector.Click += new System.EventHandler(this.btnCalculateVector_Click);
             // 
-            // nmColumns_A
+            // cmbVectorOperation
             // 
-            this.nmColumns_A.Location = new System.Drawing.Point(167, 14);
-            this.nmColumns_A.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.nmColumns_A.Name = "nmColumns_A";
-            this.nmColumns_A.Size = new System.Drawing.Size(50, 20);
-            this.nmColumns_A.TabIndex = 2;
-            this.nmColumns_A.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.nmColumns_A.Visible = false;
+            this.cmbVectorOperation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbVectorOperation.FormattingEnabled = true;
+            this.cmbVectorOperation.Location = new System.Drawing.Point(282, 89);
+            this.cmbVectorOperation.Name = "cmbVectorOperation";
+            this.cmbVectorOperation.Size = new System.Drawing.Size(104, 21);
+            this.cmbVectorOperation.TabIndex = 3;
             // 
-            // nmRows_A
+            // pnlB
             // 
-            this.nmRows_A.Location = new System.Drawing.Point(103, 14);
-            this.nmRows_A.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.nmRows_A.Name = "nmRows_A";
-            this.nmRows_A.Size = new System.Drawing.Size(50, 20);
-            this.nmRows_A.TabIndex = 1;
-            this.nmRows_A.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.nmRows_A.Visible = false;
-            // 
-            // cmbTypeA
-            // 
-            this.cmbTypeA.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbTypeA.FormattingEnabled = true;
-            this.cmbTypeA.Location = new System.Drawing.Point(6, 14);
-            this.cmbTypeA.Name = "cmbTypeA";
-            this.cmbTypeA.Size = new System.Drawing.Size(74, 21);
-            this.cmbTypeA.TabIndex = 0;
-            this.cmbTypeA.SelectedIndexChanged += new System.EventHandler(this.cmbTypeA_SelectedIndexChanged);
-            // 
-            // btnCreate_1
-            // 
-            this.btnCreate_1.Location = new System.Drawing.Point(223, 12);
-            this.btnCreate_1.Name = "btnCreate_1";
-            this.btnCreate_1.Size = new System.Drawing.Size(39, 23);
-            this.btnCreate_1.TabIndex = 3;
-            this.btnCreate_1.Text = "Add";
-            this.btnCreate_1.UseVisualStyleBackColor = true;
-            this.btnCreate_1.Click += new System.EventHandler(this.btnCreate_1_Click);
+            this.pnlB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlB.ContextMenuStrip = this.cntxMenu;
+            this.pnlB.Location = new System.Drawing.Point(392, 63);
+            this.pnlB.Name = "pnlB";
+            this.pnlB.Size = new System.Drawing.Size(268, 73);
+            this.pnlB.TabIndex = 2;
             // 
             // grpB
             // 
@@ -312,7 +277,7 @@
             this.grpB.Controls.Add(this.nmColumns_B);
             this.grpB.Controls.Add(this.nmRows_B);
             this.grpB.Controls.Add(this.cmbTypeB);
-            this.grpB.Location = new System.Drawing.Point(406, 16);
+            this.grpB.Location = new System.Drawing.Point(392, 16);
             this.grpB.Name = "grpB";
             this.grpB.Size = new System.Drawing.Size(268, 41);
             this.grpB.TabIndex = 1;
@@ -375,40 +340,106 @@
             this.cmbTypeB.TabIndex = 0;
             this.cmbTypeB.SelectedIndexChanged += new System.EventHandler(this.cmbTypeB_SelectedIndexChanged);
             // 
-            // pnlB
+            // pnlA
             // 
-            this.pnlB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlB.Location = new System.Drawing.Point(406, 63);
-            this.pnlB.Name = "pnlB";
-            this.pnlB.Size = new System.Drawing.Size(268, 73);
-            this.pnlB.TabIndex = 2;
+            this.pnlA.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlA.ContextMenuStrip = this.cntxMenu;
+            this.pnlA.Location = new System.Drawing.Point(8, 63);
+            this.pnlA.Name = "pnlA";
+            this.pnlA.Size = new System.Drawing.Size(268, 73);
+            this.pnlA.TabIndex = 0;
             // 
-            // cmbVectorOperation
+            // grpA
             // 
-            this.cmbVectorOperation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbVectorOperation.FormattingEnabled = true;
-            this.cmbVectorOperation.Location = new System.Drawing.Point(282, 89);
-            this.cmbVectorOperation.Name = "cmbVectorOperation";
-            this.cmbVectorOperation.Size = new System.Drawing.Size(118, 21);
-            this.cmbVectorOperation.TabIndex = 3;
+            this.grpA.Controls.Add(this.btnCreate_1);
+            this.grpA.Controls.Add(this.nmColumns_A);
+            this.grpA.Controls.Add(this.nmRows_A);
+            this.grpA.Controls.Add(this.cmbTypeA);
+            this.grpA.Location = new System.Drawing.Point(8, 16);
+            this.grpA.Name = "grpA";
+            this.grpA.Size = new System.Drawing.Size(268, 41);
+            this.grpA.TabIndex = 0;
+            this.grpA.TabStop = false;
+            this.grpA.Text = "A";
             // 
-            // btnCalculateVector
+            // btnCreate_1
             // 
-            this.btnCalculateVector.Location = new System.Drawing.Point(680, 34);
-            this.btnCalculateVector.Name = "btnCalculateVector";
-            this.btnCalculateVector.Size = new System.Drawing.Size(75, 23);
-            this.btnCalculateVector.TabIndex = 7;
-            this.btnCalculateVector.Text = "Calculate";
-            this.btnCalculateVector.UseVisualStyleBackColor = true;
-            this.btnCalculateVector.Click += new System.EventHandler(this.btnCalculateVector_Click);
+            this.btnCreate_1.Location = new System.Drawing.Point(223, 12);
+            this.btnCreate_1.Name = "btnCreate_1";
+            this.btnCreate_1.Size = new System.Drawing.Size(39, 23);
+            this.btnCreate_1.TabIndex = 3;
+            this.btnCreate_1.Text = "Add";
+            this.btnCreate_1.UseVisualStyleBackColor = true;
+            this.btnCreate_1.Click += new System.EventHandler(this.btnCreate_1_Click);
             // 
-            // pnlResult
+            // nmColumns_A
             // 
-            this.pnlResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlResult.Location = new System.Drawing.Point(8, 205);
-            this.pnlResult.Name = "pnlResult";
-            this.pnlResult.Size = new System.Drawing.Size(268, 73);
-            this.pnlResult.TabIndex = 8;
+            this.nmColumns_A.Location = new System.Drawing.Point(167, 14);
+            this.nmColumns_A.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nmColumns_A.Name = "nmColumns_A";
+            this.nmColumns_A.Size = new System.Drawing.Size(50, 20);
+            this.nmColumns_A.TabIndex = 2;
+            this.nmColumns_A.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nmColumns_A.Visible = false;
+            // 
+            // nmRows_A
+            // 
+            this.nmRows_A.Location = new System.Drawing.Point(103, 14);
+            this.nmRows_A.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nmRows_A.Name = "nmRows_A";
+            this.nmRows_A.Size = new System.Drawing.Size(50, 20);
+            this.nmRows_A.TabIndex = 1;
+            this.nmRows_A.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nmRows_A.Visible = false;
+            // 
+            // cmbTypeA
+            // 
+            this.cmbTypeA.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTypeA.FormattingEnabled = true;
+            this.cmbTypeA.Location = new System.Drawing.Point(6, 14);
+            this.cmbTypeA.Name = "cmbTypeA";
+            this.cmbTypeA.Size = new System.Drawing.Size(74, 21);
+            this.cmbTypeA.TabIndex = 0;
+            this.cmbTypeA.SelectedIndexChanged += new System.EventHandler(this.cmbTypeA_SelectedIndexChanged);
+            // 
+            // cntxMenu
+            // 
+            this.cntxMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.copyToolStripMenuItem,
+            this.pasteToolStripMenuItem});
+            this.cntxMenu.Name = "cntxMenu";
+            this.cntxMenu.Size = new System.Drawing.Size(103, 48);
+            this.cntxMenu.Opening += new System.ComponentModel.CancelEventHandler(this.cntxMenu_Opening);
+            // 
+            // copyToolStripMenuItem
+            // 
+            this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.copyToolStripMenuItem.Text = "Copy";
+            this.copyToolStripMenuItem.Click += new System.EventHandler(this.copyToolStripMenuItem_Click);
+            // 
+            // pasteToolStripMenuItem
+            // 
+            this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
+            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.pasteToolStripMenuItem.Text = "Paste";
+            this.pasteToolStripMenuItem.Click += new System.EventHandler(this.pasteToolStripMenuItem_Click);
             // 
             // frmMain
             // 
@@ -429,12 +460,13 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
-            this.grpA.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.nmColumns_A)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmRows_A)).EndInit();
             this.grpB.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nmColumns_B)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmRows_B)).EndInit();
+            this.grpA.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.nmColumns_A)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmRows_A)).EndInit();
+            this.cntxMenu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -472,6 +504,9 @@
         private System.Windows.Forms.ComboBox cmbVectorOperation;
         private System.Windows.Forms.Button btnCalculateVector;
         private System.Windows.Forms.Panel pnlResult;
+        private System.Windows.Forms.ContextMenuStrip cntxMenu;
+        private System.Windows.Forms.ToolStripMenuItem copyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pasteToolStripMenuItem;
     }
 }
 
