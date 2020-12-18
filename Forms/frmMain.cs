@@ -123,69 +123,64 @@ namespace MathIS.Forms
                 Clipboard.SetText(num.Text);
         }
 
-        private void cmbTypeA_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (EventDisable)
-                return;
-            switch(((AritmeticType)cmbTypeA.SelectedItem).Aritmetc)
-            {
-                case Model.Enums.AritmeticTypeEnum.Number:
-                    nmColumns_A.Visible = false;
-                    nmRows_A.Visible = false;
-                    break;
-                case Model.Enums.AritmeticTypeEnum.Vector:
-                    nmColumns_A.Visible = false;
-                    nmRows_A.Visible = true;
-                    break;
-                case Model.Enums.AritmeticTypeEnum.Matrix:
-                    nmColumns_A.Visible = true;
-                    nmRows_A.Visible = true;
-                    break;
-            }
-        }
-
-        private void cmbTypeB_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (EventDisable)
-                return;
-            switch (((AritmeticType)cmbTypeB.SelectedItem).Aritmetc)
-            {
-                case Model.Enums.AritmeticTypeEnum.Number:
-                    nmColumns_B.Visible = false;
-                    nmRows_B.Visible = false;
-                    break;
-                case Model.Enums.AritmeticTypeEnum.Vector:
-                    nmColumns_B.Visible = false;
-                    nmRows_B.Visible = true;
-                    break;
-                case Model.Enums.AritmeticTypeEnum.Matrix:
-                    nmColumns_B.Visible = true;
-                    nmRows_B.Visible = true;
-                    break;
-            }
-        }
-
-        private void btnCreate_1_Click(object sender, EventArgs e)
+              
+        private void num_A_Click(object sender, EventArgs e)
         {
             ClearA();
-            switch (((AritmeticType)cmbTypeA.SelectedItem).Aritmetc)
-            {
-                case Model.Enums.AritmeticTypeEnum.Number:
-                    var n = new Number(0);
-                    var nc = new NumberControl(n, pnlA);
-                    nc.Grid.ContextMenuStrip = cntxMenu;
-                    break;
-                case Model.Enums.AritmeticTypeEnum.Vector:
-                    var v = new Vector((int)nmRows_A.Value);
-                    var vc = new VectorControl(v, pnlA);
-                    vc.Grid.ContextMenuStrip = cntxMenu;
-                    break;
-                case Model.Enums.AritmeticTypeEnum.Matrix:
-                    var m = new Matrix((int)nmRows_A.Value, (int)nmColumns_A.Value);
-                    var mnc = new MatrixControl(m, pnlA);
-                    mnc.Grid.ContextMenuStrip = cntxMenu;
-                    break;
-            }
+            var n = new Number(0);
+            var nc = new NumberControl(n, pnlA);
+            nc.Grid.ContextMenuStrip = cntxMenu;
+            nc.Grid.Focus();
+            ArrangeControls();
+        }
+
+        private void vector_A_Click(object sender, EventArgs e)
+        {
+            ClearA();
+            var v = new Vector((int)vectorDim_A.Value);
+            var vc = new VectorControl(v, pnlA);
+            vc.Grid.ContextMenuStrip = cntxMenu;
+            vc.Grid.Focus();
+            ArrangeControls();
+        }
+
+        private void matrix_A_Click(object sender, EventArgs e)
+        {
+            ClearA();
+            var m = new Matrix((int)matrixRows_A.Value, (int)matrixColumns_A.Value);
+            var mnc = new MatrixControl(m, pnlA);
+            mnc.Grid.ContextMenuStrip = cntxMenu;
+            mnc.Grid.Focus();
+            ArrangeControls();
+        }
+
+        private void num_B_Click(object sender, EventArgs e)
+        {
+            ClearB();
+            var n = new Number(0);
+            var nc = new NumberControl(n, pnlB);
+            nc.Grid.ContextMenuStrip = cntxMenu;
+            nc.Grid.Focus();
+            ArrangeControls();
+        }
+
+        private void vector_B_Click(object sender, EventArgs e)
+        {
+            ClearB();
+            var v = new Vector((int)vectorDim_B.Value);
+            var vc = new VectorControl(v, pnlB);
+            vc.Grid.ContextMenuStrip = cntxMenu;
+            vc.Grid.Focus();
+            ArrangeControls();
+        }
+
+        private void matrix_B_Click(object sender, EventArgs e)
+        {
+            ClearB();
+            var m = new Matrix((int)matrixRows_B.Value, (int)matrixColumns_B.Value);
+            var mnc = new MatrixControl(m, pnlB);
+            mnc.Grid.ContextMenuStrip = cntxMenu;
+            mnc.Grid.Focus();
             ArrangeControls();
         }
 
@@ -213,44 +208,14 @@ namespace MathIS.Forms
             }
             if (container == null)
                 return;
-            AritmeticControl ac = null;
-            if (AritmeticsService.CopiedEntity is Number)
-                ac = new NumberControl((Number)AritmeticsService.CopiedEntity, container);
-            else if (AritmeticsService.CopiedEntity is Vector)
-                ac = new VectorControl((Vector)AritmeticsService.CopiedEntity, container);
-            else if (AritmeticsService.CopiedEntity is Matrix)
-                ac = new MatrixControl((Matrix)AritmeticsService.CopiedEntity, container);
 
-            if (ac != null)
-                ac.Grid.ContextMenuStrip = cntxMenu;
+            var ac = CreateAritmeticControl(AritmeticsService.CopiedEntity, container);
+            ac.Grid.Focus();
 
             ArrangeControls();
         }
 
-        private void btnCreate_2_Click(object sender, EventArgs e)
-        {
-            ClearB();
-            switch (((AritmeticType)cmbTypeB.SelectedItem).Aritmetc)
-            {
-                case Model.Enums.AritmeticTypeEnum.Number:
-                    var n = new Number(0);
-                    var nc = new NumberControl(n, pnlB);
-                    nc.Grid.ContextMenuStrip = cntxMenu;
-                    break;
-                case Model.Enums.AritmeticTypeEnum.Vector:
-                    var v = new Vector((int)nmRows_B.Value);
-                    var vc = new VectorControl(v, pnlB);
-                    vc.Grid.ContextMenuStrip = cntxMenu;
-                    break;
-                case Model.Enums.AritmeticTypeEnum.Matrix:
-                    var m = new Matrix((int)nmRows_B.Value, (int)nmColumns_B.Value);
-                    var mnc = new MatrixControl(m, pnlB);
-                    mnc.Grid.ContextMenuStrip = cntxMenu;
-                    break;
-            }
-            ArrangeControls();
-        }
-
+        
         private void btnCalculateVector_Click(object sender, EventArgs e)
         {
             CalculateVector();
@@ -312,11 +277,6 @@ namespace MathIS.Forms
             cmbOperation.DataSource = AritmeticsService.Operations;
             cmbOperation.SelectedIndex = 0;
 
-            cmbTypeA.DataSource = new List<AritmeticType>(AritmeticsService.Types);
-            cmbTypeA.SelectedIndex = 0;
-
-            cmbTypeB.DataSource = new List<AritmeticType>(AritmeticsService.Types);
-            cmbTypeB.SelectedIndex = 0;
 
             cmbVectorOperation.DataSource = AritmeticsService.VectorOperations;
             cmbVectorOperation.SelectedIndex = 0;
@@ -358,16 +318,43 @@ namespace MathIS.Forms
             if (result == null)
                 return;
 
-            ClearResult();
-            AritmeticControl rc = null;
-            if (result is Number)
-                rc = new NumberControl((Number)result, pnlResult);
-            else if (result is Vector)
-                rc = new VectorControl((Vector)result, pnlResult);
-            else if (result is Matrix)
-                rc = new MatrixControl((Matrix)result, pnlResult);
-            if (rc != null)
-                rc.Grid.ContextMenuStrip = cntxMenu;
+            if(rbresult_A.Checked)
+            {
+                ClearA();
+                CreateAritmeticControl(result, pnlA);
+                
+            }
+            else if(rbresult_B.Checked)
+            {
+                ClearB();
+                CreateAritmeticControl(result, pnlB);
+            }
+            else
+            {
+                ClearResult();
+                CreateAritmeticControl(result, pnlResult);
+                
+            }
+
+            ArrangeControls();
+
+
+        }
+
+        private AritmeticControl CreateAritmeticControl(BaseMathEntity entity, Control container)
+        {
+            AritmeticControl ac = null;
+            if (entity is Number)
+                ac = new NumberControl((Number)entity, container);
+            else if (entity is Vector)
+                ac = new VectorControl((Vector)entity, container);
+            else if (entity is Matrix)
+                ac = new MatrixControl((Matrix)entity, container);
+
+            if (ac != null)
+                ac.Grid.ContextMenuStrip = cntxMenu;
+
+            return ac;
         }
 
         private void ClearA()
@@ -402,7 +389,7 @@ namespace MathIS.Forms
 
         public void ArrangeControls()
         {
-            int top = 63;
+            int top = grpVarA.Location.Y + grpVarA.Height + 20;
             int gap = 6;
 
             int maxHeight = pnlA.Height;
@@ -416,6 +403,15 @@ namespace MathIS.Forms
             cmbVectorOperation.Location = new Point(pnlA.Location.X + pnlA.Width + gap, top + (maxHeight - cmbVectorOperation.Height) / 2);
 
             pnlB.Location = new Point(cmbVectorOperation.Location.X + cmbVectorOperation.Width + gap, top + (maxHeight - pnlB.Height) / 2);
+
+            int bottom = pnlA.Location.Y + pnlA.Height;
+            if ((pnlB.Location.Y + pnlB.Height) > bottom)
+                bottom = pnlB.Location.Y + pnlB.Height;
+
+            pnlResult.Location = new Point(pnlResult.Location.X, bottom + 50);
+
+            pnlBreakLine.Location = new Point(pnlBreakLine.Location.X, bottom + 25 - pnlBreakLine.Height / 2);
+            pnlBreakLine.Size = new Size(pnlB.Location.X + pnlB.Width - pnlBreakLine.Location.X, pnlBreakLine.Height);
 
         }
 

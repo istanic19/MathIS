@@ -108,6 +108,11 @@ namespace MathIS.Model.Entities
             return base.Add(x);
         }
 
+        public override BaseMathEntity MatrixMultiply(BaseMathEntity x)
+        {
+            return Multiply(x);
+        }
+
         public static Matrix operator *(Matrix b, Matrix c)
         {
             if (b.Columns != c.Rows)

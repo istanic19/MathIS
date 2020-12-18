@@ -68,6 +68,17 @@ namespace MathIS.UI
             {
                 _dataGrid.EndEdit();
                 e.Handled = true;
+                if (_dataGrid.CurrentCell != null)
+                {
+                    if (_dataGrid.CurrentCell.OwningColumn.Index < (_dataGrid.ColumnCount - 1))
+                    {
+                        _dataGrid.CurrentCell = _dataGrid.CurrentCell.OwningRow.Cells[_dataGrid.CurrentCell.OwningColumn.Index + 1];
+                    }
+                    else if(_dataGrid.CurrentCell.OwningRow.Index < (_dataGrid.RowCount - 1))
+                    {
+                        _dataGrid.CurrentCell = _dataGrid.Rows[_dataGrid.CurrentCell.OwningRow.Index + 1].Cells[0];
+                    }
+                }
             }
         }
 

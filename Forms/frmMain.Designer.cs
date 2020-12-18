@@ -44,34 +44,52 @@
             this.txtNum2 = new System.Windows.Forms.TextBox();
             this.txtNum1 = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.grpVarB = new System.Windows.Forms.GroupBox();
+            this.matrixColumns_B = new System.Windows.Forms.NumericUpDown();
+            this.matrixRows_B = new System.Windows.Forms.NumericUpDown();
+            this.vectorDim_B = new System.Windows.Forms.NumericUpDown();
+            this.matrix_B = new MathIS.UI.ImageButton();
+            this.vector_B = new MathIS.UI.ImageButton();
+            this.num_B = new MathIS.UI.ImageButton();
+            this.grpVarA = new System.Windows.Forms.GroupBox();
+            this.matrixColumns_A = new System.Windows.Forms.NumericUpDown();
+            this.matrixRows_A = new System.Windows.Forms.NumericUpDown();
+            this.vectorDim_A = new System.Windows.Forms.NumericUpDown();
+            this.matrix_A = new MathIS.UI.ImageButton();
+            this.vector_A = new MathIS.UI.ImageButton();
+            this.num_A = new MathIS.UI.ImageButton();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rbresult_B = new System.Windows.Forms.RadioButton();
+            this.rbresult_A = new System.Windows.Forms.RadioButton();
+            this.rbresult_Default = new System.Windows.Forms.RadioButton();
             this.pnlResult = new System.Windows.Forms.Panel();
-            this.btnCalculateVector = new System.Windows.Forms.Button();
-            this.cmbVectorOperation = new System.Windows.Forms.ComboBox();
-            this.pnlB = new System.Windows.Forms.Panel();
-            this.grpB = new System.Windows.Forms.GroupBox();
-            this.btnCreate_2 = new System.Windows.Forms.Button();
-            this.nmColumns_B = new System.Windows.Forms.NumericUpDown();
-            this.nmRows_B = new System.Windows.Forms.NumericUpDown();
-            this.cmbTypeB = new System.Windows.Forms.ComboBox();
-            this.pnlA = new System.Windows.Forms.Panel();
-            this.grpA = new System.Windows.Forms.GroupBox();
-            this.btnCreate_1 = new System.Windows.Forms.Button();
-            this.nmColumns_A = new System.Windows.Forms.NumericUpDown();
-            this.nmRows_A = new System.Windows.Forms.NumericUpDown();
-            this.cmbTypeA = new System.Windows.Forms.ComboBox();
             this.cntxMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnCalculateVector = new System.Windows.Forms.Button();
+            this.cmbVectorOperation = new System.Windows.Forms.ComboBox();
+            this.pnlB = new System.Windows.Forms.Panel();
+            this.pnlA = new System.Windows.Forms.Panel();
+            this.pnlBreakLine = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.grpB.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nmColumns_B)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmRows_B)).BeginInit();
-            this.grpA.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nmColumns_A)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmRows_A)).BeginInit();
+            this.grpVarB.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.matrixColumns_B)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.matrixRows_B)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vectorDim_B)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.matrix_B)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vector_B)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num_B)).BeginInit();
+            this.grpVarA.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.matrixColumns_A)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.matrixRows_A)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vectorDim_A)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.matrix_A)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vector_A)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num_A)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.cntxMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -81,7 +99,7 @@
             this.optionsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(924, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -116,7 +134,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 24);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(800, 426);
+            this.tabControl1.Size = new System.Drawing.Size(924, 426);
             this.tabControl1.TabIndex = 1;
             // 
             // tabPage1
@@ -132,7 +150,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(792, 400);
+            this.tabPage1.Size = new System.Drawing.Size(916, 400);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Complex";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -219,204 +237,291 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.pnlBreakLine);
+            this.tabPage2.Controls.Add(this.grpVarB);
+            this.tabPage2.Controls.Add(this.grpVarA);
+            this.tabPage2.Controls.Add(this.groupBox1);
             this.tabPage2.Controls.Add(this.pnlResult);
-            this.tabPage2.Controls.Add(this.btnCalculateVector);
             this.tabPage2.Controls.Add(this.cmbVectorOperation);
             this.tabPage2.Controls.Add(this.pnlB);
-            this.tabPage2.Controls.Add(this.grpB);
             this.tabPage2.Controls.Add(this.pnlA);
-            this.tabPage2.Controls.Add(this.grpA);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(792, 400);
+            this.tabPage2.Size = new System.Drawing.Size(916, 400);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Vectors and Matrix";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // grpVarB
+            // 
+            this.grpVarB.Controls.Add(this.matrixColumns_B);
+            this.grpVarB.Controls.Add(this.matrixRows_B);
+            this.grpVarB.Controls.Add(this.vectorDim_B);
+            this.grpVarB.Controls.Add(this.matrix_B);
+            this.grpVarB.Controls.Add(this.vector_B);
+            this.grpVarB.Controls.Add(this.num_B);
+            this.grpVarB.Location = new System.Drawing.Point(145, 6);
+            this.grpVarB.Name = "grpVarB";
+            this.grpVarB.Size = new System.Drawing.Size(122, 96);
+            this.grpVarB.TabIndex = 11;
+            this.grpVarB.TabStop = false;
+            this.grpVarB.Text = "Variable B";
+            // 
+            // matrixColumns_B
+            // 
+            this.matrixColumns_B.Location = new System.Drawing.Point(75, 65);
+            this.matrixColumns_B.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.matrixColumns_B.Name = "matrixColumns_B";
+            this.matrixColumns_B.Size = new System.Drawing.Size(39, 20);
+            this.matrixColumns_B.TabIndex = 34;
+            this.matrixColumns_B.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // matrixRows_B
+            // 
+            this.matrixRows_B.Location = new System.Drawing.Point(30, 65);
+            this.matrixRows_B.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.matrixRows_B.Name = "matrixRows_B";
+            this.matrixRows_B.Size = new System.Drawing.Size(39, 20);
+            this.matrixRows_B.TabIndex = 33;
+            this.matrixRows_B.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // vectorDim_B
+            // 
+            this.vectorDim_B.Location = new System.Drawing.Point(30, 41);
+            this.vectorDim_B.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.vectorDim_B.Name = "vectorDim_B";
+            this.vectorDim_B.Size = new System.Drawing.Size(39, 20);
+            this.vectorDim_B.TabIndex = 32;
+            this.vectorDim_B.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // matrix_B
+            // 
+            this.matrix_B.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.matrix_B.DisabledImage = global::MathIS.Properties.Resources.Ok16Disabled;
+            this.matrix_B.DownImage = global::MathIS.Properties.Resources.Ok16Down;
+            this.matrix_B.HoverImage = global::MathIS.Properties.Resources.Ok16Hower;
+            this.matrix_B.Location = new System.Drawing.Point(6, 67);
+            this.matrix_B.Name = "matrix_B";
+            this.matrix_B.NormalImage = global::MathIS.Properties.Resources.Ok16;
+            this.matrix_B.Size = new System.Drawing.Size(18, 18);
+            this.matrix_B.TabIndex = 31;
+            this.matrix_B.TabStop = false;
+            this.matrix_B.Click += new System.EventHandler(this.matrix_B_Click);
+            // 
+            // vector_B
+            // 
+            this.vector_B.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.vector_B.DisabledImage = global::MathIS.Properties.Resources.Ok16Disabled;
+            this.vector_B.DownImage = global::MathIS.Properties.Resources.Ok16Down;
+            this.vector_B.HoverImage = global::MathIS.Properties.Resources.Ok16Hower;
+            this.vector_B.Location = new System.Drawing.Point(6, 43);
+            this.vector_B.Name = "vector_B";
+            this.vector_B.NormalImage = global::MathIS.Properties.Resources.Ok16;
+            this.vector_B.Size = new System.Drawing.Size(18, 18);
+            this.vector_B.TabIndex = 30;
+            this.vector_B.TabStop = false;
+            this.vector_B.Click += new System.EventHandler(this.vector_B_Click);
+            // 
+            // num_B
+            // 
+            this.num_B.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.num_B.DisabledImage = global::MathIS.Properties.Resources.Ok16Disabled;
+            this.num_B.DownImage = global::MathIS.Properties.Resources.Ok16Down;
+            this.num_B.HoverImage = global::MathIS.Properties.Resources.Ok16Hower;
+            this.num_B.Location = new System.Drawing.Point(6, 19);
+            this.num_B.Name = "num_B";
+            this.num_B.NormalImage = global::MathIS.Properties.Resources.Ok16;
+            this.num_B.Size = new System.Drawing.Size(18, 18);
+            this.num_B.TabIndex = 29;
+            this.num_B.TabStop = false;
+            this.num_B.Click += new System.EventHandler(this.num_B_Click);
+            // 
+            // grpVarA
+            // 
+            this.grpVarA.Controls.Add(this.matrixColumns_A);
+            this.grpVarA.Controls.Add(this.matrixRows_A);
+            this.grpVarA.Controls.Add(this.vectorDim_A);
+            this.grpVarA.Controls.Add(this.matrix_A);
+            this.grpVarA.Controls.Add(this.vector_A);
+            this.grpVarA.Controls.Add(this.num_A);
+            this.grpVarA.Location = new System.Drawing.Point(8, 6);
+            this.grpVarA.Name = "grpVarA";
+            this.grpVarA.Size = new System.Drawing.Size(122, 96);
+            this.grpVarA.TabIndex = 10;
+            this.grpVarA.TabStop = false;
+            this.grpVarA.Text = "Variable A";
+            // 
+            // matrixColumns_A
+            // 
+            this.matrixColumns_A.Location = new System.Drawing.Point(75, 65);
+            this.matrixColumns_A.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.matrixColumns_A.Name = "matrixColumns_A";
+            this.matrixColumns_A.Size = new System.Drawing.Size(39, 20);
+            this.matrixColumns_A.TabIndex = 34;
+            this.matrixColumns_A.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // matrixRows_A
+            // 
+            this.matrixRows_A.Location = new System.Drawing.Point(30, 65);
+            this.matrixRows_A.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.matrixRows_A.Name = "matrixRows_A";
+            this.matrixRows_A.Size = new System.Drawing.Size(39, 20);
+            this.matrixRows_A.TabIndex = 33;
+            this.matrixRows_A.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // vectorDim_A
+            // 
+            this.vectorDim_A.Location = new System.Drawing.Point(30, 41);
+            this.vectorDim_A.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.vectorDim_A.Name = "vectorDim_A";
+            this.vectorDim_A.Size = new System.Drawing.Size(39, 20);
+            this.vectorDim_A.TabIndex = 32;
+            this.vectorDim_A.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // matrix_A
+            // 
+            this.matrix_A.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.matrix_A.DisabledImage = global::MathIS.Properties.Resources.Ok16Disabled;
+            this.matrix_A.DownImage = global::MathIS.Properties.Resources.Ok16Down;
+            this.matrix_A.HoverImage = global::MathIS.Properties.Resources.Ok16Hower;
+            this.matrix_A.Location = new System.Drawing.Point(6, 67);
+            this.matrix_A.Name = "matrix_A";
+            this.matrix_A.NormalImage = global::MathIS.Properties.Resources.Ok16;
+            this.matrix_A.Size = new System.Drawing.Size(18, 18);
+            this.matrix_A.TabIndex = 31;
+            this.matrix_A.TabStop = false;
+            this.matrix_A.Click += new System.EventHandler(this.matrix_A_Click);
+            // 
+            // vector_A
+            // 
+            this.vector_A.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.vector_A.DisabledImage = global::MathIS.Properties.Resources.Ok16Disabled;
+            this.vector_A.DownImage = global::MathIS.Properties.Resources.Ok16Down;
+            this.vector_A.HoverImage = global::MathIS.Properties.Resources.Ok16Hower;
+            this.vector_A.Location = new System.Drawing.Point(6, 43);
+            this.vector_A.Name = "vector_A";
+            this.vector_A.NormalImage = global::MathIS.Properties.Resources.Ok16;
+            this.vector_A.Size = new System.Drawing.Size(18, 18);
+            this.vector_A.TabIndex = 30;
+            this.vector_A.TabStop = false;
+            this.vector_A.Click += new System.EventHandler(this.vector_A_Click);
+            // 
+            // num_A
+            // 
+            this.num_A.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.num_A.DisabledImage = global::MathIS.Properties.Resources.Ok16Disabled;
+            this.num_A.DownImage = global::MathIS.Properties.Resources.Ok16Down;
+            this.num_A.HoverImage = global::MathIS.Properties.Resources.Ok16Hower;
+            this.num_A.Location = new System.Drawing.Point(6, 19);
+            this.num_A.Name = "num_A";
+            this.num_A.NormalImage = global::MathIS.Properties.Resources.Ok16;
+            this.num_A.Size = new System.Drawing.Size(18, 18);
+            this.num_A.TabIndex = 29;
+            this.num_A.TabStop = false;
+            this.num_A.Click += new System.EventHandler(this.num_A_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.rbresult_B);
+            this.groupBox1.Controls.Add(this.rbresult_A);
+            this.groupBox1.Controls.Add(this.rbresult_Default);
+            this.groupBox1.Controls.Add(this.btnCalculateVector);
+            this.groupBox1.Location = new System.Drawing.Point(282, 6);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(154, 96);
+            this.groupBox1.TabIndex = 9;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Result to";
+            // 
+            // rbresult_B
+            // 
+            this.rbresult_B.AutoSize = true;
+            this.rbresult_B.Location = new System.Drawing.Point(18, 65);
+            this.rbresult_B.Name = "rbresult_B";
+            this.rbresult_B.Size = new System.Drawing.Size(48, 17);
+            this.rbresult_B.TabIndex = 2;
+            this.rbresult_B.Text = "To B";
+            this.rbresult_B.UseVisualStyleBackColor = true;
+            // 
+            // rbresult_A
+            // 
+            this.rbresult_A.AutoSize = true;
+            this.rbresult_A.Location = new System.Drawing.Point(18, 42);
+            this.rbresult_A.Name = "rbresult_A";
+            this.rbresult_A.Size = new System.Drawing.Size(48, 17);
+            this.rbresult_A.TabIndex = 1;
+            this.rbresult_A.Text = "To A";
+            this.rbresult_A.UseVisualStyleBackColor = true;
+            // 
+            // rbresult_Default
+            // 
+            this.rbresult_Default.AutoSize = true;
+            this.rbresult_Default.Checked = true;
+            this.rbresult_Default.Location = new System.Drawing.Point(18, 19);
+            this.rbresult_Default.Name = "rbresult_Default";
+            this.rbresult_Default.Size = new System.Drawing.Size(59, 17);
+            this.rbresult_Default.TabIndex = 0;
+            this.rbresult_Default.TabStop = true;
+            this.rbresult_Default.Text = "Default";
+            this.rbresult_Default.UseVisualStyleBackColor = true;
             // 
             // pnlResult
             // 
             this.pnlResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlResult.ContextMenuStrip = this.cntxMenu;
-            this.pnlResult.Location = new System.Drawing.Point(8, 205);
+            this.pnlResult.Location = new System.Drawing.Point(8, 275);
             this.pnlResult.Name = "pnlResult";
             this.pnlResult.Size = new System.Drawing.Size(268, 73);
             this.pnlResult.TabIndex = 8;
-            // 
-            // btnCalculateVector
-            // 
-            this.btnCalculateVector.Location = new System.Drawing.Point(666, 34);
-            this.btnCalculateVector.Name = "btnCalculateVector";
-            this.btnCalculateVector.Size = new System.Drawing.Size(75, 23);
-            this.btnCalculateVector.TabIndex = 7;
-            this.btnCalculateVector.Text = "Calculate";
-            this.btnCalculateVector.UseVisualStyleBackColor = true;
-            this.btnCalculateVector.Click += new System.EventHandler(this.btnCalculateVector_Click);
-            // 
-            // cmbVectorOperation
-            // 
-            this.cmbVectorOperation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbVectorOperation.FormattingEnabled = true;
-            this.cmbVectorOperation.Location = new System.Drawing.Point(282, 89);
-            this.cmbVectorOperation.Name = "cmbVectorOperation";
-            this.cmbVectorOperation.Size = new System.Drawing.Size(104, 21);
-            this.cmbVectorOperation.TabIndex = 3;
-            // 
-            // pnlB
-            // 
-            this.pnlB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlB.ContextMenuStrip = this.cntxMenu;
-            this.pnlB.Location = new System.Drawing.Point(392, 63);
-            this.pnlB.Name = "pnlB";
-            this.pnlB.Size = new System.Drawing.Size(268, 73);
-            this.pnlB.TabIndex = 2;
-            // 
-            // grpB
-            // 
-            this.grpB.Controls.Add(this.btnCreate_2);
-            this.grpB.Controls.Add(this.nmColumns_B);
-            this.grpB.Controls.Add(this.nmRows_B);
-            this.grpB.Controls.Add(this.cmbTypeB);
-            this.grpB.Location = new System.Drawing.Point(392, 16);
-            this.grpB.Name = "grpB";
-            this.grpB.Size = new System.Drawing.Size(268, 41);
-            this.grpB.TabIndex = 1;
-            this.grpB.TabStop = false;
-            this.grpB.Text = "B";
-            // 
-            // btnCreate_2
-            // 
-            this.btnCreate_2.Location = new System.Drawing.Point(223, 12);
-            this.btnCreate_2.Name = "btnCreate_2";
-            this.btnCreate_2.Size = new System.Drawing.Size(39, 23);
-            this.btnCreate_2.TabIndex = 3;
-            this.btnCreate_2.Text = "Add";
-            this.btnCreate_2.UseVisualStyleBackColor = true;
-            this.btnCreate_2.Click += new System.EventHandler(this.btnCreate_2_Click);
-            // 
-            // nmColumns_B
-            // 
-            this.nmColumns_B.Location = new System.Drawing.Point(167, 14);
-            this.nmColumns_B.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.nmColumns_B.Name = "nmColumns_B";
-            this.nmColumns_B.Size = new System.Drawing.Size(50, 20);
-            this.nmColumns_B.TabIndex = 2;
-            this.nmColumns_B.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.nmColumns_B.Visible = false;
-            // 
-            // nmRows_B
-            // 
-            this.nmRows_B.Location = new System.Drawing.Point(103, 14);
-            this.nmRows_B.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.nmRows_B.Name = "nmRows_B";
-            this.nmRows_B.Size = new System.Drawing.Size(50, 20);
-            this.nmRows_B.TabIndex = 1;
-            this.nmRows_B.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.nmRows_B.Visible = false;
-            // 
-            // cmbTypeB
-            // 
-            this.cmbTypeB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbTypeB.FormattingEnabled = true;
-            this.cmbTypeB.Location = new System.Drawing.Point(6, 14);
-            this.cmbTypeB.Name = "cmbTypeB";
-            this.cmbTypeB.Size = new System.Drawing.Size(74, 21);
-            this.cmbTypeB.TabIndex = 0;
-            this.cmbTypeB.SelectedIndexChanged += new System.EventHandler(this.cmbTypeB_SelectedIndexChanged);
-            // 
-            // pnlA
-            // 
-            this.pnlA.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlA.ContextMenuStrip = this.cntxMenu;
-            this.pnlA.Location = new System.Drawing.Point(8, 63);
-            this.pnlA.Name = "pnlA";
-            this.pnlA.Size = new System.Drawing.Size(268, 73);
-            this.pnlA.TabIndex = 0;
-            // 
-            // grpA
-            // 
-            this.grpA.Controls.Add(this.btnCreate_1);
-            this.grpA.Controls.Add(this.nmColumns_A);
-            this.grpA.Controls.Add(this.nmRows_A);
-            this.grpA.Controls.Add(this.cmbTypeA);
-            this.grpA.Location = new System.Drawing.Point(8, 16);
-            this.grpA.Name = "grpA";
-            this.grpA.Size = new System.Drawing.Size(268, 41);
-            this.grpA.TabIndex = 0;
-            this.grpA.TabStop = false;
-            this.grpA.Text = "A";
-            // 
-            // btnCreate_1
-            // 
-            this.btnCreate_1.Location = new System.Drawing.Point(223, 12);
-            this.btnCreate_1.Name = "btnCreate_1";
-            this.btnCreate_1.Size = new System.Drawing.Size(39, 23);
-            this.btnCreate_1.TabIndex = 3;
-            this.btnCreate_1.Text = "Add";
-            this.btnCreate_1.UseVisualStyleBackColor = true;
-            this.btnCreate_1.Click += new System.EventHandler(this.btnCreate_1_Click);
-            // 
-            // nmColumns_A
-            // 
-            this.nmColumns_A.Location = new System.Drawing.Point(167, 14);
-            this.nmColumns_A.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.nmColumns_A.Name = "nmColumns_A";
-            this.nmColumns_A.Size = new System.Drawing.Size(50, 20);
-            this.nmColumns_A.TabIndex = 2;
-            this.nmColumns_A.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.nmColumns_A.Visible = false;
-            // 
-            // nmRows_A
-            // 
-            this.nmRows_A.Location = new System.Drawing.Point(103, 14);
-            this.nmRows_A.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.nmRows_A.Name = "nmRows_A";
-            this.nmRows_A.Size = new System.Drawing.Size(50, 20);
-            this.nmRows_A.TabIndex = 1;
-            this.nmRows_A.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.nmRows_A.Visible = false;
-            // 
-            // cmbTypeA
-            // 
-            this.cmbTypeA.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbTypeA.FormattingEnabled = true;
-            this.cmbTypeA.Location = new System.Drawing.Point(6, 14);
-            this.cmbTypeA.Name = "cmbTypeA";
-            this.cmbTypeA.Size = new System.Drawing.Size(74, 21);
-            this.cmbTypeA.TabIndex = 0;
-            this.cmbTypeA.SelectedIndexChanged += new System.EventHandler(this.cmbTypeA_SelectedIndexChanged);
             // 
             // cntxMenu
             // 
@@ -430,22 +535,67 @@
             // copyToolStripMenuItem
             // 
             this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
-            this.copyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
             this.copyToolStripMenuItem.Text = "Copy";
             this.copyToolStripMenuItem.Click += new System.EventHandler(this.copyToolStripMenuItem_Click);
             // 
             // pasteToolStripMenuItem
             // 
             this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
-            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
             this.pasteToolStripMenuItem.Text = "Paste";
             this.pasteToolStripMenuItem.Click += new System.EventHandler(this.pasteToolStripMenuItem_Click);
+            // 
+            // btnCalculateVector
+            // 
+            this.btnCalculateVector.Location = new System.Drawing.Point(73, 42);
+            this.btnCalculateVector.Name = "btnCalculateVector";
+            this.btnCalculateVector.Size = new System.Drawing.Size(75, 23);
+            this.btnCalculateVector.TabIndex = 7;
+            this.btnCalculateVector.Text = "Calculate";
+            this.btnCalculateVector.UseVisualStyleBackColor = true;
+            this.btnCalculateVector.Click += new System.EventHandler(this.btnCalculateVector_Click);
+            // 
+            // cmbVectorOperation
+            // 
+            this.cmbVectorOperation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbVectorOperation.FormattingEnabled = true;
+            this.cmbVectorOperation.Location = new System.Drawing.Point(282, 159);
+            this.cmbVectorOperation.Name = "cmbVectorOperation";
+            this.cmbVectorOperation.Size = new System.Drawing.Size(104, 21);
+            this.cmbVectorOperation.TabIndex = 3;
+            // 
+            // pnlB
+            // 
+            this.pnlB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlB.ContextMenuStrip = this.cntxMenu;
+            this.pnlB.Location = new System.Drawing.Point(392, 133);
+            this.pnlB.Name = "pnlB";
+            this.pnlB.Size = new System.Drawing.Size(268, 73);
+            this.pnlB.TabIndex = 2;
+            // 
+            // pnlA
+            // 
+            this.pnlA.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlA.ContextMenuStrip = this.cntxMenu;
+            this.pnlA.Location = new System.Drawing.Point(8, 133);
+            this.pnlA.Name = "pnlA";
+            this.pnlA.Size = new System.Drawing.Size(268, 73);
+            this.pnlA.TabIndex = 0;
+            // 
+            // pnlBreakLine
+            // 
+            this.pnlBreakLine.BackColor = System.Drawing.Color.Black;
+            this.pnlBreakLine.Location = new System.Drawing.Point(8, 237);
+            this.pnlBreakLine.Name = "pnlBreakLine";
+            this.pnlBreakLine.Size = new System.Drawing.Size(600, 4);
+            this.pnlBreakLine.TabIndex = 12;
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(924, 450);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -460,12 +610,22 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
-            this.grpB.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.nmColumns_B)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmRows_B)).EndInit();
-            this.grpA.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.nmColumns_A)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmRows_A)).EndInit();
+            this.grpVarB.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.matrixColumns_B)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.matrixRows_B)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vectorDim_B)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.matrix_B)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vector_B)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num_B)).EndInit();
+            this.grpVarA.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.matrixColumns_A)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.matrixRows_A)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vectorDim_A)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.matrix_A)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vector_A)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num_A)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.cntxMenu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -489,24 +649,33 @@
         private System.Windows.Forms.Button btCalculate;
         private System.Windows.Forms.Button btCopy;
         private System.Windows.Forms.ToolStripMenuItem testToolStripMenuItem;
-        private System.Windows.Forms.GroupBox grpA;
         private System.Windows.Forms.Panel pnlA;
-        private System.Windows.Forms.ComboBox cmbTypeA;
-        private System.Windows.Forms.NumericUpDown nmColumns_A;
-        private System.Windows.Forms.NumericUpDown nmRows_A;
-        private System.Windows.Forms.Button btnCreate_1;
         private System.Windows.Forms.Panel pnlB;
-        private System.Windows.Forms.GroupBox grpB;
-        private System.Windows.Forms.Button btnCreate_2;
-        private System.Windows.Forms.NumericUpDown nmColumns_B;
-        private System.Windows.Forms.NumericUpDown nmRows_B;
-        private System.Windows.Forms.ComboBox cmbTypeB;
         private System.Windows.Forms.ComboBox cmbVectorOperation;
         private System.Windows.Forms.Button btnCalculateVector;
         private System.Windows.Forms.Panel pnlResult;
         private System.Windows.Forms.ContextMenuStrip cntxMenu;
         private System.Windows.Forms.ToolStripMenuItem copyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pasteToolStripMenuItem;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton rbresult_B;
+        private System.Windows.Forms.RadioButton rbresult_A;
+        private System.Windows.Forms.RadioButton rbresult_Default;
+        private System.Windows.Forms.GroupBox grpVarA;
+        private UI.ImageButton num_A;
+        private System.Windows.Forms.NumericUpDown matrixColumns_A;
+        private System.Windows.Forms.NumericUpDown matrixRows_A;
+        private System.Windows.Forms.NumericUpDown vectorDim_A;
+        private UI.ImageButton matrix_A;
+        private UI.ImageButton vector_A;
+        private System.Windows.Forms.GroupBox grpVarB;
+        private System.Windows.Forms.NumericUpDown matrixColumns_B;
+        private System.Windows.Forms.NumericUpDown matrixRows_B;
+        private System.Windows.Forms.NumericUpDown vectorDim_B;
+        private UI.ImageButton matrix_B;
+        private UI.ImageButton vector_B;
+        private UI.ImageButton num_B;
+        private System.Windows.Forms.Panel pnlBreakLine;
     }
 }
 
