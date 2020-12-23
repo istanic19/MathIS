@@ -126,7 +126,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="_Documents\number.ico" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="AppImages\ajax_loader.gif" />
   </ItemGroup>
@@ -177,6 +179,39 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="AppImages\Ok16Hower.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="_Documents\matrix.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="_Documents\matrixDisabled.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="_Documents\matrixDown.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="_Documents\matrixHover.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="_Documents\numberDisabled.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="_Documents\numberDown.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="_Documents\numberHover.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="_Documents\vector.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="_Documents\vectorDisabled.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="_Documents\vectorDown.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="_Documents\vectorHover.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

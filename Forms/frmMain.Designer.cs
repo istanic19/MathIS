@@ -134,7 +134,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 24);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(924, 426);
+            this.tabControl1.Size = new System.Drawing.Size(924, 635);
             this.tabControl1.TabIndex = 1;
             // 
             // tabPage1
@@ -150,7 +150,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(916, 400);
+            this.tabPage1.Size = new System.Drawing.Size(916, 609);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Complex";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -248,7 +248,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(916, 400);
+            this.tabPage2.Size = new System.Drawing.Size(916, 609);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Vectors and Matrix";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -256,7 +256,7 @@
             // pnlBreakLine
             // 
             this.pnlBreakLine.BackColor = System.Drawing.Color.Black;
-            this.pnlBreakLine.Location = new System.Drawing.Point(8, 237);
+            this.pnlBreakLine.Location = new System.Drawing.Point(8, 251);
             this.pnlBreakLine.Name = "pnlBreakLine";
             this.pnlBreakLine.Size = new System.Drawing.Size(600, 4);
             this.pnlBreakLine.TabIndex = 12;
@@ -269,16 +269,16 @@
             this.grpVarB.Controls.Add(this.matrix_B);
             this.grpVarB.Controls.Add(this.vector_B);
             this.grpVarB.Controls.Add(this.num_B);
-            this.grpVarB.Location = new System.Drawing.Point(145, 6);
+            this.grpVarB.Location = new System.Drawing.Point(149, 6);
             this.grpVarB.Name = "grpVarB";
-            this.grpVarB.Size = new System.Drawing.Size(122, 96);
+            this.grpVarB.Size = new System.Drawing.Size(135, 135);
             this.grpVarB.TabIndex = 11;
             this.grpVarB.TabStop = false;
             this.grpVarB.Text = "Variable B";
             // 
             // matrixColumns_B
             // 
-            this.matrixColumns_B.Location = new System.Drawing.Point(75, 65);
+            this.matrixColumns_B.Location = new System.Drawing.Point(89, 110);
             this.matrixColumns_B.Minimum = new decimal(new int[] {
             1,
             0,
@@ -295,7 +295,7 @@
             // 
             // matrixRows_B
             // 
-            this.matrixRows_B.Location = new System.Drawing.Point(30, 65);
+            this.matrixRows_B.Location = new System.Drawing.Point(44, 110);
             this.matrixRows_B.Minimum = new decimal(new int[] {
             1,
             0,
@@ -312,7 +312,7 @@
             // 
             // vectorDim_B
             // 
-            this.vectorDim_B.Location = new System.Drawing.Point(30, 41);
+            this.vectorDim_B.Location = new System.Drawing.Point(44, 71);
             this.vectorDim_B.Minimum = new decimal(new int[] {
             1,
             0,
@@ -337,14 +337,14 @@
             this.grpVarA.Controls.Add(this.num_A);
             this.grpVarA.Location = new System.Drawing.Point(8, 6);
             this.grpVarA.Name = "grpVarA";
-            this.grpVarA.Size = new System.Drawing.Size(122, 96);
+            this.grpVarA.Size = new System.Drawing.Size(135, 135);
             this.grpVarA.TabIndex = 10;
             this.grpVarA.TabStop = false;
             this.grpVarA.Text = "Variable A";
             // 
             // matrixColumns_A
             // 
-            this.matrixColumns_A.Location = new System.Drawing.Point(75, 65);
+            this.matrixColumns_A.Location = new System.Drawing.Point(89, 110);
             this.matrixColumns_A.Minimum = new decimal(new int[] {
             1,
             0,
@@ -361,7 +361,7 @@
             // 
             // matrixRows_A
             // 
-            this.matrixRows_A.Location = new System.Drawing.Point(30, 65);
+            this.matrixRows_A.Location = new System.Drawing.Point(44, 110);
             this.matrixRows_A.Minimum = new decimal(new int[] {
             1,
             0,
@@ -378,7 +378,7 @@
             // 
             // vectorDim_A
             // 
-            this.vectorDim_A.Location = new System.Drawing.Point(30, 41);
+            this.vectorDim_A.Location = new System.Drawing.Point(44, 71);
             this.vectorDim_A.Minimum = new decimal(new int[] {
             1,
             0,
@@ -399,7 +399,7 @@
             this.groupBox1.Controls.Add(this.rbresult_A);
             this.groupBox1.Controls.Add(this.rbresult_Default);
             this.groupBox1.Controls.Add(this.btnCalculateVector);
-            this.groupBox1.Location = new System.Drawing.Point(282, 6);
+            this.groupBox1.Location = new System.Drawing.Point(292, 6);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(154, 96);
             this.groupBox1.TabIndex = 9;
@@ -452,7 +452,7 @@
             // 
             this.pnlResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlResult.ContextMenuStrip = this.cntxMenu;
-            this.pnlResult.Location = new System.Drawing.Point(8, 275);
+            this.pnlResult.Location = new System.Drawing.Point(8, 289);
             this.pnlResult.Name = "pnlResult";
             this.pnlResult.Size = new System.Drawing.Size(268, 73);
             this.pnlResult.TabIndex = 8;
@@ -484,7 +484,7 @@
             // 
             this.cmbVectorOperation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbVectorOperation.FormattingEnabled = true;
-            this.cmbVectorOperation.Location = new System.Drawing.Point(282, 159);
+            this.cmbVectorOperation.Location = new System.Drawing.Point(282, 173);
             this.cmbVectorOperation.Name = "cmbVectorOperation";
             this.cmbVectorOperation.Size = new System.Drawing.Size(104, 21);
             this.cmbVectorOperation.TabIndex = 3;
@@ -493,7 +493,7 @@
             // 
             this.pnlB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlB.ContextMenuStrip = this.cntxMenu;
-            this.pnlB.Location = new System.Drawing.Point(392, 133);
+            this.pnlB.Location = new System.Drawing.Point(392, 147);
             this.pnlB.Name = "pnlB";
             this.pnlB.Size = new System.Drawing.Size(268, 73);
             this.pnlB.TabIndex = 2;
@@ -502,7 +502,7 @@
             // 
             this.pnlA.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlA.ContextMenuStrip = this.cntxMenu;
-            this.pnlA.Location = new System.Drawing.Point(8, 133);
+            this.pnlA.Location = new System.Drawing.Point(8, 147);
             this.pnlA.Name = "pnlA";
             this.pnlA.Size = new System.Drawing.Size(268, 73);
             this.pnlA.TabIndex = 0;
@@ -510,13 +510,13 @@
             // matrix_B
             // 
             this.matrix_B.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.matrix_B.DisabledImage = global::MathIS.Properties.Resources.Ok16Disabled;
-            this.matrix_B.DownImage = global::MathIS.Properties.Resources.Ok16Down;
-            this.matrix_B.HoverImage = global::MathIS.Properties.Resources.Ok16Hower;
-            this.matrix_B.Location = new System.Drawing.Point(6, 67);
+            this.matrix_B.DisabledImage = global::MathIS.Properties.Resources.matrixDisabled;
+            this.matrix_B.DownImage = global::MathIS.Properties.Resources.matrixDown;
+            this.matrix_B.HoverImage = global::MathIS.Properties.Resources.matrixHover;
+            this.matrix_B.Location = new System.Drawing.Point(6, 96);
             this.matrix_B.Name = "matrix_B";
-            this.matrix_B.NormalImage = global::MathIS.Properties.Resources.Ok16;
-            this.matrix_B.Size = new System.Drawing.Size(18, 18);
+            this.matrix_B.NormalImage = global::MathIS.Properties.Resources.matrix;
+            this.matrix_B.Size = new System.Drawing.Size(34, 34);
             this.matrix_B.TabIndex = 31;
             this.matrix_B.TabStop = false;
             this.matrix_B.Click += new System.EventHandler(this.matrix_B_Click);
@@ -524,13 +524,13 @@
             // vector_B
             // 
             this.vector_B.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.vector_B.DisabledImage = global::MathIS.Properties.Resources.Ok16Disabled;
-            this.vector_B.DownImage = global::MathIS.Properties.Resources.Ok16Down;
-            this.vector_B.HoverImage = global::MathIS.Properties.Resources.Ok16Hower;
-            this.vector_B.Location = new System.Drawing.Point(6, 43);
+            this.vector_B.DisabledImage = global::MathIS.Properties.Resources.vectorDisabled;
+            this.vector_B.DownImage = global::MathIS.Properties.Resources.vectorDown;
+            this.vector_B.HoverImage = global::MathIS.Properties.Resources.vectorHover;
+            this.vector_B.Location = new System.Drawing.Point(6, 57);
             this.vector_B.Name = "vector_B";
-            this.vector_B.NormalImage = global::MathIS.Properties.Resources.Ok16;
-            this.vector_B.Size = new System.Drawing.Size(18, 18);
+            this.vector_B.NormalImage = global::MathIS.Properties.Resources.vector;
+            this.vector_B.Size = new System.Drawing.Size(34, 34);
             this.vector_B.TabIndex = 30;
             this.vector_B.TabStop = false;
             this.vector_B.Click += new System.EventHandler(this.vector_B_Click);
@@ -538,13 +538,13 @@
             // num_B
             // 
             this.num_B.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.num_B.DisabledImage = global::MathIS.Properties.Resources.Ok16Disabled;
-            this.num_B.DownImage = global::MathIS.Properties.Resources.Ok16Down;
-            this.num_B.HoverImage = global::MathIS.Properties.Resources.Ok16Hower;
+            this.num_B.DisabledImage = global::MathIS.Properties.Resources.numberDisabled;
+            this.num_B.DownImage = global::MathIS.Properties.Resources.numberDown;
+            this.num_B.HoverImage = global::MathIS.Properties.Resources.numberHover;
             this.num_B.Location = new System.Drawing.Point(6, 19);
             this.num_B.Name = "num_B";
-            this.num_B.NormalImage = global::MathIS.Properties.Resources.Ok16;
-            this.num_B.Size = new System.Drawing.Size(18, 18);
+            this.num_B.NormalImage = global::MathIS.Properties.Resources.number;
+            this.num_B.Size = new System.Drawing.Size(34, 34);
             this.num_B.TabIndex = 29;
             this.num_B.TabStop = false;
             this.num_B.Click += new System.EventHandler(this.num_B_Click);
@@ -552,13 +552,13 @@
             // matrix_A
             // 
             this.matrix_A.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.matrix_A.DisabledImage = global::MathIS.Properties.Resources.Ok16Disabled;
-            this.matrix_A.DownImage = global::MathIS.Properties.Resources.Ok16Down;
-            this.matrix_A.HoverImage = global::MathIS.Properties.Resources.Ok16Hower;
-            this.matrix_A.Location = new System.Drawing.Point(6, 67);
+            this.matrix_A.DisabledImage = global::MathIS.Properties.Resources.matrixDisabled;
+            this.matrix_A.DownImage = global::MathIS.Properties.Resources.matrixDown;
+            this.matrix_A.HoverImage = global::MathIS.Properties.Resources.matrixHover;
+            this.matrix_A.Location = new System.Drawing.Point(6, 96);
             this.matrix_A.Name = "matrix_A";
-            this.matrix_A.NormalImage = global::MathIS.Properties.Resources.Ok16;
-            this.matrix_A.Size = new System.Drawing.Size(18, 18);
+            this.matrix_A.NormalImage = global::MathIS.Properties.Resources.matrix;
+            this.matrix_A.Size = new System.Drawing.Size(34, 34);
             this.matrix_A.TabIndex = 31;
             this.matrix_A.TabStop = false;
             this.matrix_A.Click += new System.EventHandler(this.matrix_A_Click);
@@ -566,13 +566,13 @@
             // vector_A
             // 
             this.vector_A.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.vector_A.DisabledImage = global::MathIS.Properties.Resources.Ok16Disabled;
-            this.vector_A.DownImage = global::MathIS.Properties.Resources.Ok16Down;
-            this.vector_A.HoverImage = global::MathIS.Properties.Resources.Ok16Hower;
-            this.vector_A.Location = new System.Drawing.Point(6, 43);
+            this.vector_A.DisabledImage = global::MathIS.Properties.Resources.vectorDisabled;
+            this.vector_A.DownImage = global::MathIS.Properties.Resources.vectorDown;
+            this.vector_A.HoverImage = global::MathIS.Properties.Resources.vectorHover;
+            this.vector_A.Location = new System.Drawing.Point(6, 57);
             this.vector_A.Name = "vector_A";
-            this.vector_A.NormalImage = global::MathIS.Properties.Resources.Ok16;
-            this.vector_A.Size = new System.Drawing.Size(18, 18);
+            this.vector_A.NormalImage = global::MathIS.Properties.Resources.vector;
+            this.vector_A.Size = new System.Drawing.Size(34, 34);
             this.vector_A.TabIndex = 30;
             this.vector_A.TabStop = false;
             this.vector_A.Click += new System.EventHandler(this.vector_A_Click);
@@ -580,13 +580,13 @@
             // num_A
             // 
             this.num_A.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.num_A.DisabledImage = global::MathIS.Properties.Resources.Ok16Disabled;
-            this.num_A.DownImage = global::MathIS.Properties.Resources.Ok16Down;
-            this.num_A.HoverImage = global::MathIS.Properties.Resources.Ok16Hower;
+            this.num_A.DisabledImage = global::MathIS.Properties.Resources.numberDisabled;
+            this.num_A.DownImage = global::MathIS.Properties.Resources.numberDown;
+            this.num_A.HoverImage = global::MathIS.Properties.Resources.numberHover;
             this.num_A.Location = new System.Drawing.Point(6, 19);
             this.num_A.Name = "num_A";
-            this.num_A.NormalImage = global::MathIS.Properties.Resources.Ok16;
-            this.num_A.Size = new System.Drawing.Size(18, 18);
+            this.num_A.NormalImage = global::MathIS.Properties.Resources.number;
+            this.num_A.Size = new System.Drawing.Size(34, 34);
             this.num_A.TabIndex = 29;
             this.num_A.TabStop = false;
             this.num_A.Click += new System.EventHandler(this.num_A_Click);
@@ -595,7 +595,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(924, 450);
+            this.ClientSize = new System.Drawing.Size(924, 659);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
