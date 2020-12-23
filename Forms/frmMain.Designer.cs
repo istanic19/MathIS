@@ -44,33 +44,33 @@
             this.txtNum2 = new System.Windows.Forms.TextBox();
             this.txtNum1 = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.pnlBreakLine = new System.Windows.Forms.Panel();
             this.grpVarB = new System.Windows.Forms.GroupBox();
             this.matrixColumns_B = new System.Windows.Forms.NumericUpDown();
             this.matrixRows_B = new System.Windows.Forms.NumericUpDown();
             this.vectorDim_B = new System.Windows.Forms.NumericUpDown();
-            this.matrix_B = new MathIS.UI.ImageButton();
-            this.vector_B = new MathIS.UI.ImageButton();
-            this.num_B = new MathIS.UI.ImageButton();
             this.grpVarA = new System.Windows.Forms.GroupBox();
             this.matrixColumns_A = new System.Windows.Forms.NumericUpDown();
             this.matrixRows_A = new System.Windows.Forms.NumericUpDown();
             this.vectorDim_A = new System.Windows.Forms.NumericUpDown();
-            this.matrix_A = new MathIS.UI.ImageButton();
-            this.vector_A = new MathIS.UI.ImageButton();
-            this.num_A = new MathIS.UI.ImageButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rbresult_B = new System.Windows.Forms.RadioButton();
             this.rbresult_A = new System.Windows.Forms.RadioButton();
             this.rbresult_Default = new System.Windows.Forms.RadioButton();
+            this.btnCalculateVector = new System.Windows.Forms.Button();
             this.pnlResult = new System.Windows.Forms.Panel();
             this.cntxMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnCalculateVector = new System.Windows.Forms.Button();
             this.cmbVectorOperation = new System.Windows.Forms.ComboBox();
             this.pnlB = new System.Windows.Forms.Panel();
             this.pnlA = new System.Windows.Forms.Panel();
-            this.pnlBreakLine = new System.Windows.Forms.Panel();
+            this.matrix_B = new MathIS.UI.ImageButton();
+            this.vector_B = new MathIS.UI.ImageButton();
+            this.num_B = new MathIS.UI.ImageButton();
+            this.matrix_A = new MathIS.UI.ImageButton();
+            this.vector_A = new MathIS.UI.ImageButton();
+            this.num_A = new MathIS.UI.ImageButton();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -79,18 +79,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.matrixColumns_B)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.matrixRows_B)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vectorDim_B)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.matrix_B)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vector_B)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.num_B)).BeginInit();
             this.grpVarA.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.matrixColumns_A)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.matrixRows_A)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vectorDim_A)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.cntxMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.matrix_B)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vector_B)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num_B)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.matrix_A)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vector_A)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_A)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            this.cntxMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -253,6 +253,14 @@
             this.tabPage2.Text = "Vectors and Matrix";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // pnlBreakLine
+            // 
+            this.pnlBreakLine.BackColor = System.Drawing.Color.Black;
+            this.pnlBreakLine.Location = new System.Drawing.Point(8, 237);
+            this.pnlBreakLine.Name = "pnlBreakLine";
+            this.pnlBreakLine.Size = new System.Drawing.Size(600, 4);
+            this.pnlBreakLine.TabIndex = 12;
+            // 
             // grpVarB
             // 
             this.grpVarB.Controls.Add(this.matrixColumns_B);
@@ -318,48 +326,6 @@
             0,
             0,
             0});
-            // 
-            // matrix_B
-            // 
-            this.matrix_B.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.matrix_B.DisabledImage = global::MathIS.Properties.Resources.Ok16Disabled;
-            this.matrix_B.DownImage = global::MathIS.Properties.Resources.Ok16Down;
-            this.matrix_B.HoverImage = global::MathIS.Properties.Resources.Ok16Hower;
-            this.matrix_B.Location = new System.Drawing.Point(6, 67);
-            this.matrix_B.Name = "matrix_B";
-            this.matrix_B.NormalImage = global::MathIS.Properties.Resources.Ok16;
-            this.matrix_B.Size = new System.Drawing.Size(18, 18);
-            this.matrix_B.TabIndex = 31;
-            this.matrix_B.TabStop = false;
-            this.matrix_B.Click += new System.EventHandler(this.matrix_B_Click);
-            // 
-            // vector_B
-            // 
-            this.vector_B.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.vector_B.DisabledImage = global::MathIS.Properties.Resources.Ok16Disabled;
-            this.vector_B.DownImage = global::MathIS.Properties.Resources.Ok16Down;
-            this.vector_B.HoverImage = global::MathIS.Properties.Resources.Ok16Hower;
-            this.vector_B.Location = new System.Drawing.Point(6, 43);
-            this.vector_B.Name = "vector_B";
-            this.vector_B.NormalImage = global::MathIS.Properties.Resources.Ok16;
-            this.vector_B.Size = new System.Drawing.Size(18, 18);
-            this.vector_B.TabIndex = 30;
-            this.vector_B.TabStop = false;
-            this.vector_B.Click += new System.EventHandler(this.vector_B_Click);
-            // 
-            // num_B
-            // 
-            this.num_B.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.num_B.DisabledImage = global::MathIS.Properties.Resources.Ok16Disabled;
-            this.num_B.DownImage = global::MathIS.Properties.Resources.Ok16Down;
-            this.num_B.HoverImage = global::MathIS.Properties.Resources.Ok16Hower;
-            this.num_B.Location = new System.Drawing.Point(6, 19);
-            this.num_B.Name = "num_B";
-            this.num_B.NormalImage = global::MathIS.Properties.Resources.Ok16;
-            this.num_B.Size = new System.Drawing.Size(18, 18);
-            this.num_B.TabIndex = 29;
-            this.num_B.TabStop = false;
-            this.num_B.Click += new System.EventHandler(this.num_B_Click);
             // 
             // grpVarA
             // 
@@ -427,48 +393,6 @@
             0,
             0});
             // 
-            // matrix_A
-            // 
-            this.matrix_A.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.matrix_A.DisabledImage = global::MathIS.Properties.Resources.Ok16Disabled;
-            this.matrix_A.DownImage = global::MathIS.Properties.Resources.Ok16Down;
-            this.matrix_A.HoverImage = global::MathIS.Properties.Resources.Ok16Hower;
-            this.matrix_A.Location = new System.Drawing.Point(6, 67);
-            this.matrix_A.Name = "matrix_A";
-            this.matrix_A.NormalImage = global::MathIS.Properties.Resources.Ok16;
-            this.matrix_A.Size = new System.Drawing.Size(18, 18);
-            this.matrix_A.TabIndex = 31;
-            this.matrix_A.TabStop = false;
-            this.matrix_A.Click += new System.EventHandler(this.matrix_A_Click);
-            // 
-            // vector_A
-            // 
-            this.vector_A.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.vector_A.DisabledImage = global::MathIS.Properties.Resources.Ok16Disabled;
-            this.vector_A.DownImage = global::MathIS.Properties.Resources.Ok16Down;
-            this.vector_A.HoverImage = global::MathIS.Properties.Resources.Ok16Hower;
-            this.vector_A.Location = new System.Drawing.Point(6, 43);
-            this.vector_A.Name = "vector_A";
-            this.vector_A.NormalImage = global::MathIS.Properties.Resources.Ok16;
-            this.vector_A.Size = new System.Drawing.Size(18, 18);
-            this.vector_A.TabIndex = 30;
-            this.vector_A.TabStop = false;
-            this.vector_A.Click += new System.EventHandler(this.vector_A_Click);
-            // 
-            // num_A
-            // 
-            this.num_A.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.num_A.DisabledImage = global::MathIS.Properties.Resources.Ok16Disabled;
-            this.num_A.DownImage = global::MathIS.Properties.Resources.Ok16Down;
-            this.num_A.HoverImage = global::MathIS.Properties.Resources.Ok16Hower;
-            this.num_A.Location = new System.Drawing.Point(6, 19);
-            this.num_A.Name = "num_A";
-            this.num_A.NormalImage = global::MathIS.Properties.Resources.Ok16;
-            this.num_A.Size = new System.Drawing.Size(18, 18);
-            this.num_A.TabIndex = 29;
-            this.num_A.TabStop = false;
-            this.num_A.Click += new System.EventHandler(this.num_A_Click);
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.rbresult_B);
@@ -514,6 +438,16 @@
             this.rbresult_Default.Text = "Default";
             this.rbresult_Default.UseVisualStyleBackColor = true;
             // 
+            // btnCalculateVector
+            // 
+            this.btnCalculateVector.Location = new System.Drawing.Point(73, 42);
+            this.btnCalculateVector.Name = "btnCalculateVector";
+            this.btnCalculateVector.Size = new System.Drawing.Size(75, 23);
+            this.btnCalculateVector.TabIndex = 7;
+            this.btnCalculateVector.Text = "Calculate";
+            this.btnCalculateVector.UseVisualStyleBackColor = true;
+            this.btnCalculateVector.Click += new System.EventHandler(this.btnCalculateVector_Click);
+            // 
             // pnlResult
             // 
             this.pnlResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -546,16 +480,6 @@
             this.pasteToolStripMenuItem.Text = "Paste";
             this.pasteToolStripMenuItem.Click += new System.EventHandler(this.pasteToolStripMenuItem_Click);
             // 
-            // btnCalculateVector
-            // 
-            this.btnCalculateVector.Location = new System.Drawing.Point(73, 42);
-            this.btnCalculateVector.Name = "btnCalculateVector";
-            this.btnCalculateVector.Size = new System.Drawing.Size(75, 23);
-            this.btnCalculateVector.TabIndex = 7;
-            this.btnCalculateVector.Text = "Calculate";
-            this.btnCalculateVector.UseVisualStyleBackColor = true;
-            this.btnCalculateVector.Click += new System.EventHandler(this.btnCalculateVector_Click);
-            // 
             // cmbVectorOperation
             // 
             this.cmbVectorOperation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -583,13 +507,89 @@
             this.pnlA.Size = new System.Drawing.Size(268, 73);
             this.pnlA.TabIndex = 0;
             // 
-            // pnlBreakLine
+            // matrix_B
             // 
-            this.pnlBreakLine.BackColor = System.Drawing.Color.Black;
-            this.pnlBreakLine.Location = new System.Drawing.Point(8, 237);
-            this.pnlBreakLine.Name = "pnlBreakLine";
-            this.pnlBreakLine.Size = new System.Drawing.Size(600, 4);
-            this.pnlBreakLine.TabIndex = 12;
+            this.matrix_B.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.matrix_B.DisabledImage = global::MathIS.Properties.Resources.Ok16Disabled;
+            this.matrix_B.DownImage = global::MathIS.Properties.Resources.Ok16Down;
+            this.matrix_B.HoverImage = global::MathIS.Properties.Resources.Ok16Hower;
+            this.matrix_B.Location = new System.Drawing.Point(6, 67);
+            this.matrix_B.Name = "matrix_B";
+            this.matrix_B.NormalImage = global::MathIS.Properties.Resources.Ok16;
+            this.matrix_B.Size = new System.Drawing.Size(18, 18);
+            this.matrix_B.TabIndex = 31;
+            this.matrix_B.TabStop = false;
+            this.matrix_B.Click += new System.EventHandler(this.matrix_B_Click);
+            // 
+            // vector_B
+            // 
+            this.vector_B.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.vector_B.DisabledImage = global::MathIS.Properties.Resources.Ok16Disabled;
+            this.vector_B.DownImage = global::MathIS.Properties.Resources.Ok16Down;
+            this.vector_B.HoverImage = global::MathIS.Properties.Resources.Ok16Hower;
+            this.vector_B.Location = new System.Drawing.Point(6, 43);
+            this.vector_B.Name = "vector_B";
+            this.vector_B.NormalImage = global::MathIS.Properties.Resources.Ok16;
+            this.vector_B.Size = new System.Drawing.Size(18, 18);
+            this.vector_B.TabIndex = 30;
+            this.vector_B.TabStop = false;
+            this.vector_B.Click += new System.EventHandler(this.vector_B_Click);
+            // 
+            // num_B
+            // 
+            this.num_B.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.num_B.DisabledImage = global::MathIS.Properties.Resources.Ok16Disabled;
+            this.num_B.DownImage = global::MathIS.Properties.Resources.Ok16Down;
+            this.num_B.HoverImage = global::MathIS.Properties.Resources.Ok16Hower;
+            this.num_B.Location = new System.Drawing.Point(6, 19);
+            this.num_B.Name = "num_B";
+            this.num_B.NormalImage = global::MathIS.Properties.Resources.Ok16;
+            this.num_B.Size = new System.Drawing.Size(18, 18);
+            this.num_B.TabIndex = 29;
+            this.num_B.TabStop = false;
+            this.num_B.Click += new System.EventHandler(this.num_B_Click);
+            // 
+            // matrix_A
+            // 
+            this.matrix_A.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.matrix_A.DisabledImage = global::MathIS.Properties.Resources.Ok16Disabled;
+            this.matrix_A.DownImage = global::MathIS.Properties.Resources.Ok16Down;
+            this.matrix_A.HoverImage = global::MathIS.Properties.Resources.Ok16Hower;
+            this.matrix_A.Location = new System.Drawing.Point(6, 67);
+            this.matrix_A.Name = "matrix_A";
+            this.matrix_A.NormalImage = global::MathIS.Properties.Resources.Ok16;
+            this.matrix_A.Size = new System.Drawing.Size(18, 18);
+            this.matrix_A.TabIndex = 31;
+            this.matrix_A.TabStop = false;
+            this.matrix_A.Click += new System.EventHandler(this.matrix_A_Click);
+            // 
+            // vector_A
+            // 
+            this.vector_A.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.vector_A.DisabledImage = global::MathIS.Properties.Resources.Ok16Disabled;
+            this.vector_A.DownImage = global::MathIS.Properties.Resources.Ok16Down;
+            this.vector_A.HoverImage = global::MathIS.Properties.Resources.Ok16Hower;
+            this.vector_A.Location = new System.Drawing.Point(6, 43);
+            this.vector_A.Name = "vector_A";
+            this.vector_A.NormalImage = global::MathIS.Properties.Resources.Ok16;
+            this.vector_A.Size = new System.Drawing.Size(18, 18);
+            this.vector_A.TabIndex = 30;
+            this.vector_A.TabStop = false;
+            this.vector_A.Click += new System.EventHandler(this.vector_A_Click);
+            // 
+            // num_A
+            // 
+            this.num_A.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.num_A.DisabledImage = global::MathIS.Properties.Resources.Ok16Disabled;
+            this.num_A.DownImage = global::MathIS.Properties.Resources.Ok16Down;
+            this.num_A.HoverImage = global::MathIS.Properties.Resources.Ok16Hower;
+            this.num_A.Location = new System.Drawing.Point(6, 19);
+            this.num_A.Name = "num_A";
+            this.num_A.NormalImage = global::MathIS.Properties.Resources.Ok16;
+            this.num_A.Size = new System.Drawing.Size(18, 18);
+            this.num_A.TabIndex = 29;
+            this.num_A.TabStop = false;
+            this.num_A.Click += new System.EventHandler(this.num_A_Click);
             // 
             // frmMain
             // 
@@ -614,19 +614,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.matrixColumns_B)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.matrixRows_B)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vectorDim_B)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.matrix_B)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vector_B)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.num_B)).EndInit();
             this.grpVarA.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.matrixColumns_A)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.matrixRows_A)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vectorDim_A)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.matrix_A)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vector_A)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.num_A)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.cntxMenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.matrix_B)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vector_B)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num_B)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.matrix_A)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vector_A)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num_A)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
