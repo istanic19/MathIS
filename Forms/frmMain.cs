@@ -280,7 +280,6 @@ namespace MathIS.Forms
 
             cmbVectorOperation.DataSource = AritmeticsService.VectorOperations;
             cmbVectorOperation.SelectedIndex = 0;
-
         }
 
         private void CalculateVector()

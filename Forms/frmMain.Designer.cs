@@ -65,6 +65,7 @@
             this.cmbVectorOperation = new System.Windows.Forms.ComboBox();
             this.pnlB = new System.Windows.Forms.Panel();
             this.pnlA = new System.Windows.Forms.Panel();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.matrix_B = new MathIS.UI.ImageButton();
             this.vector_B = new MathIS.UI.ImageButton();
             this.num_B = new MathIS.UI.ImageButton();
@@ -287,6 +288,7 @@
             this.matrixColumns_B.Name = "matrixColumns_B";
             this.matrixColumns_B.Size = new System.Drawing.Size(39, 20);
             this.matrixColumns_B.TabIndex = 34;
+            this.toolTip1.SetToolTip(this.matrixColumns_B, "Matrix:\r\nNumber of Columns");
             this.matrixColumns_B.Value = new decimal(new int[] {
             1,
             0,
@@ -304,6 +306,7 @@
             this.matrixRows_B.Name = "matrixRows_B";
             this.matrixRows_B.Size = new System.Drawing.Size(39, 20);
             this.matrixRows_B.TabIndex = 33;
+            this.toolTip1.SetToolTip(this.matrixRows_B, "Matrix:\r\nNumber of Rows");
             this.matrixRows_B.Value = new decimal(new int[] {
             1,
             0,
@@ -321,6 +324,7 @@
             this.vectorDim_B.Name = "vectorDim_B";
             this.vectorDim_B.Size = new System.Drawing.Size(39, 20);
             this.vectorDim_B.TabIndex = 32;
+            this.toolTip1.SetToolTip(this.vectorDim_B, "Number of \r\nvector dimensions");
             this.vectorDim_B.Value = new decimal(new int[] {
             1,
             0,
@@ -353,6 +357,7 @@
             this.matrixColumns_A.Name = "matrixColumns_A";
             this.matrixColumns_A.Size = new System.Drawing.Size(39, 20);
             this.matrixColumns_A.TabIndex = 34;
+            this.toolTip1.SetToolTip(this.matrixColumns_A, "Matrix:\r\nNumber of Columns");
             this.matrixColumns_A.Value = new decimal(new int[] {
             1,
             0,
@@ -370,6 +375,7 @@
             this.matrixRows_A.Name = "matrixRows_A";
             this.matrixRows_A.Size = new System.Drawing.Size(39, 20);
             this.matrixRows_A.TabIndex = 33;
+            this.toolTip1.SetToolTip(this.matrixRows_A, "Matrix:\r\nNumber of Rows");
             this.matrixRows_A.Value = new decimal(new int[] {
             1,
             0,
@@ -387,6 +393,7 @@
             this.vectorDim_A.Name = "vectorDim_A";
             this.vectorDim_A.Size = new System.Drawing.Size(39, 20);
             this.vectorDim_A.TabIndex = 32;
+            this.toolTip1.SetToolTip(this.vectorDim_A, "Number of \r\nvector dimensions");
             this.vectorDim_A.Value = new decimal(new int[] {
             1,
             0,
@@ -519,6 +526,7 @@
             this.matrix_B.Size = new System.Drawing.Size(34, 34);
             this.matrix_B.TabIndex = 31;
             this.matrix_B.TabStop = false;
+            this.toolTip1.SetToolTip(this.matrix_B, "Matrix \r\n(rows X columns)");
             this.matrix_B.Click += new System.EventHandler(this.matrix_B_Click);
             // 
             // vector_B
@@ -533,6 +541,7 @@
             this.vector_B.Size = new System.Drawing.Size(34, 34);
             this.vector_B.TabIndex = 30;
             this.vector_B.TabStop = false;
+            this.toolTip1.SetToolTip(this.vector_B, "n-Dimensional vector");
             this.vector_B.Click += new System.EventHandler(this.vector_B_Click);
             // 
             // num_B
@@ -547,6 +556,7 @@
             this.num_B.Size = new System.Drawing.Size(34, 34);
             this.num_B.TabIndex = 29;
             this.num_B.TabStop = false;
+            this.toolTip1.SetToolTip(this.num_B, "Complex number\r\na + bj");
             this.num_B.Click += new System.EventHandler(this.num_B_Click);
             // 
             // matrix_A
@@ -561,6 +571,7 @@
             this.matrix_A.Size = new System.Drawing.Size(34, 34);
             this.matrix_A.TabIndex = 31;
             this.matrix_A.TabStop = false;
+            this.toolTip1.SetToolTip(this.matrix_A, "Matrix \r\n(rows X columns)");
             this.matrix_A.Click += new System.EventHandler(this.matrix_A_Click);
             // 
             // vector_A
@@ -575,6 +586,7 @@
             this.vector_A.Size = new System.Drawing.Size(34, 34);
             this.vector_A.TabIndex = 30;
             this.vector_A.TabStop = false;
+            this.toolTip1.SetToolTip(this.vector_A, "n-Dimensional vector");
             this.vector_A.Click += new System.EventHandler(this.vector_A_Click);
             // 
             // num_A
@@ -589,6 +601,7 @@
             this.num_A.Size = new System.Drawing.Size(34, 34);
             this.num_A.TabIndex = 29;
             this.num_A.TabStop = false;
+            this.toolTip1.SetToolTip(this.num_A, "Complex number\r\na + bj");
             this.num_A.Click += new System.EventHandler(this.num_A_Click);
             // 
             // frmMain
@@ -676,6 +689,7 @@
         private UI.ImageButton vector_B;
         private UI.ImageButton num_B;
         private System.Windows.Forms.Panel pnlBreakLine;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
 
