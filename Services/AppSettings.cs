@@ -22,6 +22,9 @@ namespace MathIS.Services
         private CDBConnection _connection;
         private static CDBConnection _conn;
 
+        private int _precision;
+        private static int _precisionDecimals;
+
         private List<CDBConnection> _connections;
 
 
@@ -40,6 +43,20 @@ namespace MathIS.Services
             get { return _conn; }
         }
 
+        public int Precision
+        {
+            get { return _precision; }
+            set 
+            { 
+                _precision = value;
+                _precisionDecimals = value;
+            }
+        }
+
+        public static int PrecisionDecimals
+        {
+            get { return _precisionDecimals; }
+        }
 
 
 
@@ -55,12 +72,15 @@ namespace MathIS.Services
         {
             _AppPath = apppath;
             _connections = new List<CDBConnection>();
+            _precision = -1;
+            _precisionDecimals = -1;
         }
 
         [OnDeserialized]
         void OnDeserialized(StreamingContext context)
         {
             _conn = _connection;
+            _precisionDecimals = _precision;
             if (_connections == null)
                 _connections = new List<CDBConnection>();
         }

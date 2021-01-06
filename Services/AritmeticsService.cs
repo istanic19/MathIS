@@ -44,23 +44,23 @@ namespace MathIS.Services
             switch (operation.Operation)
             {
                 case Operation.Add:
-                    return (a + b);
+                    return (Number)Round((a + b));
                 case Operation.Subtract:
-                    return (a - b);
+                    return (Number)Round((a - b));
                 case Operation.Multiply:
-                    return (a * b);
+                    return (Number)Round((a * b));
                 case Operation.Divide:
-                    return (a / b);
+                    return (Number)Round((a / b));
                 case Operation.Power:
                     if (b.Imaginary == 0)
-                        return a.Power((int)b.Real);
+                        return (Number)Round(a.Power((int)b.Real));
                     else
-                        return a.Power(b);
+                        return (Number)Round(a.Power(b));
                 case Operation.Root:
                     if (b.Imaginary == 0)
-                        return a.Root((int)b.Real);
+                        return (Number)Round(a.Root((int)b.Real));
                     else
-                        return a.Root(b);
+                        return (Number)Round(a.Root(b));
             }
 
 
@@ -72,16 +72,34 @@ namespace MathIS.Services
             switch(operation.Operation)
             {
                 case VectorOperationEnum.Add:
-                    return a.Add(b);
+                    return Round(a.Add(b));
                 case VectorOperationEnum.Subtract:
-                    return a.Subtract(b);
+                    return Round(a.Subtract(b));
                 case VectorOperationEnum.Multiply:
-                    return a.Multiply(b);
+                    return Round(a.Multiply(b));
                 case VectorOperationEnum.MatrixMupltiply:
-                    return a.MatrixMultiply(b);
+                    return Round(a.MatrixMultiply(b));
             }
 
             return null;
+        }
+
+        public static BaseMathEntity Conjugate(BaseMathEntity a)
+        {
+            return Round(a.Conjugate());
+        }
+
+        public static BaseMathEntity Normalize(BaseMathEntity a)
+        {
+            return Round(a.Normalize());
+        }
+
+        public static BaseMathEntity Round(BaseMathEntity input)
+        {
+            if (AppSettings.PrecisionDecimals < 0)
+                return input;
+            input.Round((uint)AppSettings.PrecisionDecimals);
+            return input;
         }
     }
 }

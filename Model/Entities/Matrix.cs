@@ -90,9 +90,28 @@ namespace MathIS.Model.Entities
             return text;
         }
 
+        public override void Round(uint decimals)
+        {
+            foreach (var c in Components)
+                c.Round(decimals);
+        }
+
         public override string ToString()
         {
             return GetText();
+        }
+
+        public override BaseMathEntity Conjugate()
+        {
+            var conj = new Matrix(Rows, Columns);
+            for (int i = 0; i < Rows; ++i)
+            {
+                for (int j = 0; j < Columns; ++j)
+                {
+                    conj.Components[i, j] = (Number)Components[i, j].Conjugate();
+                }
+            }
+            return conj;
         }
 
         public override BaseMathEntity Multiply(BaseMathEntity x)

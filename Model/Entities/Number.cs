@@ -37,6 +37,24 @@ namespace MathIS.Model.Entities
             get { return GetModule(); }
         }
 
+        public override BaseMathEntity Conjugate()
+        {
+            return new Number(Real, -Imaginary);
+        }
+
+        public override BaseMathEntity Normalize()
+        {
+            if (Real == 0 && Imaginary == 0)
+                return new Number(0);
+            return new Number(Real / GetModule(), Imaginary /GetModule());
+        }
+
+        public override void Round(uint decimals)
+        {
+            _real = Math.Round(Real, (int)decimals, MidpointRounding.AwayFromZero);
+            _imaginary = Math.Round(Imaginary, (int)decimals, MidpointRounding.AwayFromZero);
+        }
+
         public override string ToString()
         {
             if (_real != 0 && _imaginary != 0)
@@ -181,6 +199,11 @@ namespace MathIS.Model.Entities
         public decimal GetModule()
         {
             return (decimal)Math.Sqrt((double)(Real * Real) + (double)(Imaginary * Imaginary));
+        }
+
+        public decimal Magnitude()
+        {
+            return Real * Real + Imaginary * Imaginary;
         }
         
 
@@ -375,7 +398,7 @@ namespace MathIS.Model.Entities
             }
             else if (x is Vector)
             {
-                return ((this) * ((Vector)x));
+                return (((Vector)x) * (this));
             }
             return base.Add(x);
         }

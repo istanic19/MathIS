@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms.VisualStyles;
 
 namespace MathIS.Model.Entities
 {
@@ -59,7 +60,50 @@ namespace MathIS.Model.Entities
             return _text;
         }
 
+        public override void Round(uint decimals)
+        {
+            foreach (var c in Components)
+                c.Round(decimals);
+        }
+
         #region Operators
+
+        public override BaseMathEntity Conjugate()
+        {
+            var conj = new Vector(Components.Count);
+            for(int i=0;i<Components.Count;++i)
+            {
+                conj.Components[i] = (Number)Components[i].Conjugate();
+            }
+            return conj;
+        }
+        public override BaseMathEntity Normalize()
+        {
+            decimal magnitude = 0;
+            foreach (var c in Components)
+                magnitude += c.GetModule();
+            if (magnitude != 0)
+            {
+                var result = new Vector(Components.Count);
+                for (int i = 0; i < Components.Count; ++i)
+                    result.Components[i] = Components[i].Clone() / magnitude;
+                return result;
+            }
+            else
+            {
+                return this.Clone();
+            }
+            
+        }
+
+        public Vector Clone()
+        {
+            var clone = new Vector(Components.Count);
+
+            for (int i = 0; i < Components.Count; ++i)
+                clone.Components[i] = Components[i].Clone();
+            return clone;
+        }
         public override BaseMathEntity Multiply(BaseMathEntity x)
         {
             if (x is Number)
@@ -81,6 +125,15 @@ namespace MathIS.Model.Entities
             if (x is Vector)
             {
                 return ((this) & ((Vector)x));
+            }
+            return base.Add(x);
+        }
+
+        public override BaseMathEntity Add(BaseMathEntity x)
+        {
+            if (x is Vector)
+            {
+                return ((this) + ((Vector)x));
             }
             return base.Add(x);
         }

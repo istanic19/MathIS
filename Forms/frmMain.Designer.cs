@@ -1,4 +1,6 @@
-﻿namespace MathIS.Forms
+﻿using MathIS.UI;
+
+namespace MathIS.Forms
 {
     partial class frmMain
     {
@@ -32,7 +34,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.connectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btCopy = new System.Windows.Forms.Button();
@@ -44,15 +46,22 @@
             this.txtNum2 = new System.Windows.Forms.TextBox();
             this.txtNum1 = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.ddiOperation = new MathIS.UI.DropDownImage();
             this.pnlBreakLine = new System.Windows.Forms.Panel();
             this.grpVarB = new System.Windows.Forms.GroupBox();
             this.matrixColumns_B = new System.Windows.Forms.NumericUpDown();
             this.matrixRows_B = new System.Windows.Forms.NumericUpDown();
             this.vectorDim_B = new System.Windows.Forms.NumericUpDown();
+            this.matrix_B = new MathIS.UI.ImageButton();
+            this.vector_B = new MathIS.UI.ImageButton();
+            this.num_B = new MathIS.UI.ImageButton();
             this.grpVarA = new System.Windows.Forms.GroupBox();
             this.matrixColumns_A = new System.Windows.Forms.NumericUpDown();
             this.matrixRows_A = new System.Windows.Forms.NumericUpDown();
             this.vectorDim_A = new System.Windows.Forms.NumericUpDown();
+            this.matrix_A = new MathIS.UI.ImageButton();
+            this.vector_A = new MathIS.UI.ImageButton();
+            this.num_A = new MathIS.UI.ImageButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rbresult_B = new System.Windows.Forms.RadioButton();
             this.rbresult_A = new System.Windows.Forms.RadioButton();
@@ -62,16 +71,12 @@
             this.cntxMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cmbVectorOperation = new System.Windows.Forms.ComboBox();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.conjugateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.normalizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlB = new System.Windows.Forms.Panel();
             this.pnlA = new System.Windows.Forms.Panel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.matrix_B = new MathIS.UI.ImageButton();
-            this.vector_B = new MathIS.UI.ImageButton();
-            this.num_B = new MathIS.UI.ImageButton();
-            this.matrix_A = new MathIS.UI.ImageButton();
-            this.vector_A = new MathIS.UI.ImageButton();
-            this.num_A = new MathIS.UI.ImageButton();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -80,18 +85,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.matrixColumns_B)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.matrixRows_B)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vectorDim_B)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.matrix_B)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vector_B)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num_B)).BeginInit();
             this.grpVarA.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.matrixColumns_A)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.matrixRows_A)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vectorDim_A)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            this.cntxMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.matrix_B)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vector_B)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.num_B)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.matrix_A)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vector_A)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_A)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.cntxMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -108,7 +113,7 @@
             // 
             this.optionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.connectionToolStripMenuItem,
-            this.testToolStripMenuItem});
+            this.settingsToolStripMenuItem});
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
             this.optionsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.optionsToolStripMenuItem.Text = "Options";
@@ -120,12 +125,12 @@
             this.connectionToolStripMenuItem.Text = "Connection ...";
             this.connectionToolStripMenuItem.Click += new System.EventHandler(this.connectionToolStripMenuItem_Click);
             // 
-            // testToolStripMenuItem
+            // settingsToolStripMenuItem
             // 
-            this.testToolStripMenuItem.Name = "testToolStripMenuItem";
-            this.testToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
-            this.testToolStripMenuItem.Text = "Test";
-            this.testToolStripMenuItem.Click += new System.EventHandler(this.testToolStripMenuItem_Click);
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.settingsToolStripMenuItem.Text = "Settings ...";
+            this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
             // tabControl1
             // 
@@ -238,12 +243,13 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.tabPage2.Controls.Add(this.ddiOperation);
             this.tabPage2.Controls.Add(this.pnlBreakLine);
             this.tabPage2.Controls.Add(this.grpVarB);
             this.tabPage2.Controls.Add(this.grpVarA);
             this.tabPage2.Controls.Add(this.groupBox1);
             this.tabPage2.Controls.Add(this.pnlResult);
-            this.tabPage2.Controls.Add(this.cmbVectorOperation);
             this.tabPage2.Controls.Add(this.pnlB);
             this.tabPage2.Controls.Add(this.pnlA);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
@@ -252,11 +258,19 @@
             this.tabPage2.Size = new System.Drawing.Size(916, 609);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Vectors and Matrix";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // ddiOperation
+            // 
+            this.ddiOperation.Location = new System.Drawing.Point(282, 169);
+            this.ddiOperation.Name = "ddiOperation";
+            this.ddiOperation.SelectedItem = null;
+            this.ddiOperation.Size = new System.Drawing.Size(32, 32);
+            this.ddiOperation.TabIndex = 13;
             // 
             // pnlBreakLine
             // 
-            this.pnlBreakLine.BackColor = System.Drawing.Color.Black;
+            this.pnlBreakLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(163)))), ((int)(((byte)(240)))));
+            this.pnlBreakLine.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(163)))), ((int)(((byte)(240)))));
             this.pnlBreakLine.Location = new System.Drawing.Point(8, 251);
             this.pnlBreakLine.Name = "pnlBreakLine";
             this.pnlBreakLine.Size = new System.Drawing.Size(600, 4);
@@ -270,6 +284,7 @@
             this.grpVarB.Controls.Add(this.matrix_B);
             this.grpVarB.Controls.Add(this.vector_B);
             this.grpVarB.Controls.Add(this.num_B);
+            this.grpVarB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(163)))), ((int)(((byte)(240)))));
             this.grpVarB.Location = new System.Drawing.Point(149, 6);
             this.grpVarB.Name = "grpVarB";
             this.grpVarB.Size = new System.Drawing.Size(135, 135);
@@ -279,6 +294,9 @@
             // 
             // matrixColumns_B
             // 
+            this.matrixColumns_B.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.matrixColumns_B.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.matrixColumns_B.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(163)))), ((int)(((byte)(240)))));
             this.matrixColumns_B.Location = new System.Drawing.Point(89, 110);
             this.matrixColumns_B.Minimum = new decimal(new int[] {
             1,
@@ -297,6 +315,9 @@
             // 
             // matrixRows_B
             // 
+            this.matrixRows_B.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.matrixRows_B.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.matrixRows_B.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(163)))), ((int)(((byte)(240)))));
             this.matrixRows_B.Location = new System.Drawing.Point(44, 110);
             this.matrixRows_B.Minimum = new decimal(new int[] {
             1,
@@ -315,6 +336,9 @@
             // 
             // vectorDim_B
             // 
+            this.vectorDim_B.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.vectorDim_B.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.vectorDim_B.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(163)))), ((int)(((byte)(240)))));
             this.vectorDim_B.Location = new System.Drawing.Point(44, 71);
             this.vectorDim_B.Minimum = new decimal(new int[] {
             1,
@@ -330,189 +354,6 @@
             0,
             0,
             0});
-            // 
-            // grpVarA
-            // 
-            this.grpVarA.Controls.Add(this.matrixColumns_A);
-            this.grpVarA.Controls.Add(this.matrixRows_A);
-            this.grpVarA.Controls.Add(this.vectorDim_A);
-            this.grpVarA.Controls.Add(this.matrix_A);
-            this.grpVarA.Controls.Add(this.vector_A);
-            this.grpVarA.Controls.Add(this.num_A);
-            this.grpVarA.Location = new System.Drawing.Point(8, 6);
-            this.grpVarA.Name = "grpVarA";
-            this.grpVarA.Size = new System.Drawing.Size(135, 135);
-            this.grpVarA.TabIndex = 10;
-            this.grpVarA.TabStop = false;
-            this.grpVarA.Text = "Variable A";
-            // 
-            // matrixColumns_A
-            // 
-            this.matrixColumns_A.Location = new System.Drawing.Point(89, 110);
-            this.matrixColumns_A.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.matrixColumns_A.Name = "matrixColumns_A";
-            this.matrixColumns_A.Size = new System.Drawing.Size(39, 20);
-            this.matrixColumns_A.TabIndex = 34;
-            this.toolTip1.SetToolTip(this.matrixColumns_A, "Matrix:\r\nNumber of Columns");
-            this.matrixColumns_A.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // matrixRows_A
-            // 
-            this.matrixRows_A.Location = new System.Drawing.Point(44, 110);
-            this.matrixRows_A.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.matrixRows_A.Name = "matrixRows_A";
-            this.matrixRows_A.Size = new System.Drawing.Size(39, 20);
-            this.matrixRows_A.TabIndex = 33;
-            this.toolTip1.SetToolTip(this.matrixRows_A, "Matrix:\r\nNumber of Rows");
-            this.matrixRows_A.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // vectorDim_A
-            // 
-            this.vectorDim_A.Location = new System.Drawing.Point(44, 71);
-            this.vectorDim_A.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.vectorDim_A.Name = "vectorDim_A";
-            this.vectorDim_A.Size = new System.Drawing.Size(39, 20);
-            this.vectorDim_A.TabIndex = 32;
-            this.toolTip1.SetToolTip(this.vectorDim_A, "Number of \r\nvector dimensions");
-            this.vectorDim_A.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.rbresult_B);
-            this.groupBox1.Controls.Add(this.rbresult_A);
-            this.groupBox1.Controls.Add(this.rbresult_Default);
-            this.groupBox1.Controls.Add(this.btnCalculateVector);
-            this.groupBox1.Location = new System.Drawing.Point(292, 6);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(154, 96);
-            this.groupBox1.TabIndex = 9;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Result to";
-            // 
-            // rbresult_B
-            // 
-            this.rbresult_B.AutoSize = true;
-            this.rbresult_B.Location = new System.Drawing.Point(18, 65);
-            this.rbresult_B.Name = "rbresult_B";
-            this.rbresult_B.Size = new System.Drawing.Size(48, 17);
-            this.rbresult_B.TabIndex = 2;
-            this.rbresult_B.Text = "To B";
-            this.rbresult_B.UseVisualStyleBackColor = true;
-            // 
-            // rbresult_A
-            // 
-            this.rbresult_A.AutoSize = true;
-            this.rbresult_A.Location = new System.Drawing.Point(18, 42);
-            this.rbresult_A.Name = "rbresult_A";
-            this.rbresult_A.Size = new System.Drawing.Size(48, 17);
-            this.rbresult_A.TabIndex = 1;
-            this.rbresult_A.Text = "To A";
-            this.rbresult_A.UseVisualStyleBackColor = true;
-            // 
-            // rbresult_Default
-            // 
-            this.rbresult_Default.AutoSize = true;
-            this.rbresult_Default.Checked = true;
-            this.rbresult_Default.Location = new System.Drawing.Point(18, 19);
-            this.rbresult_Default.Name = "rbresult_Default";
-            this.rbresult_Default.Size = new System.Drawing.Size(59, 17);
-            this.rbresult_Default.TabIndex = 0;
-            this.rbresult_Default.TabStop = true;
-            this.rbresult_Default.Text = "Default";
-            this.rbresult_Default.UseVisualStyleBackColor = true;
-            // 
-            // btnCalculateVector
-            // 
-            this.btnCalculateVector.Location = new System.Drawing.Point(73, 42);
-            this.btnCalculateVector.Name = "btnCalculateVector";
-            this.btnCalculateVector.Size = new System.Drawing.Size(75, 23);
-            this.btnCalculateVector.TabIndex = 7;
-            this.btnCalculateVector.Text = "Calculate";
-            this.btnCalculateVector.UseVisualStyleBackColor = true;
-            this.btnCalculateVector.Click += new System.EventHandler(this.btnCalculateVector_Click);
-            // 
-            // pnlResult
-            // 
-            this.pnlResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlResult.ContextMenuStrip = this.cntxMenu;
-            this.pnlResult.Location = new System.Drawing.Point(8, 289);
-            this.pnlResult.Name = "pnlResult";
-            this.pnlResult.Size = new System.Drawing.Size(268, 73);
-            this.pnlResult.TabIndex = 8;
-            // 
-            // cntxMenu
-            // 
-            this.cntxMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.copyToolStripMenuItem,
-            this.pasteToolStripMenuItem});
-            this.cntxMenu.Name = "cntxMenu";
-            this.cntxMenu.Size = new System.Drawing.Size(103, 48);
-            this.cntxMenu.Opening += new System.ComponentModel.CancelEventHandler(this.cntxMenu_Opening);
-            // 
-            // copyToolStripMenuItem
-            // 
-            this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
-            this.copyToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
-            this.copyToolStripMenuItem.Text = "Copy";
-            this.copyToolStripMenuItem.Click += new System.EventHandler(this.copyToolStripMenuItem_Click);
-            // 
-            // pasteToolStripMenuItem
-            // 
-            this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
-            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
-            this.pasteToolStripMenuItem.Text = "Paste";
-            this.pasteToolStripMenuItem.Click += new System.EventHandler(this.pasteToolStripMenuItem_Click);
-            // 
-            // cmbVectorOperation
-            // 
-            this.cmbVectorOperation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbVectorOperation.FormattingEnabled = true;
-            this.cmbVectorOperation.Location = new System.Drawing.Point(282, 173);
-            this.cmbVectorOperation.Name = "cmbVectorOperation";
-            this.cmbVectorOperation.Size = new System.Drawing.Size(104, 21);
-            this.cmbVectorOperation.TabIndex = 3;
-            // 
-            // pnlB
-            // 
-            this.pnlB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlB.ContextMenuStrip = this.cntxMenu;
-            this.pnlB.Location = new System.Drawing.Point(392, 147);
-            this.pnlB.Name = "pnlB";
-            this.pnlB.Size = new System.Drawing.Size(268, 73);
-            this.pnlB.TabIndex = 2;
-            // 
-            // pnlA
-            // 
-            this.pnlA.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlA.ContextMenuStrip = this.cntxMenu;
-            this.pnlA.Location = new System.Drawing.Point(8, 147);
-            this.pnlA.Name = "pnlA";
-            this.pnlA.Size = new System.Drawing.Size(268, 73);
-            this.pnlA.TabIndex = 0;
             // 
             // matrix_B
             // 
@@ -559,6 +400,85 @@
             this.toolTip1.SetToolTip(this.num_B, "Complex number\r\na + bj");
             this.num_B.Click += new System.EventHandler(this.num_B_Click);
             // 
+            // grpVarA
+            // 
+            this.grpVarA.Controls.Add(this.matrixColumns_A);
+            this.grpVarA.Controls.Add(this.matrixRows_A);
+            this.grpVarA.Controls.Add(this.vectorDim_A);
+            this.grpVarA.Controls.Add(this.matrix_A);
+            this.grpVarA.Controls.Add(this.vector_A);
+            this.grpVarA.Controls.Add(this.num_A);
+            this.grpVarA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(163)))), ((int)(((byte)(240)))));
+            this.grpVarA.Location = new System.Drawing.Point(8, 6);
+            this.grpVarA.Name = "grpVarA";
+            this.grpVarA.Size = new System.Drawing.Size(135, 135);
+            this.grpVarA.TabIndex = 10;
+            this.grpVarA.TabStop = false;
+            this.grpVarA.Text = "Variable A";
+            // 
+            // matrixColumns_A
+            // 
+            this.matrixColumns_A.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.matrixColumns_A.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.matrixColumns_A.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(163)))), ((int)(((byte)(240)))));
+            this.matrixColumns_A.Location = new System.Drawing.Point(89, 110);
+            this.matrixColumns_A.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.matrixColumns_A.Name = "matrixColumns_A";
+            this.matrixColumns_A.Size = new System.Drawing.Size(39, 20);
+            this.matrixColumns_A.TabIndex = 34;
+            this.toolTip1.SetToolTip(this.matrixColumns_A, "Matrix:\r\nNumber of Columns");
+            this.matrixColumns_A.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // matrixRows_A
+            // 
+            this.matrixRows_A.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.matrixRows_A.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.matrixRows_A.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(163)))), ((int)(((byte)(240)))));
+            this.matrixRows_A.Location = new System.Drawing.Point(44, 110);
+            this.matrixRows_A.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.matrixRows_A.Name = "matrixRows_A";
+            this.matrixRows_A.Size = new System.Drawing.Size(39, 20);
+            this.matrixRows_A.TabIndex = 33;
+            this.toolTip1.SetToolTip(this.matrixRows_A, "Matrix:\r\nNumber of Rows");
+            this.matrixRows_A.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // vectorDim_A
+            // 
+            this.vectorDim_A.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.vectorDim_A.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.vectorDim_A.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(163)))), ((int)(((byte)(240)))));
+            this.vectorDim_A.Location = new System.Drawing.Point(44, 71);
+            this.vectorDim_A.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.vectorDim_A.Name = "vectorDim_A";
+            this.vectorDim_A.Size = new System.Drawing.Size(39, 20);
+            this.vectorDim_A.TabIndex = 32;
+            this.toolTip1.SetToolTip(this.vectorDim_A, "Number of \r\nvector dimensions");
+            this.vectorDim_A.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
             // matrix_A
             // 
             this.matrix_A.DialogResult = System.Windows.Forms.DialogResult.None;
@@ -604,6 +524,137 @@
             this.toolTip1.SetToolTip(this.num_A, "Complex number\r\na + bj");
             this.num_A.Click += new System.EventHandler(this.num_A_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.rbresult_B);
+            this.groupBox1.Controls.Add(this.rbresult_A);
+            this.groupBox1.Controls.Add(this.rbresult_Default);
+            this.groupBox1.Controls.Add(this.btnCalculateVector);
+            this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(163)))), ((int)(((byte)(240)))));
+            this.groupBox1.Location = new System.Drawing.Point(292, 6);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(154, 96);
+            this.groupBox1.TabIndex = 9;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Result to";
+            // 
+            // rbresult_B
+            // 
+            this.rbresult_B.AutoSize = true;
+            this.rbresult_B.Location = new System.Drawing.Point(18, 65);
+            this.rbresult_B.Name = "rbresult_B";
+            this.rbresult_B.Size = new System.Drawing.Size(48, 17);
+            this.rbresult_B.TabIndex = 2;
+            this.rbresult_B.Text = "To B";
+            this.rbresult_B.UseVisualStyleBackColor = true;
+            // 
+            // rbresult_A
+            // 
+            this.rbresult_A.AutoSize = true;
+            this.rbresult_A.Location = new System.Drawing.Point(18, 42);
+            this.rbresult_A.Name = "rbresult_A";
+            this.rbresult_A.Size = new System.Drawing.Size(48, 17);
+            this.rbresult_A.TabIndex = 1;
+            this.rbresult_A.Text = "To A";
+            this.rbresult_A.UseVisualStyleBackColor = true;
+            // 
+            // rbresult_Default
+            // 
+            this.rbresult_Default.AutoSize = true;
+            this.rbresult_Default.Checked = true;
+            this.rbresult_Default.Location = new System.Drawing.Point(18, 19);
+            this.rbresult_Default.Name = "rbresult_Default";
+            this.rbresult_Default.Size = new System.Drawing.Size(59, 17);
+            this.rbresult_Default.TabIndex = 0;
+            this.rbresult_Default.TabStop = true;
+            this.rbresult_Default.Text = "Default";
+            this.rbresult_Default.UseVisualStyleBackColor = true;
+            // 
+            // btnCalculateVector
+            // 
+            this.btnCalculateVector.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnCalculateVector.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCalculateVector.ForeColor = System.Drawing.Color.Black;
+            this.btnCalculateVector.Location = new System.Drawing.Point(83, 59);
+            this.btnCalculateVector.Name = "btnCalculateVector";
+            this.btnCalculateVector.Size = new System.Drawing.Size(65, 23);
+            this.btnCalculateVector.TabIndex = 7;
+            this.btnCalculateVector.Text = "Calculate";
+            this.btnCalculateVector.UseVisualStyleBackColor = false;
+            this.btnCalculateVector.Click += new System.EventHandler(this.btnCalculateVector_Click);
+            // 
+            // pnlResult
+            // 
+            this.pnlResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlResult.ContextMenuStrip = this.cntxMenu;
+            this.pnlResult.Location = new System.Drawing.Point(8, 289);
+            this.pnlResult.Name = "pnlResult";
+            this.pnlResult.Size = new System.Drawing.Size(268, 73);
+            this.pnlResult.TabIndex = 8;
+            // 
+            // cntxMenu
+            // 
+            this.cntxMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.copyToolStripMenuItem,
+            this.pasteToolStripMenuItem,
+            this.toolStripMenuItem1,
+            this.conjugateToolStripMenuItem,
+            this.normalizeToolStripMenuItem});
+            this.cntxMenu.Name = "cntxMenu";
+            this.cntxMenu.Size = new System.Drawing.Size(130, 98);
+            this.cntxMenu.Opening += new System.ComponentModel.CancelEventHandler(this.cntxMenu_Opening);
+            // 
+            // copyToolStripMenuItem
+            // 
+            this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+            this.copyToolStripMenuItem.Text = "Copy";
+            this.copyToolStripMenuItem.Click += new System.EventHandler(this.copyToolStripMenuItem_Click);
+            // 
+            // pasteToolStripMenuItem
+            // 
+            this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
+            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+            this.pasteToolStripMenuItem.Text = "Paste";
+            this.pasteToolStripMenuItem.Click += new System.EventHandler(this.pasteToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(126, 6);
+            // 
+            // conjugateToolStripMenuItem
+            // 
+            this.conjugateToolStripMenuItem.Name = "conjugateToolStripMenuItem";
+            this.conjugateToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+            this.conjugateToolStripMenuItem.Text = "Conjugate";
+            this.conjugateToolStripMenuItem.Click += new System.EventHandler(this.conjugateToolStripMenuItem_Click);
+            // 
+            // normalizeToolStripMenuItem
+            // 
+            this.normalizeToolStripMenuItem.Name = "normalizeToolStripMenuItem";
+            this.normalizeToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+            this.normalizeToolStripMenuItem.Text = "Normalize";
+            this.normalizeToolStripMenuItem.Click += new System.EventHandler(this.normalizeToolStripMenuItem_Click);
+            // 
+            // pnlB
+            // 
+            this.pnlB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlB.ContextMenuStrip = this.cntxMenu;
+            this.pnlB.Location = new System.Drawing.Point(320, 147);
+            this.pnlB.Name = "pnlB";
+            this.pnlB.Size = new System.Drawing.Size(268, 73);
+            this.pnlB.TabIndex = 2;
+            // 
+            // pnlA
+            // 
+            this.pnlA.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlA.ContextMenuStrip = this.cntxMenu;
+            this.pnlA.Location = new System.Drawing.Point(8, 147);
+            this.pnlA.Name = "pnlA";
+            this.pnlA.Size = new System.Drawing.Size(268, 73);
+            this.pnlA.TabIndex = 0;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -627,19 +678,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.matrixColumns_B)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.matrixRows_B)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vectorDim_B)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.matrix_B)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vector_B)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num_B)).EndInit();
             this.grpVarA.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.matrixColumns_A)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.matrixRows_A)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vectorDim_A)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.cntxMenu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.matrix_B)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vector_B)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.num_B)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.matrix_A)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vector_A)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_A)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.cntxMenu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -661,10 +712,8 @@
         private System.Windows.Forms.ComboBox cmbOperation;
         private System.Windows.Forms.Button btCalculate;
         private System.Windows.Forms.Button btCopy;
-        private System.Windows.Forms.ToolStripMenuItem testToolStripMenuItem;
         private System.Windows.Forms.Panel pnlA;
         private System.Windows.Forms.Panel pnlB;
-        private System.Windows.Forms.ComboBox cmbVectorOperation;
         private System.Windows.Forms.Button btnCalculateVector;
         private System.Windows.Forms.Panel pnlResult;
         private System.Windows.Forms.ContextMenuStrip cntxMenu;
@@ -690,6 +739,11 @@
         private UI.ImageButton num_B;
         private System.Windows.Forms.Panel pnlBreakLine;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem conjugateToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem normalizeToolStripMenuItem;
+        private DropDownImage ddiOperation;
+        private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
     }
 }
 

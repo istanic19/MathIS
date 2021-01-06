@@ -27,5 +27,20 @@ namespace MathIS.Model.Entities
         {
             throw new Exception("Operation not implemented");
         }
+
+        public virtual BaseMathEntity Conjugate()
+        {
+            throw new Exception("Operation not implemented");
+        }
+
+        public virtual BaseMathEntity Normalize()
+        {
+            throw new Exception("Operation not implemented");
+        }
+
+        public virtual void Round(uint decimals)
+        {
+            throw new Exception("Operation not implemented");
+        }
     }
 }

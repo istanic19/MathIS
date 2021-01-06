@@ -1,5 +1,6 @@
 ﻿using MathIS.Components;
 using MathIS.Model.Entities;
+using MathIS.Model.Enums;
 using MathIS.Services;
 using MathIS.UI;
 using System;
@@ -80,6 +81,12 @@ namespace MathIS.Forms
                 MessageBox.Show(this, message, @"Veza s bazom", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Close();
             }
+        }
+
+        private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmOptions form = new frmOptions(_settings);
+            form.ShowDialog(this);
         }
 
         #endregion
@@ -226,11 +233,17 @@ namespace MathIS.Forms
             var control = cntxMenu.SourceControl;
             if(control== pnlA || control == pnlA || control == pnlResult)
             {
+                conjugateToolStripMenuItem.Visible = false;
+                normalizeToolStripMenuItem.Visible = false;
+                toolStripMenuItem1.Visible = false;
                 copyToolStripMenuItem.Visible = false;
                 pasteToolStripMenuItem.Visible = true;
             }
             else
             {
+                conjugateToolStripMenuItem.Visible = true;
+                normalizeToolStripMenuItem.Visible = true;
+                toolStripMenuItem1.Visible = true;
                 copyToolStripMenuItem.Visible = true;
                 pasteToolStripMenuItem.Visible = true;
             }
@@ -247,6 +260,89 @@ namespace MathIS.Forms
             var ac = ctrl.Parent.Tag as AritmeticControl;
             if (ac != null)
                 AritmeticsService.CopiedEntity = ac.Entity;
+        }
+
+        private void conjugateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Control ctrl = cntxMenu.SourceControl;
+            var ac = ctrl.Parent.Tag as AritmeticControl;
+            if (ac != null)
+            {
+                BaseMathEntity conj = null;
+                try
+                {
+                    conj = AritmeticsService.Conjugate(ac.Entity);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(this, ex.Message, "Conjugate", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                Control container = null;
+
+                if (ctrl == pnlA || ctrl.Parent == pnlA)
+                {
+                    container = pnlA;
+                    ClearA();
+                }
+                else if (ctrl == pnlB || ctrl.Parent == pnlB)
+                {
+                    container = pnlB;
+                    ClearB();
+                }
+                else if (ctrl == pnlResult || ctrl.Parent == pnlResult)
+                {
+                    container = pnlResult;
+                    ClearResult();
+                }
+
+                var acC = CreateAritmeticControl(conj, container);
+                acC.Grid.Focus();
+
+                ArrangeControls();
+            }
+        }
+
+        private void normalizeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Control ctrl = cntxMenu.SourceControl;
+            var ac = ctrl.Parent.Tag as AritmeticControl;
+            if (ac != null)
+            {
+                BaseMathEntity conj = null;
+                try
+                {
+                    conj = AritmeticsService.Normalize(ac.Entity);
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(this, ex.Message, "Normalize", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                
+                Control container = null;
+
+                if (ctrl == pnlA || ctrl.Parent == pnlA)
+                {
+                    container = pnlA;
+                    ClearA();
+                }
+                else if (ctrl == pnlB || ctrl.Parent == pnlB)
+                {
+                    container = pnlB;
+                    ClearB();
+                }
+                else if (ctrl == pnlResult || ctrl.Parent == pnlResult)
+                {
+                    container = pnlResult;
+                    ClearResult();
+                }
+
+                var acC = CreateAritmeticControl(conj, container);
+                acC.Grid.Focus();
+
+                ArrangeControls();
+            }
         }
 
         #endregion
@@ -277,9 +373,12 @@ namespace MathIS.Forms
             cmbOperation.DataSource = AritmeticsService.Operations;
             cmbOperation.SelectedIndex = 0;
 
+            ddiOperation.Items.Add(new DropDownImageItem() { Image = Properties.Resources.Add, Text = "Add", Tag = new VectorOperation(VectorOperationEnum.Add) });
+            ddiOperation.Items.Add(new DropDownImageItem() { Image = Properties.Resources.Subtract, Text = "Subtract", Tag = new VectorOperation(VectorOperationEnum.Subtract) });
+            ddiOperation.Items.Add(new DropDownImageItem() { Image = Properties.Resources.Multiply, Text = "Multiply", Tag = new VectorOperation(VectorOperationEnum.Multiply) });
+            ddiOperation.Items.Add(new DropDownImageItem() { Image = Properties.Resources.MatrixMultiply, Text = "Matrix multiply", Tag = new VectorOperation(VectorOperationEnum.MatrixMupltiply) });
 
-            cmbVectorOperation.DataSource = AritmeticsService.VectorOperations;
-            cmbVectorOperation.SelectedIndex = 0;
+            ddiOperation.SelectedItem = ddiOperation.Items[0];
         }
 
         private void CalculateVector()
@@ -307,7 +406,7 @@ namespace MathIS.Forms
 
             try
             {
-                result = AritmeticsService.CalculateVector((VectorOperation)cmbVectorOperation.SelectedItem, ac.Entity, bc.Entity);
+                result = AritmeticsService.CalculateVector((VectorOperation)ddiOperation.SelectedItem.Tag, ac.Entity, bc.Entity);
             }
             catch(Exception ex)
             {
@@ -394,14 +493,14 @@ namespace MathIS.Forms
             int maxHeight = pnlA.Height;
             if (pnlB.Height > maxHeight)
                 maxHeight = pnlB.Height;
-            if (cmbVectorOperation.Height > maxHeight)
-                maxHeight = cmbVectorOperation.Height;
+            if (ddiOperation.Height > maxHeight)
+                maxHeight = ddiOperation.Height;
 
             pnlA.Location = new Point(pnlA.Location.X, top + (maxHeight - pnlA.Height) / 2);
 
-            cmbVectorOperation.Location = new Point(pnlA.Location.X + pnlA.Width + gap, top + (maxHeight - cmbVectorOperation.Height) / 2);
+            ddiOperation.Location = new Point(pnlA.Location.X + pnlA.Width + gap, top + (maxHeight - ddiOperation.Height) / 2);
 
-            pnlB.Location = new Point(cmbVectorOperation.Location.X + cmbVectorOperation.Width + gap, top + (maxHeight - pnlB.Height) / 2);
+            pnlB.Location = new Point(ddiOperation.Location.X + ddiOperation.Width + gap, top + (maxHeight - pnlB.Height) / 2);
 
             int bottom = pnlA.Location.Y + pnlA.Height;
             if ((pnlB.Location.Y + pnlB.Height) > bottom)
@@ -476,17 +575,10 @@ namespace MathIS.Forms
 
 
 
+
+
+
         #endregion
-
-        
-        private void testToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var m = new Matrix(3, 3);
-
-            m.Components[1, 1] = new Number(2, -3);
-
-            var nc = new MatrixControl(m, pnlA);
-        }
 
         
     }

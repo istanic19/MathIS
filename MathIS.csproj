@@ -72,6 +72,12 @@
     <Compile Include="Forms\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmOptions.Designer.cs">
+      <DependentUpon>frmOptions.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\Entities\AritmeticType.cs" />
     <Compile Include="Model\Entities\BaseMathEntity.cs" />
     <Compile Include="Model\Entities\MatOperation.cs" />
@@ -91,10 +97,20 @@
     <Compile Include="UI\DataGridViewEx.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="UI\DropDownImage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\DropDownImage.Designer.cs">
+      <DependentUpon>DropDownImage.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\ImageButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="UI\ImageDropDownPortion.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="UI\MatrixControl.cs" />
+    <Compile Include="UI\NativeMethods.cs" />
     <Compile Include="UI\NumberControl.cs" />
     <Compile Include="UI\VectorControl.cs" />
     <EmbeddedResource Include="Forms\frmConnection.resx">
@@ -102,6 +118,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmOptions.resx">
+      <DependentUpon>frmOptions.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -113,6 +132,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UI\DropDownImage.resx">
+      <DependentUpon>DropDownImage.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -212,6 +234,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="_Documents\vectorHover.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="_Documents\Add.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="_Documents\MatrixMultiply.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="_Documents\Multiply.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="_Documents\Subtract.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
