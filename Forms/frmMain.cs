@@ -91,6 +91,55 @@ namespace MathIS.Forms
 
         #endregion
 
+        private void resultTo_checkedChanged(object sender, EventArgs e)
+        {
+            if (EventDisable)
+                return;
+            Control c = sender as Control;
+
+            EventDisable++;
+            if (c == cb_rbresult_Default)
+            {
+                if (cb_rbresult_Default.Checked)
+                {
+                    cb_rbresult_A.Checked = false;
+                    cb_rbresult_B.Checked = false;
+                }
+                else
+                {
+                    cb_rbresult_A.Checked = true;
+                    cb_rbresult_B.Checked = false;
+                }
+            }
+            else if (c == cb_rbresult_A)
+            {
+                if (cb_rbresult_A.Checked)
+                {
+                    cb_rbresult_Default.Checked = false;
+                    cb_rbresult_B.Checked = false;
+                }
+                else
+                {
+                    cb_rbresult_Default.Checked = true;
+                    cb_rbresult_B.Checked = false;
+                }
+            }
+            else if (c == cb_rbresult_B)
+            {
+                if (cb_rbresult_B.Checked)
+                {
+                    cb_rbresult_Default.Checked = false;
+                    cb_rbresult_A.Checked = false;
+                }
+                else
+                {
+                    cb_rbresult_Default.Checked = true;
+                    cb_rbresult_A.Checked = false;
+                }
+            }
+            EventDisable--;
+        }
+
         private void txtNum1_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -143,8 +192,13 @@ namespace MathIS.Forms
 
         private void vector_A_Click(object sender, EventArgs e)
         {
+            var result = GetVectorDimensions(sender as Control);
+            if (!result.HasValue)
+            {
+                return;
+            }
             ClearA();
-            var v = new Vector((int)vectorDim_A.Value);
+            var v = new Vector(result.Value);
             var vc = new VectorControl(v, pnlA);
             vc.Grid.ContextMenuStrip = cntxMenu;
             vc.Grid.Focus();
@@ -153,8 +207,13 @@ namespace MathIS.Forms
 
         private void matrix_A_Click(object sender, EventArgs e)
         {
+            var result = GetMatrixDimensions(sender as Control);
+            if (result == null)
+            {
+                return;
+            }
             ClearA();
-            var m = new Matrix((int)matrixRows_A.Value, (int)matrixColumns_A.Value);
+            var m = new Matrix(result.Item1, result.Item2);
             var mnc = new MatrixControl(m, pnlA);
             mnc.Grid.ContextMenuStrip = cntxMenu;
             mnc.Grid.Focus();
@@ -173,8 +232,13 @@ namespace MathIS.Forms
 
         private void vector_B_Click(object sender, EventArgs e)
         {
+            var result = GetVectorDimensions(sender as Control);
+            if (!result.HasValue)
+            {
+                return;
+            }
             ClearB();
-            var v = new Vector((int)vectorDim_B.Value);
+            var v = new Vector(result.Value);
             var vc = new VectorControl(v, pnlB);
             vc.Grid.ContextMenuStrip = cntxMenu;
             vc.Grid.Focus();
@@ -183,8 +247,13 @@ namespace MathIS.Forms
 
         private void matrix_B_Click(object sender, EventArgs e)
         {
+            var result = GetMatrixDimensions(sender as Control);
+            if (result == null)
+            {
+                return;
+            }
             ClearB();
-            var m = new Matrix((int)matrixRows_B.Value, (int)matrixColumns_B.Value);
+            var m = new Matrix(result.Item1, result.Item2);
             var mnc = new MatrixControl(m, pnlB);
             mnc.Grid.ContextMenuStrip = cntxMenu;
             mnc.Grid.Focus();
@@ -416,13 +485,13 @@ namespace MathIS.Forms
             if (result == null)
                 return;
 
-            if(rbresult_A.Checked)
+            if(cb_rbresult_A.Checked)
             {
                 ClearA();
                 CreateAritmeticControl(result, pnlA);
                 
             }
-            else if(rbresult_B.Checked)
+            else if(cb_rbresult_B.Checked)
             {
                 ClearB();
                 CreateAritmeticControl(result, pnlB);
@@ -572,7 +641,23 @@ namespace MathIS.Forms
             }
         }
 
+        private int? GetVectorDimensions(Control sender)
+        {
+            var location = sender.PointToScreen(new Point(sender.Width, 0));
+            frmDimension frm = new frmDimension(false, location);
+            frm.ShowDialog(this);
 
+            return frm.Dimensions;
+        }
+
+        private Tuple<int,int> GetMatrixDimensions(Control sender)
+        {
+            var location = sender.PointToScreen(new Point(sender.Width, 0));
+            frmDimension frm = new frmDimension(true, location);
+            frm.ShowDialog(this);
+
+            return frm.MatrixOrder;
+        }
 
 
 

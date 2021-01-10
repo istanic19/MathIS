@@ -49,23 +49,14 @@ namespace MathIS.Forms
             this.ddiOperation = new MathIS.UI.DropDownImage();
             this.pnlBreakLine = new System.Windows.Forms.Panel();
             this.grpVarB = new System.Windows.Forms.GroupBox();
-            this.matrixColumns_B = new System.Windows.Forms.NumericUpDown();
-            this.matrixRows_B = new System.Windows.Forms.NumericUpDown();
-            this.vectorDim_B = new System.Windows.Forms.NumericUpDown();
             this.matrix_B = new MathIS.UI.ImageButton();
             this.vector_B = new MathIS.UI.ImageButton();
             this.num_B = new MathIS.UI.ImageButton();
             this.grpVarA = new System.Windows.Forms.GroupBox();
-            this.matrixColumns_A = new System.Windows.Forms.NumericUpDown();
-            this.matrixRows_A = new System.Windows.Forms.NumericUpDown();
-            this.vectorDim_A = new System.Windows.Forms.NumericUpDown();
             this.matrix_A = new MathIS.UI.ImageButton();
             this.vector_A = new MathIS.UI.ImageButton();
             this.num_A = new MathIS.UI.ImageButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rbresult_B = new System.Windows.Forms.RadioButton();
-            this.rbresult_A = new System.Windows.Forms.RadioButton();
-            this.rbresult_Default = new System.Windows.Forms.RadioButton();
             this.btnCalculateVector = new System.Windows.Forms.Button();
             this.pnlResult = new System.Windows.Forms.Panel();
             this.cntxMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -77,21 +68,21 @@ namespace MathIS.Forms
             this.pnlB = new System.Windows.Forms.Panel();
             this.pnlA = new System.Windows.Forms.Panel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.cb_rbresult_Default = new System.Windows.Forms.CheckBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cb_rbresult_A = new System.Windows.Forms.CheckBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cb_rbresult_B = new System.Windows.Forms.CheckBox();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.grpVarB.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.matrixColumns_B)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.matrixRows_B)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vectorDim_B)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.matrix_B)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vector_B)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_B)).BeginInit();
             this.grpVarA.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.matrixColumns_A)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.matrixRows_A)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vectorDim_A)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.matrix_A)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vector_A)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_A)).BeginInit();
@@ -278,82 +269,16 @@ namespace MathIS.Forms
             // 
             // grpVarB
             // 
-            this.grpVarB.Controls.Add(this.matrixColumns_B);
-            this.grpVarB.Controls.Add(this.matrixRows_B);
-            this.grpVarB.Controls.Add(this.vectorDim_B);
             this.grpVarB.Controls.Add(this.matrix_B);
             this.grpVarB.Controls.Add(this.vector_B);
             this.grpVarB.Controls.Add(this.num_B);
             this.grpVarB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(163)))), ((int)(((byte)(240)))));
             this.grpVarB.Location = new System.Drawing.Point(149, 6);
             this.grpVarB.Name = "grpVarB";
-            this.grpVarB.Size = new System.Drawing.Size(135, 135);
+            this.grpVarB.Size = new System.Drawing.Size(135, 96);
             this.grpVarB.TabIndex = 11;
             this.grpVarB.TabStop = false;
             this.grpVarB.Text = "Variable B";
-            // 
-            // matrixColumns_B
-            // 
-            this.matrixColumns_B.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.matrixColumns_B.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.matrixColumns_B.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(163)))), ((int)(((byte)(240)))));
-            this.matrixColumns_B.Location = new System.Drawing.Point(89, 110);
-            this.matrixColumns_B.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.matrixColumns_B.Name = "matrixColumns_B";
-            this.matrixColumns_B.Size = new System.Drawing.Size(39, 20);
-            this.matrixColumns_B.TabIndex = 34;
-            this.toolTip1.SetToolTip(this.matrixColumns_B, "Matrix:\r\nNumber of Columns");
-            this.matrixColumns_B.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // matrixRows_B
-            // 
-            this.matrixRows_B.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.matrixRows_B.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.matrixRows_B.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(163)))), ((int)(((byte)(240)))));
-            this.matrixRows_B.Location = new System.Drawing.Point(44, 110);
-            this.matrixRows_B.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.matrixRows_B.Name = "matrixRows_B";
-            this.matrixRows_B.Size = new System.Drawing.Size(39, 20);
-            this.matrixRows_B.TabIndex = 33;
-            this.toolTip1.SetToolTip(this.matrixRows_B, "Matrix:\r\nNumber of Rows");
-            this.matrixRows_B.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // vectorDim_B
-            // 
-            this.vectorDim_B.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.vectorDim_B.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.vectorDim_B.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(163)))), ((int)(((byte)(240)))));
-            this.vectorDim_B.Location = new System.Drawing.Point(44, 71);
-            this.vectorDim_B.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.vectorDim_B.Name = "vectorDim_B";
-            this.vectorDim_B.Size = new System.Drawing.Size(39, 20);
-            this.vectorDim_B.TabIndex = 32;
-            this.toolTip1.SetToolTip(this.vectorDim_B, "Number of \r\nvector dimensions");
-            this.vectorDim_B.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             // 
             // matrix_B
             // 
@@ -361,7 +286,7 @@ namespace MathIS.Forms
             this.matrix_B.DisabledImage = global::MathIS.Properties.Resources.matrixDisabled;
             this.matrix_B.DownImage = global::MathIS.Properties.Resources.matrixDown;
             this.matrix_B.HoverImage = global::MathIS.Properties.Resources.matrixHover;
-            this.matrix_B.Location = new System.Drawing.Point(6, 96);
+            this.matrix_B.Location = new System.Drawing.Point(86, 19);
             this.matrix_B.Name = "matrix_B";
             this.matrix_B.NormalImage = global::MathIS.Properties.Resources.matrix;
             this.matrix_B.Size = new System.Drawing.Size(34, 34);
@@ -376,7 +301,7 @@ namespace MathIS.Forms
             this.vector_B.DisabledImage = global::MathIS.Properties.Resources.vectorDisabled;
             this.vector_B.DownImage = global::MathIS.Properties.Resources.vectorDown;
             this.vector_B.HoverImage = global::MathIS.Properties.Resources.vectorHover;
-            this.vector_B.Location = new System.Drawing.Point(6, 57);
+            this.vector_B.Location = new System.Drawing.Point(46, 19);
             this.vector_B.Name = "vector_B";
             this.vector_B.NormalImage = global::MathIS.Properties.Resources.vector;
             this.vector_B.Size = new System.Drawing.Size(34, 34);
@@ -402,82 +327,16 @@ namespace MathIS.Forms
             // 
             // grpVarA
             // 
-            this.grpVarA.Controls.Add(this.matrixColumns_A);
-            this.grpVarA.Controls.Add(this.matrixRows_A);
-            this.grpVarA.Controls.Add(this.vectorDim_A);
             this.grpVarA.Controls.Add(this.matrix_A);
             this.grpVarA.Controls.Add(this.vector_A);
             this.grpVarA.Controls.Add(this.num_A);
             this.grpVarA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(163)))), ((int)(((byte)(240)))));
             this.grpVarA.Location = new System.Drawing.Point(8, 6);
             this.grpVarA.Name = "grpVarA";
-            this.grpVarA.Size = new System.Drawing.Size(135, 135);
+            this.grpVarA.Size = new System.Drawing.Size(135, 96);
             this.grpVarA.TabIndex = 10;
             this.grpVarA.TabStop = false;
             this.grpVarA.Text = "Variable A";
-            // 
-            // matrixColumns_A
-            // 
-            this.matrixColumns_A.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.matrixColumns_A.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.matrixColumns_A.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(163)))), ((int)(((byte)(240)))));
-            this.matrixColumns_A.Location = new System.Drawing.Point(89, 110);
-            this.matrixColumns_A.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.matrixColumns_A.Name = "matrixColumns_A";
-            this.matrixColumns_A.Size = new System.Drawing.Size(39, 20);
-            this.matrixColumns_A.TabIndex = 34;
-            this.toolTip1.SetToolTip(this.matrixColumns_A, "Matrix:\r\nNumber of Columns");
-            this.matrixColumns_A.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // matrixRows_A
-            // 
-            this.matrixRows_A.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.matrixRows_A.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.matrixRows_A.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(163)))), ((int)(((byte)(240)))));
-            this.matrixRows_A.Location = new System.Drawing.Point(44, 110);
-            this.matrixRows_A.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.matrixRows_A.Name = "matrixRows_A";
-            this.matrixRows_A.Size = new System.Drawing.Size(39, 20);
-            this.matrixRows_A.TabIndex = 33;
-            this.toolTip1.SetToolTip(this.matrixRows_A, "Matrix:\r\nNumber of Rows");
-            this.matrixRows_A.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // vectorDim_A
-            // 
-            this.vectorDim_A.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.vectorDim_A.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.vectorDim_A.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(163)))), ((int)(((byte)(240)))));
-            this.vectorDim_A.Location = new System.Drawing.Point(44, 71);
-            this.vectorDim_A.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.vectorDim_A.Name = "vectorDim_A";
-            this.vectorDim_A.Size = new System.Drawing.Size(39, 20);
-            this.vectorDim_A.TabIndex = 32;
-            this.toolTip1.SetToolTip(this.vectorDim_A, "Number of \r\nvector dimensions");
-            this.vectorDim_A.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             // 
             // matrix_A
             // 
@@ -485,7 +344,7 @@ namespace MathIS.Forms
             this.matrix_A.DisabledImage = global::MathIS.Properties.Resources.matrixDisabled;
             this.matrix_A.DownImage = global::MathIS.Properties.Resources.matrixDown;
             this.matrix_A.HoverImage = global::MathIS.Properties.Resources.matrixHover;
-            this.matrix_A.Location = new System.Drawing.Point(6, 96);
+            this.matrix_A.Location = new System.Drawing.Point(86, 19);
             this.matrix_A.Name = "matrix_A";
             this.matrix_A.NormalImage = global::MathIS.Properties.Resources.matrix;
             this.matrix_A.Size = new System.Drawing.Size(34, 34);
@@ -500,7 +359,7 @@ namespace MathIS.Forms
             this.vector_A.DisabledImage = global::MathIS.Properties.Resources.vectorDisabled;
             this.vector_A.DownImage = global::MathIS.Properties.Resources.vectorDown;
             this.vector_A.HoverImage = global::MathIS.Properties.Resources.vectorHover;
-            this.vector_A.Location = new System.Drawing.Point(6, 57);
+            this.vector_A.Location = new System.Drawing.Point(46, 19);
             this.vector_A.Name = "vector_A";
             this.vector_A.NormalImage = global::MathIS.Properties.Resources.vector;
             this.vector_A.Size = new System.Drawing.Size(34, 34);
@@ -526,56 +385,27 @@ namespace MathIS.Forms
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.rbresult_B);
-            this.groupBox1.Controls.Add(this.rbresult_A);
-            this.groupBox1.Controls.Add(this.rbresult_Default);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.cb_rbresult_B);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.cb_rbresult_A);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.cb_rbresult_Default);
             this.groupBox1.Controls.Add(this.btnCalculateVector);
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(163)))), ((int)(((byte)(240)))));
             this.groupBox1.Location = new System.Drawing.Point(292, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(154, 96);
+            this.groupBox1.Size = new System.Drawing.Size(162, 96);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Result to";
-            // 
-            // rbresult_B
-            // 
-            this.rbresult_B.AutoSize = true;
-            this.rbresult_B.Location = new System.Drawing.Point(18, 65);
-            this.rbresult_B.Name = "rbresult_B";
-            this.rbresult_B.Size = new System.Drawing.Size(48, 17);
-            this.rbresult_B.TabIndex = 2;
-            this.rbresult_B.Text = "To B";
-            this.rbresult_B.UseVisualStyleBackColor = true;
-            // 
-            // rbresult_A
-            // 
-            this.rbresult_A.AutoSize = true;
-            this.rbresult_A.Location = new System.Drawing.Point(18, 42);
-            this.rbresult_A.Name = "rbresult_A";
-            this.rbresult_A.Size = new System.Drawing.Size(48, 17);
-            this.rbresult_A.TabIndex = 1;
-            this.rbresult_A.Text = "To A";
-            this.rbresult_A.UseVisualStyleBackColor = true;
-            // 
-            // rbresult_Default
-            // 
-            this.rbresult_Default.AutoSize = true;
-            this.rbresult_Default.Checked = true;
-            this.rbresult_Default.Location = new System.Drawing.Point(18, 19);
-            this.rbresult_Default.Name = "rbresult_Default";
-            this.rbresult_Default.Size = new System.Drawing.Size(59, 17);
-            this.rbresult_Default.TabIndex = 0;
-            this.rbresult_Default.TabStop = true;
-            this.rbresult_Default.Text = "Default";
-            this.rbresult_Default.UseVisualStyleBackColor = true;
             // 
             // btnCalculateVector
             // 
             this.btnCalculateVector.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnCalculateVector.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCalculateVector.ForeColor = System.Drawing.Color.Black;
-            this.btnCalculateVector.Location = new System.Drawing.Point(83, 59);
+            this.btnCalculateVector.Location = new System.Drawing.Point(83, 15);
             this.btnCalculateVector.Name = "btnCalculateVector";
             this.btnCalculateVector.Size = new System.Drawing.Size(65, 23);
             this.btnCalculateVector.TabIndex = 7;
@@ -655,6 +485,68 @@ namespace MathIS.Forms
             this.pnlA.Size = new System.Drawing.Size(268, 73);
             this.pnlA.TabIndex = 0;
             // 
+            // cb_rbresult_Default
+            // 
+            this.cb_rbresult_Default.AutoSize = true;
+            this.cb_rbresult_Default.Checked = true;
+            this.cb_rbresult_Default.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cb_rbresult_Default.ForeColor = System.Drawing.Color.White;
+            this.cb_rbresult_Default.Location = new System.Drawing.Point(13, 20);
+            this.cb_rbresult_Default.Name = "cb_rbresult_Default";
+            this.cb_rbresult_Default.Size = new System.Drawing.Size(15, 14);
+            this.cb_rbresult_Default.TabIndex = 8;
+            this.cb_rbresult_Default.UseVisualStyleBackColor = true;
+            this.cb_rbresult_Default.CheckedChanged += new System.EventHandler(this.resultTo_checkedChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(36, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(41, 13);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Default";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(36, 44);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(30, 13);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "To A";
+            // 
+            // cb_rbresult_A
+            // 
+            this.cb_rbresult_A.AutoSize = true;
+            this.cb_rbresult_A.ForeColor = System.Drawing.Color.White;
+            this.cb_rbresult_A.Location = new System.Drawing.Point(13, 44);
+            this.cb_rbresult_A.Name = "cb_rbresult_A";
+            this.cb_rbresult_A.Size = new System.Drawing.Size(15, 14);
+            this.cb_rbresult_A.TabIndex = 10;
+            this.cb_rbresult_A.UseVisualStyleBackColor = true;
+            this.cb_rbresult_A.CheckedChanged += new System.EventHandler(this.resultTo_checkedChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(36, 67);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(30, 13);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "To B";
+            // 
+            // cb_rbresult_B
+            // 
+            this.cb_rbresult_B.AutoSize = true;
+            this.cb_rbresult_B.ForeColor = System.Drawing.Color.White;
+            this.cb_rbresult_B.Location = new System.Drawing.Point(13, 67);
+            this.cb_rbresult_B.Name = "cb_rbresult_B";
+            this.cb_rbresult_B.Size = new System.Drawing.Size(15, 14);
+            this.cb_rbresult_B.TabIndex = 12;
+            this.cb_rbresult_B.UseVisualStyleBackColor = true;
+            this.cb_rbresult_B.CheckedChanged += new System.EventHandler(this.resultTo_checkedChanged);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -675,16 +567,10 @@ namespace MathIS.Forms
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.grpVarB.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.matrixColumns_B)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.matrixRows_B)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vectorDim_B)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.matrix_B)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vector_B)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_B)).EndInit();
             this.grpVarA.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.matrixColumns_A)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.matrixRows_A)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vectorDim_A)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.matrix_A)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vector_A)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_A)).EndInit();
@@ -720,20 +606,11 @@ namespace MathIS.Forms
         private System.Windows.Forms.ToolStripMenuItem copyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pasteToolStripMenuItem;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton rbresult_B;
-        private System.Windows.Forms.RadioButton rbresult_A;
-        private System.Windows.Forms.RadioButton rbresult_Default;
         private System.Windows.Forms.GroupBox grpVarA;
         private UI.ImageButton num_A;
-        private System.Windows.Forms.NumericUpDown matrixColumns_A;
-        private System.Windows.Forms.NumericUpDown matrixRows_A;
-        private System.Windows.Forms.NumericUpDown vectorDim_A;
         private UI.ImageButton matrix_A;
         private UI.ImageButton vector_A;
         private System.Windows.Forms.GroupBox grpVarB;
-        private System.Windows.Forms.NumericUpDown matrixColumns_B;
-        private System.Windows.Forms.NumericUpDown matrixRows_B;
-        private System.Windows.Forms.NumericUpDown vectorDim_B;
         private UI.ImageButton matrix_B;
         private UI.ImageButton vector_B;
         private UI.ImageButton num_B;
@@ -744,6 +621,12 @@ namespace MathIS.Forms
         private System.Windows.Forms.ToolStripMenuItem normalizeToolStripMenuItem;
         private DropDownImage ddiOperation;
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
+        private System.Windows.Forms.CheckBox cb_rbresult_Default;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.CheckBox cb_rbresult_B;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.CheckBox cb_rbresult_A;
+        private System.Windows.Forms.Label label1;
     }
 }
 
