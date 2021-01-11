@@ -57,6 +57,12 @@ namespace MathIS.Forms
             this.vector_A = new MathIS.UI.ImageButton();
             this.num_A = new MathIS.UI.ImageButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cb_rbresult_B = new System.Windows.Forms.CheckBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cb_rbresult_A = new System.Windows.Forms.CheckBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cb_rbresult_Default = new System.Windows.Forms.CheckBox();
             this.btnCalculateVector = new System.Windows.Forms.Button();
             this.pnlResult = new System.Windows.Forms.Panel();
             this.cntxMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -68,12 +74,6 @@ namespace MathIS.Forms
             this.pnlB = new System.Windows.Forms.Panel();
             this.pnlA = new System.Windows.Forms.Panel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.cb_rbresult_Default = new System.Windows.Forms.CheckBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cb_rbresult_A = new System.Windows.Forms.CheckBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.cb_rbresult_B = new System.Windows.Forms.CheckBox();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -400,14 +400,77 @@ namespace MathIS.Forms
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Result to";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(36, 67);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(30, 13);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "To B";
+            // 
+            // cb_rbresult_B
+            // 
+            this.cb_rbresult_B.AutoSize = true;
+            this.cb_rbresult_B.ForeColor = System.Drawing.Color.White;
+            this.cb_rbresult_B.Location = new System.Drawing.Point(13, 67);
+            this.cb_rbresult_B.Name = "cb_rbresult_B";
+            this.cb_rbresult_B.Size = new System.Drawing.Size(15, 14);
+            this.cb_rbresult_B.TabIndex = 12;
+            this.cb_rbresult_B.UseVisualStyleBackColor = true;
+            this.cb_rbresult_B.CheckedChanged += new System.EventHandler(this.resultTo_checkedChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(36, 44);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(30, 13);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "To A";
+            // 
+            // cb_rbresult_A
+            // 
+            this.cb_rbresult_A.AutoSize = true;
+            this.cb_rbresult_A.ForeColor = System.Drawing.Color.White;
+            this.cb_rbresult_A.Location = new System.Drawing.Point(13, 44);
+            this.cb_rbresult_A.Name = "cb_rbresult_A";
+            this.cb_rbresult_A.Size = new System.Drawing.Size(15, 14);
+            this.cb_rbresult_A.TabIndex = 10;
+            this.cb_rbresult_A.UseVisualStyleBackColor = true;
+            this.cb_rbresult_A.CheckedChanged += new System.EventHandler(this.resultTo_checkedChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(36, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(41, 13);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Default";
+            // 
+            // cb_rbresult_Default
+            // 
+            this.cb_rbresult_Default.AutoSize = true;
+            this.cb_rbresult_Default.Checked = true;
+            this.cb_rbresult_Default.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cb_rbresult_Default.ForeColor = System.Drawing.Color.White;
+            this.cb_rbresult_Default.Location = new System.Drawing.Point(13, 20);
+            this.cb_rbresult_Default.Name = "cb_rbresult_Default";
+            this.cb_rbresult_Default.Size = new System.Drawing.Size(15, 14);
+            this.cb_rbresult_Default.TabIndex = 8;
+            this.cb_rbresult_Default.UseVisualStyleBackColor = true;
+            this.cb_rbresult_Default.CheckedChanged += new System.EventHandler(this.resultTo_checkedChanged);
+            // 
             // btnCalculateVector
             // 
-            this.btnCalculateVector.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnCalculateVector.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(163)))), ((int)(((byte)(240)))));
             this.btnCalculateVector.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnCalculateVector.ForeColor = System.Drawing.Color.Black;
+            this.btnCalculateVector.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnCalculateVector.ForeColor = System.Drawing.Color.White;
             this.btnCalculateVector.Location = new System.Drawing.Point(83, 15);
             this.btnCalculateVector.Name = "btnCalculateVector";
-            this.btnCalculateVector.Size = new System.Drawing.Size(65, 23);
+            this.btnCalculateVector.Size = new System.Drawing.Size(73, 23);
             this.btnCalculateVector.TabIndex = 7;
             this.btnCalculateVector.Text = "Calculate";
             this.btnCalculateVector.UseVisualStyleBackColor = false;
@@ -484,68 +547,6 @@ namespace MathIS.Forms
             this.pnlA.Name = "pnlA";
             this.pnlA.Size = new System.Drawing.Size(268, 73);
             this.pnlA.TabIndex = 0;
-            // 
-            // cb_rbresult_Default
-            // 
-            this.cb_rbresult_Default.AutoSize = true;
-            this.cb_rbresult_Default.Checked = true;
-            this.cb_rbresult_Default.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cb_rbresult_Default.ForeColor = System.Drawing.Color.White;
-            this.cb_rbresult_Default.Location = new System.Drawing.Point(13, 20);
-            this.cb_rbresult_Default.Name = "cb_rbresult_Default";
-            this.cb_rbresult_Default.Size = new System.Drawing.Size(15, 14);
-            this.cb_rbresult_Default.TabIndex = 8;
-            this.cb_rbresult_Default.UseVisualStyleBackColor = true;
-            this.cb_rbresult_Default.CheckedChanged += new System.EventHandler(this.resultTo_checkedChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(36, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 13);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Default";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(36, 44);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(30, 13);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "To A";
-            // 
-            // cb_rbresult_A
-            // 
-            this.cb_rbresult_A.AutoSize = true;
-            this.cb_rbresult_A.ForeColor = System.Drawing.Color.White;
-            this.cb_rbresult_A.Location = new System.Drawing.Point(13, 44);
-            this.cb_rbresult_A.Name = "cb_rbresult_A";
-            this.cb_rbresult_A.Size = new System.Drawing.Size(15, 14);
-            this.cb_rbresult_A.TabIndex = 10;
-            this.cb_rbresult_A.UseVisualStyleBackColor = true;
-            this.cb_rbresult_A.CheckedChanged += new System.EventHandler(this.resultTo_checkedChanged);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(36, 67);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(30, 13);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "To B";
-            // 
-            // cb_rbresult_B
-            // 
-            this.cb_rbresult_B.AutoSize = true;
-            this.cb_rbresult_B.ForeColor = System.Drawing.Color.White;
-            this.cb_rbresult_B.Location = new System.Drawing.Point(13, 67);
-            this.cb_rbresult_B.Name = "cb_rbresult_B";
-            this.cb_rbresult_B.Size = new System.Drawing.Size(15, 14);
-            this.cb_rbresult_B.TabIndex = 12;
-            this.cb_rbresult_B.UseVisualStyleBackColor = true;
-            this.cb_rbresult_B.CheckedChanged += new System.EventHandler(this.resultTo_checkedChanged);
             // 
             // frmMain
             // 
