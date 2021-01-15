@@ -21,7 +21,7 @@ namespace MathIS.Model.Entities
         {
             _components = new List<Number>();
             foreach (var num in components)
-                _components.Add(num.Clone());
+                _components.Add(num.Clone() as Number);
             UpdateText();
         }
 
@@ -86,7 +86,7 @@ namespace MathIS.Model.Entities
             {
                 var result = new Vector(Components.Count);
                 for (int i = 0; i < Components.Count; ++i)
-                    result.Components[i] = Components[i].Clone() / magnitude;
+                    result.Components[i] = ((Number)Components[i].Clone()) / magnitude;
                 return result;
             }
             else
@@ -96,12 +96,12 @@ namespace MathIS.Model.Entities
             
         }
 
-        public Vector Clone()
+        public override BaseMathEntity Clone()
         {
             var clone = new Vector(Components.Count);
 
             for (int i = 0; i < Components.Count; ++i)
-                clone.Components[i] = Components[i].Clone();
+                clone.Components[i] = Components[i].Clone() as Number;
             return clone;
         }
         public override BaseMathEntity Multiply(BaseMathEntity x)
@@ -134,6 +134,14 @@ namespace MathIS.Model.Entities
             if (x is Vector)
             {
                 return ((this) + ((Vector)x));
+            }
+            return base.Add(x);
+        }
+        public override BaseMathEntity Subtract(BaseMathEntity x)
+        {
+            if (x is Vector)
+            {
+                return ((this) - ((Vector)x));
             }
             return base.Add(x);
         }

@@ -14,7 +14,9 @@ namespace MathIS.Services
         public static List<VectorOperation> VectorOperations { get; private set; }
         public static List<AritmeticType> Types { get; private set; }
 
-        public static BaseMathEntity CopiedEntity { get; set; }
+        public static BaseMathEntity CopiedEntity { get; private set; }
+
+        public static List<Tuple<BaseMathEntity,BaseMathEntity,BaseMathEntity>> State { get; set; }
 
         static AritmeticsService()
         {
@@ -35,6 +37,40 @@ namespace MathIS.Services
             {
                 Types.Add(new AritmeticType((AritmeticTypeEnum)enumType));
             }
+
+            State = new List<Tuple<BaseMathEntity, BaseMathEntity, BaseMathEntity>>();
+        }
+
+        public static void CopyEntity(BaseMathEntity entity)
+        {
+            if (entity == null)
+                return;
+            CopiedEntity = entity.Clone();
+        }
+
+        public static void AddState(BaseMathEntity item1, BaseMathEntity item2, BaseMathEntity item3)
+        {
+            while(State.Count>=10)
+            {
+                State.RemoveAt(State.Count - 1);
+            }
+
+            if (State.Count == 0)
+                State.Add(new Tuple<BaseMathEntity, BaseMathEntity, BaseMathEntity>(item1, item2, item3));
+            else
+                State.Insert(0, new Tuple<BaseMathEntity, BaseMathEntity, BaseMathEntity>(item1, item2, item3));
+        }
+
+        public static Tuple<BaseMathEntity, BaseMathEntity, BaseMathEntity> RestoreLastState()
+        {
+            if (State.Count > 0)
+            {
+                State.RemoveAt(0);
+                if (State.Any())
+                    return State.First();
+            }
+
+            return null;
         }
 
         public static Number Calculate(MatOperation operation, Number a, Number b)

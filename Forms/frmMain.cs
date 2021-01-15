@@ -89,6 +89,16 @@ namespace MathIS.Forms
             form.ShowDialog(this);
         }
 
+        private void editToolStripMenuItem_DropDownOpened(object sender, EventArgs e)
+        {
+            undoToolStripMenuItem.Enabled = AritmeticsService.State.Count > 0;
+        }
+
+        private void undoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RestoreState();
+        }
+
         #endregion
 
         private void resultTo_checkedChanged(object sender, EventArgs e)
@@ -188,6 +198,7 @@ namespace MathIS.Forms
             nc.Grid.ContextMenuStrip = cntxMenu;
             nc.Grid.Focus();
             ArrangeControls();
+            RecordState();
         }
 
         private void vector_A_Click(object sender, EventArgs e)
@@ -203,6 +214,7 @@ namespace MathIS.Forms
             vc.Grid.ContextMenuStrip = cntxMenu;
             vc.Grid.Focus();
             ArrangeControls();
+            RecordState();
         }
 
         private void matrix_A_Click(object sender, EventArgs e)
@@ -218,6 +230,7 @@ namespace MathIS.Forms
             mnc.Grid.ContextMenuStrip = cntxMenu;
             mnc.Grid.Focus();
             ArrangeControls();
+            RecordState();
         }
 
         private void num_B_Click(object sender, EventArgs e)
@@ -228,6 +241,7 @@ namespace MathIS.Forms
             nc.Grid.ContextMenuStrip = cntxMenu;
             nc.Grid.Focus();
             ArrangeControls();
+            RecordState();
         }
 
         private void vector_B_Click(object sender, EventArgs e)
@@ -243,6 +257,7 @@ namespace MathIS.Forms
             vc.Grid.ContextMenuStrip = cntxMenu;
             vc.Grid.Focus();
             ArrangeControls();
+            RecordState();
         }
 
         private void matrix_B_Click(object sender, EventArgs e)
@@ -258,6 +273,7 @@ namespace MathIS.Forms
             mnc.Grid.ContextMenuStrip = cntxMenu;
             mnc.Grid.Focus();
             ArrangeControls();
+            RecordState();
         }
 
         private void pasteToolStripMenuItem_Click(object sender, EventArgs e)
@@ -289,9 +305,9 @@ namespace MathIS.Forms
             ac.Grid.Focus();
 
             ArrangeControls();
-        }
 
-        
+            RecordState();
+        }
         private void btnCalculateVector_Click(object sender, EventArgs e)
         {
             CalculateVector();
@@ -328,7 +344,7 @@ namespace MathIS.Forms
             Control ctrl = cntxMenu.SourceControl;
             var ac = ctrl.Parent.Tag as AritmeticControl;
             if (ac != null)
-                AritmeticsService.CopiedEntity = ac.Entity;
+                AritmeticsService.CopyEntity(ac.Entity);
         }
 
         private void conjugateToolStripMenuItem_Click(object sender, EventArgs e)
@@ -369,6 +385,7 @@ namespace MathIS.Forms
                 acC.Grid.Focus();
 
                 ArrangeControls();
+                RecordState();
             }
         }
 
@@ -411,6 +428,7 @@ namespace MathIS.Forms
                 acC.Grid.Focus();
 
                 ArrangeControls();
+                RecordState();
             }
         }
 
@@ -448,6 +466,60 @@ namespace MathIS.Forms
             ddiOperation.Items.Add(new DropDownImageItem() { Image = Properties.Resources.MatrixMultiply, Text = "Matrix multiply", Tag = new VectorOperation(VectorOperationEnum.MatrixMupltiply) });
 
             ddiOperation.SelectedItem = ddiOperation.Items[0];
+        }
+
+        private void RecordState()
+        {
+            BaseMathEntity item1 = null;
+            BaseMathEntity item2 = null;
+            BaseMathEntity item3 = null;
+
+            foreach (Control c in pnlA.Controls)
+            {
+                item1 = c.Tag as BaseMathEntity;
+                if (item1 != null)
+                    break;
+            }
+            foreach (Control c in pnlB.Controls)
+            {
+                item2 = c.Tag as BaseMathEntity;
+                if (item2 != null)
+                    break;
+            }
+            foreach (Control c in pnlResult.Controls)
+            {
+                item3 = c.Tag as BaseMathEntity;
+                if (item3 != null)
+                    break;
+            }
+            AritmeticsService.AddState(item1, item2, item3);
+        }
+
+        public void RestoreState()
+        {
+            var state = AritmeticsService.RestoreLastState();
+            
+            ClearA();
+            ClearB();
+            ClearResult();
+
+            if (state == null)
+                return;
+
+            if (state.Item1 != null)
+            {
+                CreateAritmeticControl(state.Item1, pnlA);
+            }
+            if (state.Item2 != null)
+            {
+                CreateAritmeticControl(state.Item2, pnlB);
+            }
+            if (state.Item3 != null)
+            {
+                CreateAritmeticControl(state.Item3, pnlResult);
+            }
+
+            ArrangeControls();
         }
 
         private void CalculateVector()
@@ -505,6 +577,7 @@ namespace MathIS.Forms
 
             ArrangeControls();
 
+            RecordState();
 
         }
 
@@ -658,6 +731,7 @@ namespace MathIS.Forms
 
             return frm.MatrixOrder;
         }
+
 
 
 

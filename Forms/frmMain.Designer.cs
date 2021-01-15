@@ -36,15 +36,6 @@ namespace MathIS.Forms
             this.connectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.btCopy = new System.Windows.Forms.Button();
-            this.btCalculate = new System.Windows.Forms.Button();
-            this.cmbOperation = new System.Windows.Forms.ComboBox();
-            this.lblResult = new System.Windows.Forms.Label();
-            this.lblNum2 = new System.Windows.Forms.Label();
-            this.lblNum1 = new System.Windows.Forms.Label();
-            this.txtNum2 = new System.Windows.Forms.TextBox();
-            this.txtNum1 = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.ddiOperation = new MathIS.UI.DropDownImage();
             this.pnlBreakLine = new System.Windows.Forms.Panel();
@@ -73,10 +64,20 @@ namespace MathIS.Forms
             this.normalizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlB = new System.Windows.Forms.Panel();
             this.pnlA = new System.Windows.Forms.Panel();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btCopy = new System.Windows.Forms.Button();
+            this.btCalculate = new System.Windows.Forms.Button();
+            this.cmbOperation = new System.Windows.Forms.ComboBox();
+            this.lblResult = new System.Windows.Forms.Label();
+            this.lblNum2 = new System.Windows.Forms.Label();
+            this.lblNum1 = new System.Windows.Forms.Label();
+            this.txtNum2 = new System.Windows.Forms.TextBox();
+            this.txtNum1 = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.undoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.grpVarB.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.matrix_B)).BeginInit();
@@ -88,11 +89,13 @@ namespace MathIS.Forms
             ((System.ComponentModel.ISupportInitialize)(this.num_A)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.cntxMenu.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editToolStripMenuItem,
             this.optionsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -112,125 +115,27 @@ namespace MathIS.Forms
             // connectionToolStripMenuItem
             // 
             this.connectionToolStripMenuItem.Name = "connectionToolStripMenuItem";
-            this.connectionToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.connectionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.connectionToolStripMenuItem.Text = "Connection ...";
             this.connectionToolStripMenuItem.Click += new System.EventHandler(this.connectionToolStripMenuItem_Click);
             // 
             // settingsToolStripMenuItem
             // 
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.settingsToolStripMenuItem.Text = "Settings ...";
             this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 24);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(924, 635);
             this.tabControl1.TabIndex = 1;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.btCopy);
-            this.tabPage1.Controls.Add(this.btCalculate);
-            this.tabPage1.Controls.Add(this.cmbOperation);
-            this.tabPage1.Controls.Add(this.lblResult);
-            this.tabPage1.Controls.Add(this.lblNum2);
-            this.tabPage1.Controls.Add(this.lblNum1);
-            this.tabPage1.Controls.Add(this.txtNum2);
-            this.tabPage1.Controls.Add(this.txtNum1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(916, 609);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Complex";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // btCopy
-            // 
-            this.btCopy.Location = new System.Drawing.Point(89, 132);
-            this.btCopy.Name = "btCopy";
-            this.btCopy.Size = new System.Drawing.Size(58, 23);
-            this.btCopy.TabIndex = 7;
-            this.btCopy.Text = "Copy";
-            this.btCopy.UseVisualStyleBackColor = true;
-            this.btCopy.Click += new System.EventHandler(this.btCopy_Click);
-            // 
-            // btCalculate
-            // 
-            this.btCalculate.Location = new System.Drawing.Point(8, 132);
-            this.btCalculate.Name = "btCalculate";
-            this.btCalculate.Size = new System.Drawing.Size(75, 23);
-            this.btCalculate.TabIndex = 6;
-            this.btCalculate.Text = "Calculate";
-            this.btCalculate.UseVisualStyleBackColor = true;
-            this.btCalculate.Click += new System.EventHandler(this.btCalculate_Click);
-            // 
-            // cmbOperation
-            // 
-            this.cmbOperation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbOperation.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cmbOperation.FormattingEnabled = true;
-            this.cmbOperation.Location = new System.Drawing.Point(6, 37);
-            this.cmbOperation.Name = "cmbOperation";
-            this.cmbOperation.Size = new System.Drawing.Size(198, 21);
-            this.cmbOperation.TabIndex = 5;
-            // 
-            // lblResult
-            // 
-            this.lblResult.AutoSize = true;
-            this.lblResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblResult.Location = new System.Drawing.Point(8, 99);
-            this.lblResult.Name = "lblResult";
-            this.lblResult.Size = new System.Drawing.Size(19, 20);
-            this.lblResult.TabIndex = 4;
-            this.lblResult.Text = "  ";
-            // 
-            // lblNum2
-            // 
-            this.lblNum2.AutoSize = true;
-            this.lblNum2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblNum2.Location = new System.Drawing.Point(210, 64);
-            this.lblNum2.Name = "lblNum2";
-            this.lblNum2.Size = new System.Drawing.Size(17, 20);
-            this.lblNum2.TabIndex = 3;
-            this.lblNum2.Text = "  ";
-            // 
-            // lblNum1
-            // 
-            this.lblNum1.AutoSize = true;
-            this.lblNum1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblNum1.Location = new System.Drawing.Point(210, 9);
-            this.lblNum1.Name = "lblNum1";
-            this.lblNum1.Size = new System.Drawing.Size(17, 20);
-            this.lblNum1.TabIndex = 2;
-            this.lblNum1.Text = "  ";
-            // 
-            // txtNum2
-            // 
-            this.txtNum2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtNum2.Location = new System.Drawing.Point(8, 61);
-            this.txtNum2.Name = "txtNum2";
-            this.txtNum2.Size = new System.Drawing.Size(196, 26);
-            this.txtNum2.TabIndex = 1;
-            this.txtNum2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNum2_KeyDown);
-            this.txtNum2.Leave += new System.EventHandler(this.txtNum2_Leave);
-            // 
-            // txtNum1
-            // 
-            this.txtNum1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtNum1.Location = new System.Drawing.Point(8, 6);
-            this.txtNum1.Name = "txtNum1";
-            this.txtNum1.Size = new System.Drawing.Size(196, 26);
-            this.txtNum1.TabIndex = 0;
-            this.txtNum1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNum1_KeyDown);
-            this.txtNum1.Leave += new System.EventHandler(this.txtNum1_Leave);
             // 
             // tabPage2
             // 
@@ -548,6 +453,120 @@ namespace MathIS.Forms
             this.pnlA.Size = new System.Drawing.Size(268, 73);
             this.pnlA.TabIndex = 0;
             // 
+            // tabPage1
+            // 
+            this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.tabPage1.Controls.Add(this.btCopy);
+            this.tabPage1.Controls.Add(this.btCalculate);
+            this.tabPage1.Controls.Add(this.cmbOperation);
+            this.tabPage1.Controls.Add(this.lblResult);
+            this.tabPage1.Controls.Add(this.lblNum2);
+            this.tabPage1.Controls.Add(this.lblNum1);
+            this.tabPage1.Controls.Add(this.txtNum2);
+            this.tabPage1.Controls.Add(this.txtNum1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(916, 609);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Complex";
+            // 
+            // btCopy
+            // 
+            this.btCopy.Location = new System.Drawing.Point(89, 132);
+            this.btCopy.Name = "btCopy";
+            this.btCopy.Size = new System.Drawing.Size(58, 23);
+            this.btCopy.TabIndex = 7;
+            this.btCopy.Text = "Copy";
+            this.btCopy.UseVisualStyleBackColor = true;
+            this.btCopy.Click += new System.EventHandler(this.btCopy_Click);
+            // 
+            // btCalculate
+            // 
+            this.btCalculate.Location = new System.Drawing.Point(8, 132);
+            this.btCalculate.Name = "btCalculate";
+            this.btCalculate.Size = new System.Drawing.Size(75, 23);
+            this.btCalculate.TabIndex = 6;
+            this.btCalculate.Text = "Calculate";
+            this.btCalculate.UseVisualStyleBackColor = true;
+            this.btCalculate.Click += new System.EventHandler(this.btCalculate_Click);
+            // 
+            // cmbOperation
+            // 
+            this.cmbOperation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbOperation.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cmbOperation.FormattingEnabled = true;
+            this.cmbOperation.Location = new System.Drawing.Point(6, 37);
+            this.cmbOperation.Name = "cmbOperation";
+            this.cmbOperation.Size = new System.Drawing.Size(198, 21);
+            this.cmbOperation.TabIndex = 5;
+            // 
+            // lblResult
+            // 
+            this.lblResult.AutoSize = true;
+            this.lblResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblResult.Location = new System.Drawing.Point(8, 99);
+            this.lblResult.Name = "lblResult";
+            this.lblResult.Size = new System.Drawing.Size(19, 20);
+            this.lblResult.TabIndex = 4;
+            this.lblResult.Text = "  ";
+            // 
+            // lblNum2
+            // 
+            this.lblNum2.AutoSize = true;
+            this.lblNum2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblNum2.Location = new System.Drawing.Point(210, 64);
+            this.lblNum2.Name = "lblNum2";
+            this.lblNum2.Size = new System.Drawing.Size(17, 20);
+            this.lblNum2.TabIndex = 3;
+            this.lblNum2.Text = "  ";
+            // 
+            // lblNum1
+            // 
+            this.lblNum1.AutoSize = true;
+            this.lblNum1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblNum1.Location = new System.Drawing.Point(210, 9);
+            this.lblNum1.Name = "lblNum1";
+            this.lblNum1.Size = new System.Drawing.Size(17, 20);
+            this.lblNum1.TabIndex = 2;
+            this.lblNum1.Text = "  ";
+            // 
+            // txtNum2
+            // 
+            this.txtNum2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtNum2.Location = new System.Drawing.Point(8, 61);
+            this.txtNum2.Name = "txtNum2";
+            this.txtNum2.Size = new System.Drawing.Size(196, 26);
+            this.txtNum2.TabIndex = 1;
+            this.txtNum2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNum2_KeyDown);
+            this.txtNum2.Leave += new System.EventHandler(this.txtNum2_Leave);
+            // 
+            // txtNum1
+            // 
+            this.txtNum1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtNum1.Location = new System.Drawing.Point(8, 6);
+            this.txtNum1.Name = "txtNum1";
+            this.txtNum1.Size = new System.Drawing.Size(196, 26);
+            this.txtNum1.TabIndex = 0;
+            this.txtNum1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNum1_KeyDown);
+            this.txtNum1.Leave += new System.EventHandler(this.txtNum1_Leave);
+            // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.undoToolStripMenuItem});
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
+            this.editToolStripMenuItem.Text = "Edit";
+            this.editToolStripMenuItem.DropDownOpened += new System.EventHandler(this.editToolStripMenuItem_DropDownOpened);
+            // 
+            // undoToolStripMenuItem
+            // 
+            this.undoToolStripMenuItem.Name = "undoToolStripMenuItem";
+            this.undoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.undoToolStripMenuItem.Text = "Undo";
+            this.undoToolStripMenuItem.Click += new System.EventHandler(this.undoToolStripMenuItem_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -564,8 +583,6 @@ namespace MathIS.Forms
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.grpVarB.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.matrix_B)).EndInit();
@@ -578,6 +595,8 @@ namespace MathIS.Forms
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.cntxMenu.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -628,6 +647,8 @@ namespace MathIS.Forms
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.CheckBox cb_rbresult_A;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem undoToolStripMenuItem;
     }
 }
 

@@ -42,5 +42,10 @@ namespace MathIS.Model.Entities
         {
             throw new Exception("Operation not implemented");
         }
+
+        public virtual BaseMathEntity Clone()
+        {
+            throw new Exception("Operation not implemented");
+        }
     }
 }

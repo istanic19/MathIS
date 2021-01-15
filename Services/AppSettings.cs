@@ -1,4 +1,5 @@
 ﻿using dbConn;
+using MathIS.Model.Entities;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -27,6 +28,8 @@ namespace MathIS.Services
 
         private List<CDBConnection> _connections;
 
+        private DimensionSet _dimensions;
+        private static DimensionSet _dim;
 
         #endregion
 
@@ -41,6 +44,11 @@ namespace MathIS.Services
         public static CDBConnection Connection
         {
             get { return _conn; }
+        }
+
+        public static DimensionSet Dimensions
+        {
+            get { return _dim; }
         }
 
         public int Precision
@@ -74,6 +82,9 @@ namespace MathIS.Services
             _connections = new List<CDBConnection>();
             _precision = -1;
             _precisionDecimals = -1;
+
+            _dimensions = new DimensionSet();
+            _dim = new DimensionSet();
         }
 
         [OnDeserialized]
@@ -83,6 +94,9 @@ namespace MathIS.Services
             _precisionDecimals = _precision;
             if (_connections == null)
                 _connections = new List<CDBConnection>();
+            if (_dimensions == null)
+                _dimensions = new DimensionSet();
+            _dim = _dimensions;
         }
 
         public void Dispose()
@@ -130,6 +144,7 @@ namespace MathIS.Services
 
         public void Save()
         {
+            _dimensions = _dim;
             IFormatter formatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
             Stream toStream = null;
             try

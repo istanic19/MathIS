@@ -40,6 +40,21 @@ namespace MathIS.Model.Entities
             }
         }
 
+        public override BaseMathEntity Clone()
+        {
+            var clone = new Matrix(_rows, _columns);
+
+            for (int i = 0; i < _rows; ++i)
+            {
+                for (int j = 0; j < _columns; ++j)
+                {
+                    clone.Components[i, j] = _components[i, j].Clone() as Number;
+                }
+            }
+
+            return clone;
+        }
+
         public Matrix(int rows, int columns, string input)
         {
             _rows = rows;
@@ -66,7 +81,7 @@ namespace MathIS.Model.Entities
                 var vector = new Vector(row);
                 for (int i = 0; i < vector.Components.Count && i < _columns; ++i)
                 {
-                    _components[rowIndex, i] = vector.Components.ElementAt(i).Clone();
+                    _components[rowIndex, i] = vector.Components.ElementAt(i).Clone() as Number;
                 }
                 rowIndex++;
             }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MathIS.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -52,30 +53,61 @@ namespace MathIS.Forms
 
         private void frmDimension_Shown(object sender, EventArgs e)
         {
-            txtDim.Focus();
-            txtDim.SelectAll();
+            nmValueRow.Focus();
+            nmValueRow.Select(0, 100);
         }
 
-        private void txtDim_KeyDown(object sender, KeyEventArgs e)
+        private void nmValueRow_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Escape)
             {
                 e.Handled = true;
                 this.Close();
             }
-            else if (e.KeyCode == Keys.Enter)
+
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (!_matrix)
+                {
+                    e.Handled = true;
+                    e.SuppressKeyPress = true;
+                    OnEnter();
+                }
+                else
+                {
+                    e.Handled = true;
+                    e.SuppressKeyPress = true;
+                    nmValueColumn.Focus();
+                    nmValueColumn.Select(0, 100);
+                }
+            }
+        }
+
+        private void nmValueColumn_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                e.Handled = true;
+                this.Close();
+            }
+
+            if (e.KeyCode == Keys.Enter)
             {
                 e.Handled = true;
                 e.SuppressKeyPress = true;
                 OnEnter();
             }
-            else
-            {
-                if (!_availableKeys.Contains(e.KeyCode))
-                    e.SuppressKeyPress = true;
-                if (txtDim.Text.Contains(",") && e.KeyCode == Keys.Oemcomma)
-                    e.SuppressKeyPress = true;
-            }
+        }
+
+        
+        private void frmDimension_DoubleClick(object sender, EventArgs e)
+        {
+            OnEnter();
+        }
+
+        private void lblDim_DoubleClick(object sender, EventArgs e)
+        {
+            OnEnter();
         }
 
         private void frmDimension_Deactivate(object sender, EventArgs e)
@@ -89,9 +121,6 @@ namespace MathIS.Forms
 
         private void LoadData()
         {
-            /*48-57, 96-105   -numbers
-             
-             */
             _availableKeys = new List<Keys>();
             for (int i = 0; i < 10; ++i)
             {
@@ -105,72 +134,38 @@ namespace MathIS.Forms
             _availableKeys.Add(Keys.Delete);
             _availableKeys.Add(Keys.Back);
 
-            if (_matrix)
+            if (!_matrix)
             {
-                _availableKeys.Add(Keys.Oemcomma);
-                txtDim.Text = "2,2";
+                nmValueColumn.Visible = false;
+                nmValueRow.Size = new Size(nmValueRow.Width + 10, nmValueRow.Height);
+
+                nmValueRow.Value = AppSettings.Dimensions.VectorDimensions;
             }
             else
             {
-                txtDim.Text = "2";
+                nmValueRow.Value = AppSettings.Dimensions.MatrixRows;
+                nmValueColumn.Value = AppSettings.Dimensions.MatrixColumns;
             }
-
-
         }
 
         private void OnEnter()
         {
             if (_matrix)
             {
-                var s = txtDim.Text.Trim().Split(',');
-                if (s.Length != 2)
-                {
-                    HandleError("Invalid input");
-                    return;
-                }
-
-                if (!int.TryParse(s[0], out var rows) || rows < 2)
-                {
-                    HandleError("Minimum row number is 2");
-                    return;
-                }
-                if (!int.TryParse(s[1], out var columns) || columns < 2)
-                {
-                    HandleError("Minimum column number is 2");
-                    return;
-                }
-
-                _matrixOrder = new Tuple<int, int>(rows, columns);
-
-
+                _matrixOrder = new Tuple<int, int>((int)nmValueRow.Value, (int)nmValueColumn.Value);
+                AppSettings.Dimensions.MatrixRows = (int)nmValueRow.Value;
+                AppSettings.Dimensions.MatrixColumns = (int)nmValueColumn.Value;
             }
             else
             {
-                if (!int.TryParse(txtDim.Text.Trim(), out var result) || result < 2)
-                {
-                    HandleError("Invalid input");
-                    return;
-                }
-                else
-                {
-                    _dimensions = result;
-                }
+                _dimensions = (int)nmValueRow.Value;
+                AppSettings.Dimensions.VectorDimensions = (int)nmValueRow.Value;
             }
 
             this.Close();
         }
 
-        private void HandleError(string message)
-        {
-            if(_matrix)
-            {
-                txtDim.Text = "2,2";
-            }
-            else
-            {
-                txtDim.Text = "2";
-            }
-        }
+        
 
         protected override void WndProc(ref Message m)
         {
@@ -195,8 +190,11 @@ namespace MathIS.Forms
 
 
 
+
+
+
         #endregion
 
-
+        
     }
 }

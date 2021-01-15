@@ -86,6 +86,7 @@
     </Compile>
     <Compile Include="Model\Entities\AritmeticType.cs" />
     <Compile Include="Model\Entities\BaseMathEntity.cs" />
+    <Compile Include="Model\Entities\DimensionSet.cs" />
     <Compile Include="Model\Entities\MatOperation.cs" />
     <Compile Include="Model\Entities\Matrix.cs" />
     <Compile Include="Model\Entities\Number.cs" />

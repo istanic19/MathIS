@@ -37,6 +37,11 @@ namespace MathIS.Model.Entities
             get { return GetModule(); }
         }
 
+        public override BaseMathEntity Clone()
+        {
+            return new Number(Real, Imaginary);
+        }
+
         public override BaseMathEntity Conjugate()
         {
             return new Number(Real, -Imaginary);
@@ -256,10 +261,6 @@ namespace MathIS.Model.Entities
             this._imaginary = number.Imaginary;
         }
 
-        public Number Clone()
-        {
-            return new Number(Real, Imaginary);
-        }
 
         public Number Root(int root)
         {
@@ -287,8 +288,8 @@ namespace MathIS.Model.Entities
         {
             if (exponent == 0)
                 return new Number(1, 0);
-            var current = Clone();
-            var result = Clone();
+            var current = Clone() as Number;
+            var result = Clone() as Number;
 
             bool negative = exponent < 0;
             if (negative)
@@ -311,7 +312,7 @@ namespace MathIS.Model.Entities
             if (exponent == 0)
                 return new Number(1, 0);
 
-            exponent = exponent.Clone();
+            exponent = exponent.Clone() as Number;
 
             int r = DecimalPlaces(exponent.Real);
             int i = DecimalPlaces(exponent.Imaginary);
