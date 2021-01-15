@@ -48,7 +48,9 @@ namespace MathIS.UI
             _dataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             _dataGrid.Tag = _aritmeticObject;
             _dataGrid.Location = new Point(0, 0);
- 
+
+            _dataGrid.DefaultCellStyle.BackColor = Color.Gray;
+
             dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
 

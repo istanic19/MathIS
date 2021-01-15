@@ -17,8 +17,6 @@ namespace MathIS.Forms
 {
     public partial class frmMain : Form
     {
-        
-
         #region Fields
         private AppSettings _settings;
         private EventDisabler EventDisable = new EventDisabler();
@@ -738,7 +736,5 @@ namespace MathIS.Forms
 
 
         #endregion
-
-        
     }
 }
