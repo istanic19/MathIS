@@ -32,6 +32,8 @@ namespace MathIS.Forms
         {
             this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.undoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.connectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -74,8 +76,7 @@ namespace MathIS.Forms
             this.txtNum2 = new System.Windows.Forms.TextBox();
             this.txtNum1 = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.undoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.determinatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -103,6 +104,22 @@ namespace MathIS.Forms
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.undoToolStripMenuItem});
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
+            this.editToolStripMenuItem.Text = "Edit";
+            this.editToolStripMenuItem.DropDownOpened += new System.EventHandler(this.editToolStripMenuItem_DropDownOpened);
+            // 
+            // undoToolStripMenuItem
+            // 
+            this.undoToolStripMenuItem.Name = "undoToolStripMenuItem";
+            this.undoToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.undoToolStripMenuItem.Text = "Undo";
+            this.undoToolStripMenuItem.Click += new System.EventHandler(this.undoToolStripMenuItem_Click);
+            // 
             // optionsToolStripMenuItem
             // 
             this.optionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -115,14 +132,14 @@ namespace MathIS.Forms
             // connectionToolStripMenuItem
             // 
             this.connectionToolStripMenuItem.Name = "connectionToolStripMenuItem";
-            this.connectionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.connectionToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.connectionToolStripMenuItem.Text = "Connection ...";
             this.connectionToolStripMenuItem.Click += new System.EventHandler(this.connectionToolStripMenuItem_Click);
             // 
             // settingsToolStripMenuItem
             // 
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.settingsToolStripMenuItem.Text = "Settings ...";
             this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
@@ -157,7 +174,7 @@ namespace MathIS.Forms
             // 
             // ddiOperation
             // 
-            this.ddiOperation.Location = new System.Drawing.Point(282, 169);
+            this.ddiOperation.Location = new System.Drawing.Point(56, 105);
             this.ddiOperation.Name = "ddiOperation";
             this.ddiOperation.SelectedItem = null;
             this.ddiOperation.Size = new System.Drawing.Size(32, 32);
@@ -167,9 +184,9 @@ namespace MathIS.Forms
             // 
             this.pnlBreakLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(163)))), ((int)(((byte)(240)))));
             this.pnlBreakLine.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(163)))), ((int)(((byte)(240)))));
-            this.pnlBreakLine.Location = new System.Drawing.Point(8, 251);
+            this.pnlBreakLine.Location = new System.Drawing.Point(8, 166);
             this.pnlBreakLine.Name = "pnlBreakLine";
-            this.pnlBreakLine.Size = new System.Drawing.Size(600, 4);
+            this.pnlBreakLine.Size = new System.Drawing.Size(134, 4);
             this.pnlBreakLine.TabIndex = 12;
             // 
             // grpVarB
@@ -178,9 +195,9 @@ namespace MathIS.Forms
             this.grpVarB.Controls.Add(this.vector_B);
             this.grpVarB.Controls.Add(this.num_B);
             this.grpVarB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(163)))), ((int)(((byte)(240)))));
-            this.grpVarB.Location = new System.Drawing.Point(149, 6);
+            this.grpVarB.Location = new System.Drawing.Point(138, 6);
             this.grpVarB.Name = "grpVarB";
-            this.grpVarB.Size = new System.Drawing.Size(135, 96);
+            this.grpVarB.Size = new System.Drawing.Size(124, 84);
             this.grpVarB.TabIndex = 11;
             this.grpVarB.TabStop = false;
             this.grpVarB.Text = "Variable B";
@@ -191,7 +208,7 @@ namespace MathIS.Forms
             this.matrix_B.DisabledImage = global::MathIS.Properties.Resources.matrixDisabled;
             this.matrix_B.DownImage = global::MathIS.Properties.Resources.matrixDown;
             this.matrix_B.HoverImage = global::MathIS.Properties.Resources.matrixHover;
-            this.matrix_B.Location = new System.Drawing.Point(86, 19);
+            this.matrix_B.Location = new System.Drawing.Point(86, 27);
             this.matrix_B.Name = "matrix_B";
             this.matrix_B.NormalImage = global::MathIS.Properties.Resources.matrix;
             this.matrix_B.Size = new System.Drawing.Size(34, 34);
@@ -206,7 +223,7 @@ namespace MathIS.Forms
             this.vector_B.DisabledImage = global::MathIS.Properties.Resources.vectorDisabled;
             this.vector_B.DownImage = global::MathIS.Properties.Resources.vectorDown;
             this.vector_B.HoverImage = global::MathIS.Properties.Resources.vectorHover;
-            this.vector_B.Location = new System.Drawing.Point(46, 19);
+            this.vector_B.Location = new System.Drawing.Point(46, 27);
             this.vector_B.Name = "vector_B";
             this.vector_B.NormalImage = global::MathIS.Properties.Resources.vector;
             this.vector_B.Size = new System.Drawing.Size(34, 34);
@@ -221,7 +238,7 @@ namespace MathIS.Forms
             this.num_B.DisabledImage = global::MathIS.Properties.Resources.numberDisabled;
             this.num_B.DownImage = global::MathIS.Properties.Resources.numberDown;
             this.num_B.HoverImage = global::MathIS.Properties.Resources.numberHover;
-            this.num_B.Location = new System.Drawing.Point(6, 19);
+            this.num_B.Location = new System.Drawing.Point(6, 27);
             this.num_B.Name = "num_B";
             this.num_B.NormalImage = global::MathIS.Properties.Resources.number;
             this.num_B.Size = new System.Drawing.Size(34, 34);
@@ -238,7 +255,7 @@ namespace MathIS.Forms
             this.grpVarA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(163)))), ((int)(((byte)(240)))));
             this.grpVarA.Location = new System.Drawing.Point(8, 6);
             this.grpVarA.Name = "grpVarA";
-            this.grpVarA.Size = new System.Drawing.Size(135, 96);
+            this.grpVarA.Size = new System.Drawing.Size(124, 84);
             this.grpVarA.TabIndex = 10;
             this.grpVarA.TabStop = false;
             this.grpVarA.Text = "Variable A";
@@ -249,7 +266,7 @@ namespace MathIS.Forms
             this.matrix_A.DisabledImage = global::MathIS.Properties.Resources.matrixDisabled;
             this.matrix_A.DownImage = global::MathIS.Properties.Resources.matrixDown;
             this.matrix_A.HoverImage = global::MathIS.Properties.Resources.matrixHover;
-            this.matrix_A.Location = new System.Drawing.Point(86, 19);
+            this.matrix_A.Location = new System.Drawing.Point(86, 27);
             this.matrix_A.Name = "matrix_A";
             this.matrix_A.NormalImage = global::MathIS.Properties.Resources.matrix;
             this.matrix_A.Size = new System.Drawing.Size(34, 34);
@@ -264,7 +281,7 @@ namespace MathIS.Forms
             this.vector_A.DisabledImage = global::MathIS.Properties.Resources.vectorDisabled;
             this.vector_A.DownImage = global::MathIS.Properties.Resources.vectorDown;
             this.vector_A.HoverImage = global::MathIS.Properties.Resources.vectorHover;
-            this.vector_A.Location = new System.Drawing.Point(46, 19);
+            this.vector_A.Location = new System.Drawing.Point(46, 27);
             this.vector_A.Name = "vector_A";
             this.vector_A.NormalImage = global::MathIS.Properties.Resources.vector;
             this.vector_A.Size = new System.Drawing.Size(34, 34);
@@ -279,7 +296,7 @@ namespace MathIS.Forms
             this.num_A.DisabledImage = global::MathIS.Properties.Resources.numberDisabled;
             this.num_A.DownImage = global::MathIS.Properties.Resources.numberDown;
             this.num_A.HoverImage = global::MathIS.Properties.Resources.numberHover;
-            this.num_A.Location = new System.Drawing.Point(6, 19);
+            this.num_A.Location = new System.Drawing.Point(6, 27);
             this.num_A.Name = "num_A";
             this.num_A.NormalImage = global::MathIS.Properties.Resources.number;
             this.num_A.Size = new System.Drawing.Size(34, 34);
@@ -298,9 +315,9 @@ namespace MathIS.Forms
             this.groupBox1.Controls.Add(this.cb_rbresult_Default);
             this.groupBox1.Controls.Add(this.btnCalculateVector);
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(163)))), ((int)(((byte)(240)))));
-            this.groupBox1.Location = new System.Drawing.Point(292, 6);
+            this.groupBox1.Location = new System.Drawing.Point(269, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(162, 96);
+            this.groupBox1.Size = new System.Drawing.Size(162, 84);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Result to";
@@ -308,7 +325,7 @@ namespace MathIS.Forms
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(36, 67);
+            this.label3.Location = new System.Drawing.Point(36, 63);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(30, 13);
             this.label3.TabIndex = 13;
@@ -318,7 +335,7 @@ namespace MathIS.Forms
             // 
             this.cb_rbresult_B.AutoSize = true;
             this.cb_rbresult_B.ForeColor = System.Drawing.Color.White;
-            this.cb_rbresult_B.Location = new System.Drawing.Point(13, 67);
+            this.cb_rbresult_B.Location = new System.Drawing.Point(13, 62);
             this.cb_rbresult_B.Name = "cb_rbresult_B";
             this.cb_rbresult_B.Size = new System.Drawing.Size(15, 14);
             this.cb_rbresult_B.TabIndex = 12;
@@ -328,7 +345,7 @@ namespace MathIS.Forms
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(36, 44);
+            this.label2.Location = new System.Drawing.Point(36, 42);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(30, 13);
             this.label2.TabIndex = 11;
@@ -338,7 +355,7 @@ namespace MathIS.Forms
             // 
             this.cb_rbresult_A.AutoSize = true;
             this.cb_rbresult_A.ForeColor = System.Drawing.Color.White;
-            this.cb_rbresult_A.Location = new System.Drawing.Point(13, 44);
+            this.cb_rbresult_A.Location = new System.Drawing.Point(13, 41);
             this.cb_rbresult_A.Name = "cb_rbresult_A";
             this.cb_rbresult_A.Size = new System.Drawing.Size(15, 14);
             this.cb_rbresult_A.TabIndex = 10;
@@ -375,7 +392,7 @@ namespace MathIS.Forms
             this.btnCalculateVector.ForeColor = System.Drawing.Color.White;
             this.btnCalculateVector.Location = new System.Drawing.Point(83, 15);
             this.btnCalculateVector.Name = "btnCalculateVector";
-            this.btnCalculateVector.Size = new System.Drawing.Size(73, 23);
+            this.btnCalculateVector.Size = new System.Drawing.Size(73, 61);
             this.btnCalculateVector.TabIndex = 7;
             this.btnCalculateVector.Text = "Calculate";
             this.btnCalculateVector.UseVisualStyleBackColor = false;
@@ -383,11 +400,12 @@ namespace MathIS.Forms
             // 
             // pnlResult
             // 
+            this.pnlResult.BackgroundImage = global::MathIS.Properties.Resources.R;
             this.pnlResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlResult.ContextMenuStrip = this.cntxMenu;
-            this.pnlResult.Location = new System.Drawing.Point(8, 289);
+            this.pnlResult.Location = new System.Drawing.Point(6, 195);
             this.pnlResult.Name = "pnlResult";
-            this.pnlResult.Size = new System.Drawing.Size(268, 73);
+            this.pnlResult.Size = new System.Drawing.Size(40, 40);
             this.pnlResult.TabIndex = 8;
             // 
             // cntxMenu
@@ -397,9 +415,10 @@ namespace MathIS.Forms
             this.pasteToolStripMenuItem,
             this.toolStripMenuItem1,
             this.conjugateToolStripMenuItem,
-            this.normalizeToolStripMenuItem});
+            this.normalizeToolStripMenuItem,
+            this.determinatToolStripMenuItem});
             this.cntxMenu.Name = "cntxMenu";
-            this.cntxMenu.Size = new System.Drawing.Size(130, 98);
+            this.cntxMenu.Size = new System.Drawing.Size(181, 142);
             this.cntxMenu.Opening += new System.ComponentModel.CancelEventHandler(this.cntxMenu_Opening);
             // 
             // copyToolStripMenuItem
@@ -437,20 +456,22 @@ namespace MathIS.Forms
             // 
             // pnlB
             // 
+            this.pnlB.BackgroundImage = global::MathIS.Properties.Resources.B;
             this.pnlB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlB.ContextMenuStrip = this.cntxMenu;
-            this.pnlB.Location = new System.Drawing.Point(320, 147);
+            this.pnlB.Location = new System.Drawing.Point(94, 101);
             this.pnlB.Name = "pnlB";
-            this.pnlB.Size = new System.Drawing.Size(268, 73);
+            this.pnlB.Size = new System.Drawing.Size(40, 40);
             this.pnlB.TabIndex = 2;
             // 
             // pnlA
             // 
+            this.pnlA.BackgroundImage = global::MathIS.Properties.Resources.A;
             this.pnlA.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlA.ContextMenuStrip = this.cntxMenu;
-            this.pnlA.Location = new System.Drawing.Point(8, 147);
+            this.pnlA.Location = new System.Drawing.Point(8, 101);
             this.pnlA.Name = "pnlA";
-            this.pnlA.Size = new System.Drawing.Size(268, 73);
+            this.pnlA.Size = new System.Drawing.Size(40, 40);
             this.pnlA.TabIndex = 0;
             // 
             // tabPage1
@@ -551,21 +572,12 @@ namespace MathIS.Forms
             this.txtNum1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNum1_KeyDown);
             this.txtNum1.Leave += new System.EventHandler(this.txtNum1_Leave);
             // 
-            // editToolStripMenuItem
+            // determinatToolStripMenuItem
             // 
-            this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.undoToolStripMenuItem});
-            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
-            this.editToolStripMenuItem.Text = "Edit";
-            this.editToolStripMenuItem.DropDownOpened += new System.EventHandler(this.editToolStripMenuItem_DropDownOpened);
-            // 
-            // undoToolStripMenuItem
-            // 
-            this.undoToolStripMenuItem.Name = "undoToolStripMenuItem";
-            this.undoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.undoToolStripMenuItem.Text = "Undo";
-            this.undoToolStripMenuItem.Click += new System.EventHandler(this.undoToolStripMenuItem_Click);
+            this.determinatToolStripMenuItem.Name = "determinatToolStripMenuItem";
+            this.determinatToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.determinatToolStripMenuItem.Text = "Determinant";
+            this.determinatToolStripMenuItem.Click += new System.EventHandler(this.determinatToolStripMenuItem_Click);
             // 
             // frmMain
             // 
@@ -649,6 +661,7 @@ namespace MathIS.Forms
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem undoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem determinatToolStripMenuItem;
     }
 }
 

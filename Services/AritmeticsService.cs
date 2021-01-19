@@ -130,6 +130,11 @@ namespace MathIS.Services
             return Round(a.Normalize());
         }
 
+        public static BaseMathEntity Determinant(BaseMathEntity a)
+        {
+            return Round(a.Determinanta());
+        }
+
         public static BaseMathEntity Round(BaseMathEntity input)
         {
             if (AppSettings.PrecisionDecimals < 0)

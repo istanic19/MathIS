@@ -257,5 +257,14 @@
   <ItemGroup>
     <None Include="_Documents\Subtract.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="_Documents\A.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="_Documents\B.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="_Documents\R.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

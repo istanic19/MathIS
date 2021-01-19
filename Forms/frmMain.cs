@@ -20,6 +20,9 @@ namespace MathIS.Forms
         #region Fields
         private AppSettings _settings;
         private EventDisabler EventDisable = new EventDisabler();
+
+        private int _topLocation = 0;
+        private int _verticalGap = 10;
         #endregion
 
         #region Event Handlers
@@ -320,6 +323,7 @@ namespace MathIS.Forms
                 normalizeToolStripMenuItem.Visible = false;
                 toolStripMenuItem1.Visible = false;
                 copyToolStripMenuItem.Visible = false;
+                determinatToolStripMenuItem.Visible = false;
                 pasteToolStripMenuItem.Visible = true;
             }
             else
@@ -328,6 +332,7 @@ namespace MathIS.Forms
                 normalizeToolStripMenuItem.Visible = true;
                 toolStripMenuItem1.Visible = true;
                 copyToolStripMenuItem.Visible = true;
+                determinatToolStripMenuItem.Visible = true;
                 pasteToolStripMenuItem.Visible = true;
             }
 
@@ -430,6 +435,49 @@ namespace MathIS.Forms
             }
         }
 
+        private void determinatToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Control ctrl = cntxMenu.SourceControl;
+            var ac = ctrl.Parent.Tag as AritmeticControl;
+            if (ac != null)
+            {
+                BaseMathEntity conj = null;
+                try
+                {
+                    conj = AritmeticsService.Determinant(ac.Entity);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(this, ex.Message, "Normalize", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                Control container = null;
+
+                if (ctrl == pnlA || ctrl.Parent == pnlA)
+                {
+                    container = pnlA;
+                    ClearA();
+                }
+                else if (ctrl == pnlB || ctrl.Parent == pnlB)
+                {
+                    container = pnlB;
+                    ClearB();
+                }
+                else if (ctrl == pnlResult || ctrl.Parent == pnlResult)
+                {
+                    container = pnlResult;
+                    ClearResult();
+                }
+
+                var acC = CreateAritmeticControl(conj, container);
+                acC.Grid.Focus();
+
+                ArrangeControls();
+                RecordState();
+            }
+        }
+
         #endregion
 
         #region Constructor
@@ -464,6 +512,12 @@ namespace MathIS.Forms
             ddiOperation.Items.Add(new DropDownImageItem() { Image = Properties.Resources.MatrixMultiply, Text = "Matrix multiply", Tag = new VectorOperation(VectorOperationEnum.MatrixMupltiply) });
 
             ddiOperation.SelectedItem = ddiOperation.Items[0];
+
+            _topLocation = pnlA.Location.Y - (grpVarA.Location.Y + grpVarA.Height);
+            _verticalGap = pnlBreakLine.Location.Y - (pnlA.Location.Y + pnlA.Height);
+
+            ArrangeControls();
+
         }
 
         private void RecordState()
@@ -502,7 +556,10 @@ namespace MathIS.Forms
             ClearResult();
 
             if (state == null)
+            {
+                ArrangeControls();
                 return;
+            }
 
             if (state.Item1 != null)
             {
@@ -627,8 +684,15 @@ namespace MathIS.Forms
 
         public void ArrangeControls()
         {
-            int top = grpVarA.Location.Y + grpVarA.Height + 20;
+            int top = grpVarA.Location.Y + grpVarA.Height + _topLocation;
             int gap = 6;
+
+            if (pnlA.Controls["Grid_AritmeticControl"] == null)
+                pnlA.Size = new Size(40, 40);
+            if (pnlB.Controls["Grid_AritmeticControl"] == null)
+                pnlB.Size = new Size(40, 40);
+            if (pnlResult.Controls["Grid_AritmeticControl"] == null)
+                pnlResult.Size = new Size(40, 40);
 
             int maxHeight = pnlA.Height;
             if (pnlB.Height > maxHeight)
@@ -646,9 +710,9 @@ namespace MathIS.Forms
             if ((pnlB.Location.Y + pnlB.Height) > bottom)
                 bottom = pnlB.Location.Y + pnlB.Height;
 
-            pnlResult.Location = new Point(pnlResult.Location.X, bottom + 50);
+            pnlResult.Location = new Point(pnlResult.Location.X, bottom + 2* _verticalGap);
 
-            pnlBreakLine.Location = new Point(pnlBreakLine.Location.X, bottom + 25 - pnlBreakLine.Height / 2);
+            pnlBreakLine.Location = new Point(pnlBreakLine.Location.X, bottom + _verticalGap - pnlBreakLine.Height / 2);
             pnlBreakLine.Size = new Size(pnlB.Location.X + pnlB.Width - pnlBreakLine.Location.X, pnlBreakLine.Height);
 
         }
@@ -736,5 +800,7 @@ namespace MathIS.Forms
 
 
         #endregion
+
+        
     }
 }

@@ -142,6 +142,58 @@ namespace MathIS.Model.Entities
             return base.Add(x);
         }
 
+        public override BaseMathEntity Determinanta()
+        {
+            if (_columns != _rows)
+                throw new Exception("Matrix is not square!");
+            if (_columns == 2)
+                return ((Components[0, 0] * Components[1, 1]) - (Components[0, 1] * Components[1, 0]));
+
+            Number result = new Number(0, 0);
+
+            for (int i = 0; i < _columns; ++i)
+            {
+                var matrix = GetMinor(i);
+                var determinant = (Number)matrix.Determinanta();
+                var value = Components[0, i] * determinant;
+                if (i % 2 != 0)
+                {
+                    result = result - value;
+                }
+                else
+                {
+                    result = result + value;
+                }
+            }
+
+            return result;
+        }
+
+        private Matrix GetMinor(int minorColumn)
+        {
+            Matrix minor = new Matrix(_columns - 1, _columns - 1);
+
+            int rowIndex = 0;
+            int columnIndex = 0;
+
+            for (int row = 1; row < _rows; ++row)
+            {
+                for (int column = 0; column < _columns; ++column)
+                {
+                    if (column == minorColumn)
+                    {
+                        continue;
+                    }
+                    minor.Components[rowIndex, columnIndex] = Components[row, column].Clone() as Number;
+                    columnIndex++;
+                }
+                columnIndex = 0;
+                rowIndex++;
+            }
+
+            return minor;
+        }
+
         public override BaseMathEntity MatrixMultiply(BaseMathEntity x)
         {
             return Multiply(x);

@@ -38,6 +38,11 @@ namespace MathIS.Model.Entities
             throw new Exception("Operation not implemented");
         }
 
+        public virtual BaseMathEntity Determinanta()
+        {
+            throw new Exception("Operation not implemented");
+        }
+
         public virtual void Round(uint decimals)
         {
             throw new Exception("Operation not implemented");

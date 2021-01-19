@@ -148,6 +148,9 @@
   <data name="matrixHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\_Documents\matrixHover.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Subtract" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\_Documents\Subtract.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Close16Disabled" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\AppImages\Close16Disabled.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -160,11 +163,14 @@
   <data name="vectorDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\_Documents\vectorDown.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Ok16Down" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\AppImages\Ok16Down.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="vectorHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\_Documents\vectorHover.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="DBStopHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\AppImages\DBStopHover.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\_Documents\Add.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="DB1Down" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\AppImages\DB1Down.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -178,20 +184,26 @@
   <data name="numberHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\_Documents\numberHover.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="DBStopDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\AppImages\DBStopDown.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MatrixMultiply" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\_Documents\MatrixMultiply.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="matrixDisabled" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\_Documents\matrixDisabled.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="matrix" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\_Documents\matrix.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Multiply" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\_Documents\Multiply.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="ajax_loader" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\AppImages\ajax_loader.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="vectorHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\_Documents\vectorHover.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Ok16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\AppImages\Ok16.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Ok16Down" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\AppImages\Ok16Down.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Close16Down" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\AppImages\Close16Down.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -199,22 +211,19 @@
   <data name="DBStop" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\AppImages\DBStop.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="DBStopDown" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\AppImages\DBStopDown.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Ok16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\AppImages\Ok16.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Ok16Disabled" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\AppImages\Ok16Disabled.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Add" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\_Documents\Add.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="A" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\_Documents\A.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="MatrixMultiply" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\_Documents\MatrixMultiply.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="B" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\_Documents\B.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Multiply" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\_Documents\Multiply.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Subtract" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\_Documents\Subtract.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="R" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\_Documents\R.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
