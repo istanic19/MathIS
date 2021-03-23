@@ -48,3 +48,8 @@ Zbroj vektora i vektora je vektor
 
 Hermition operator, Hermition matrix => aij=*aji  (* - complex conjugat => 1+2j  njegov conjugate je 1-2j)
 	Hermition matrix ima dijagonalu od realnih brojeva (aii = *aii samo ako je aii realni broj bez imaginarne komponente)
+	
+	/***************************************************************************************************>
+	
+	Eigen vector
+	Sigma matrica  Sigma_1 Sigma_2 Sigma_3
