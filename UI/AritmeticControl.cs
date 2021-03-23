@@ -26,7 +26,11 @@ namespace MathIS.UI
         {
             get { return _dataGrid; }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="parent"></param>
+        /// <param name="aritmeticObject"></param>
         public AritmeticControl(Control parent, BaseMathEntity aritmeticObject)
         {
             _aritmeticObject = aritmeticObject;
