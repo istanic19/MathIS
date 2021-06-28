@@ -307,6 +307,31 @@ namespace MathIS.Model.Entities
             return result;
         }
 
+        public Number Power(decimal exponent)
+        {
+            if (exponent == 0)
+                return new Number(1, 0);
+
+            if (Imaginary != 0)
+                return this.Power(new Number(exponent));
+            
+            bool negative = exponent < 0;
+            if (negative)
+                exponent = -exponent;
+
+            decimal realResult = (decimal)Math.Pow((double)Real, (double)exponent);
+
+            if (negative && realResult != 0m)
+                realResult = 1m / realResult;
+
+            var result = new Number(realResult, 0);
+
+
+            return result;
+        }
+
+
+
         public Number Power(Number exponent)
         {
             if (exponent == 0)

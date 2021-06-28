@@ -88,8 +88,8 @@ namespace MathIS.Services
                 case Operation.Divide:
                     return (Number)Round((a / b));
                 case Operation.Power:
-                    if (b.Imaginary == 0)
-                        return (Number)Round(a.Power((int)b.Real));
+                    if (b.Imaginary == 0 && a.Imaginary == 0)
+                        return (Number)Round(a.Power(b.Real));
                     else
                         return (Number)Round(a.Power(b));
                 case Operation.Root:

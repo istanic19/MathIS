@@ -64,6 +64,7 @@ namespace MathIS.Forms
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.conjugateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.normalizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.determinatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlB = new System.Windows.Forms.Panel();
             this.pnlA = new System.Windows.Forms.Panel();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -76,7 +77,6 @@ namespace MathIS.Forms
             this.txtNum2 = new System.Windows.Forms.TextBox();
             this.txtNum1 = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.determinatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -418,41 +418,48 @@ namespace MathIS.Forms
             this.normalizeToolStripMenuItem,
             this.determinatToolStripMenuItem});
             this.cntxMenu.Name = "cntxMenu";
-            this.cntxMenu.Size = new System.Drawing.Size(181, 142);
+            this.cntxMenu.Size = new System.Drawing.Size(141, 120);
             this.cntxMenu.Opening += new System.ComponentModel.CancelEventHandler(this.cntxMenu_Opening);
             // 
             // copyToolStripMenuItem
             // 
             this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
-            this.copyToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.copyToolStripMenuItem.Text = "Copy";
             this.copyToolStripMenuItem.Click += new System.EventHandler(this.copyToolStripMenuItem_Click);
             // 
             // pasteToolStripMenuItem
             // 
             this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
-            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.pasteToolStripMenuItem.Text = "Paste";
             this.pasteToolStripMenuItem.Click += new System.EventHandler(this.pasteToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(126, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(137, 6);
             // 
             // conjugateToolStripMenuItem
             // 
             this.conjugateToolStripMenuItem.Name = "conjugateToolStripMenuItem";
-            this.conjugateToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+            this.conjugateToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.conjugateToolStripMenuItem.Text = "Conjugate";
             this.conjugateToolStripMenuItem.Click += new System.EventHandler(this.conjugateToolStripMenuItem_Click);
             // 
             // normalizeToolStripMenuItem
             // 
             this.normalizeToolStripMenuItem.Name = "normalizeToolStripMenuItem";
-            this.normalizeToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+            this.normalizeToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.normalizeToolStripMenuItem.Text = "Normalize";
             this.normalizeToolStripMenuItem.Click += new System.EventHandler(this.normalizeToolStripMenuItem_Click);
+            // 
+            // determinatToolStripMenuItem
+            // 
+            this.determinatToolStripMenuItem.Name = "determinatToolStripMenuItem";
+            this.determinatToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.determinatToolStripMenuItem.Text = "Determinant";
+            this.determinatToolStripMenuItem.Click += new System.EventHandler(this.determinatToolStripMenuItem_Click);
             // 
             // pnlB
             // 
@@ -526,6 +533,7 @@ namespace MathIS.Forms
             // 
             this.lblResult.AutoSize = true;
             this.lblResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblResult.ForeColor = System.Drawing.Color.White;
             this.lblResult.Location = new System.Drawing.Point(8, 99);
             this.lblResult.Name = "lblResult";
             this.lblResult.Size = new System.Drawing.Size(19, 20);
@@ -536,6 +544,7 @@ namespace MathIS.Forms
             // 
             this.lblNum2.AutoSize = true;
             this.lblNum2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblNum2.ForeColor = System.Drawing.Color.White;
             this.lblNum2.Location = new System.Drawing.Point(210, 64);
             this.lblNum2.Name = "lblNum2";
             this.lblNum2.Size = new System.Drawing.Size(17, 20);
@@ -546,6 +555,7 @@ namespace MathIS.Forms
             // 
             this.lblNum1.AutoSize = true;
             this.lblNum1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblNum1.ForeColor = System.Drawing.Color.White;
             this.lblNum1.Location = new System.Drawing.Point(210, 9);
             this.lblNum1.Name = "lblNum1";
             this.lblNum1.Size = new System.Drawing.Size(17, 20);
@@ -571,13 +581,6 @@ namespace MathIS.Forms
             this.txtNum1.TabIndex = 0;
             this.txtNum1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNum1_KeyDown);
             this.txtNum1.Leave += new System.EventHandler(this.txtNum1_Leave);
-            // 
-            // determinatToolStripMenuItem
-            // 
-            this.determinatToolStripMenuItem.Name = "determinatToolStripMenuItem";
-            this.determinatToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.determinatToolStripMenuItem.Text = "Determinant";
-            this.determinatToolStripMenuItem.Click += new System.EventHandler(this.determinatToolStripMenuItem_Click);
             // 
             // frmMain
             // 
